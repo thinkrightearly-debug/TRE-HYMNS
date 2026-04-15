@@ -1,7 +1,9 @@
 {
-  "name": "Sacred Hymnal - English Edition",
+  "name": "TRE-HYMNS",
   "description": "A comprehensive English hymnal app inspired by the Egba Diocese traditions, featuring 858+ sacred hymns and songs from Anglican Hymns Old & New, with organ tunes, lyrics, and AI-powered reflections.",
   "requestFramePermissions": [
     "microphone"
-  ]
+  ],
+  "C7": [],
+  "aq": []
 }
