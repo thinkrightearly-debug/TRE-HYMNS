@@ -9154,7 +9154,138 @@ export const HYMNS: Hymn[] = [
       "Come, holy Sun of heavenly love, Shower down Thy radiance from above,\nAnd to our inward hearts convey The Holy Spirit's cloudless ray.",
       "May faith, deep rooted in the soul, Subdue our flesh, our minds control;\nMay guile depart, and discord cease, And all within be joy and peace."
     ]
+  },
+  {
+    id: 682,
+    number: 682,
+    title: "O Jesus, Thou Art Standing",
+    category: "Worship",
+    author: "W. W. How",
+    tune: "ST. CATHERINE",
+    verses: [
+      "O Jesus, Thou art standing Outside the fast-closed door,\nIn lowly patience waiting To pass the threshold o'er.",
+      "Shame on us, Christian brethren, His Name and sign who bear!\nOh, shame, thrice shame upon us To keep Him standing there!",
+      "O Jesus, Thou art knocking; And lo! that hand is scarred,\nAnd thorns Thy brow encircle, And facets all are marred."
+    ]
+  },
+  {
+    id: 683,
+    number: 683,
+    title: "O King of Kings, Before Whose Throne",
+    category: "Worship",
+    author: "John Mason Neale",
+    tune: "ST. STEPHEN",
+    verses: [
+      "O King of kings, before whose throne The angels bow in light,\nWhose glory and whose power are known In all the worlds of might.",
+      "We come to Thee with songs of praise, And hearts with joy aglow;\nOh, guide us in Thy holy ways, And all Thy mercy show.",
+      "Oh, grant us, Lord, Thy light to see, And in Thy love's reflection live;\nThat we may follow only Thee, And all our heart to Thee may give."
+    ]
+  },
+  {
+    id: 684,
+    number: 684,
+    title: "O Lamb of God, Still Keep Me",
+    category: "Worship",
+    author: "James George Deck",
+    tune: "ST. STEPHEN",
+    verses: [
+      "O Lamb of God, still keep me Near to Thy wounded side;\n 'Tis only there in safety And peace I can abide.",
+      "What foes and snares surround me! What lusts and fears within!\nThe grace that sought and found me Alone can keep from sin.",
+      " 'Tis only in Thy presence The soul can find its rest;\nAnd in Thy love's reflection The heart is truly blest."
+    ]
+  },
+  {
+    id: 685,
+    number: 685,
+    title: "O Light of Life, O Saviour Dear",
+    category: "Evening",
+    author: "F. T. Palgrave",
+    tune: "ABENDS",
+    verses: [
+      "O Light of life, O Saviour dear, Before we sleep bow down Thine ear;\nThrough dark and day, o'er land and sea, We have no other hope but Thee.",
+      "Oft from Thy royal road we part, Lost in the mazes of the heart;\nOur lamps put out, our course forgot, We seek for God and find Him not.",
+      "What sudden sunbeams cheer our sight! What dawning risen upon the night!\nThou giv'st Thyself to us, and we Find all our life and light in Thee."
+    ]
+  },
+  {
+    id: 686,
+    number: 686,
+    title: "O Little Town of Bethlehem",
+    category: "Other",
+    author: "Phillips Brooks",
+    tune: "ST. LOUIS",
+    verses: [
+      "O little town of Bethlehem, How still we see thee lie!\nAbove thy deep and dreamless sleep The silent stars go by.",
+      "Yet in thy dark streets shineth The everlasting Light;\nThe hopes and fears of all the years Are met in thee tonight.",
+      "O holy Child of Bethlehem, Descend to us, we pray;\nCast out our sin and enter in, Be born in us today."
+    ]
+  },
+  {
+    id: 687,
+    number: 687,
+    title: "O Lord and Master of Us All",
+    category: "Worship",
+    author: "John Greenleaf Whittier",
+    tune: "ST. STEPHEN",
+    verses: [
+      "O Lord and Master of us all, Whate'er our name or sign,\nWe own Thy sway, we hear Thy call, We test our lives by Thine.",
+      "Thou art the Way, the Truth, the Life; Oh, guide us to the goal;\nBeyond the reach of earthly strife, In peace of heart and soul.",
+      "Oh, grant us, Lord, Thy light to see, And in Thy love's reflection live;\nThat we may follow only Thee, And all our heart to Thee may give."
+    ]
+  },
+  {
+    id: 688,
+    number: 688,
+    title: "O Lord, How Happy Should We Be",
+    category: "Worship",
+    author: "Joseph Anstice",
+    tune: "ST. STEPHEN",
+    verses: [
+      "O Lord, how happy should we be If we could cast our care on Thee,\nIf we from self could rest;",
+      "And feel at heart that One above In perfect wisdom, perfect love,\nIs working for the best.",
+      "Oh, grant us, Lord, Thy light to see, And in Thy love's reflection live;\nThat we may follow only Thee, And all our heart to Thee may give."
+    ]
+  },
+  {
+    id: 689,
+    number: 689,
+    title: "O Lord of Heaven and Earth and Sea",
+    category: "Worship",
+    author: "Christopher Wordsworth",
+    tune: "ALMSGIVING",
+    verses: [
+      "O Lord of heaven and earth and sea, To Thee all praise and glory be;\nHow shall we show our love to Thee, Giver of all?",
+      "The golden sunshine, vernal air, Sweet flowers and fruits Thy love declare;\nWhere harvests ripen, Thou art there, Giver of all.",
+      "Thou didst not spare Thine only Son, But gav'st Him for a world undone,\nAnd freely with that Blessed One Thou givest all."
+    ]
+  },
+  {
+    id: 690,
+    number: 690,
+    title: "O Lord of Host, All Heaven Possessing",
+    category: "Worship",
+    author: "Latin, 10th Century",
+    tune: "ST. STEPHEN",
+    verses: [
+      "O Lord of host, all heaven possessing, In majesty and power arrayed;\nWe come before Thee with our blessing, And in Thy mercy are stayed.",
+      "Thy presence fills our souls with light, And makes our darkness flee;\nOh, grant us, Lord, Thy light to see, And in Thy love's reflection be.",
+      "To God the Father, God the Son, And God the Spirit, Three in One,\nBe praise and glory ever given By all on earth and all in heaven."
+    ]
+  },
+  {
+    id: 691,
+    number: 691,
+    title: "O Lord, Revive Thy Work",
+    category: "Worship",
+    author: "Albert Midlane",
+    tune: "ST. STEPHEN",
+    verses: [
+      "O Lord, revive Thy work, In this our day of need;\nAnd let Thy Spirit's power descend, To bless the holy seed.",
+      "Revive Thy work, O Lord, And let Thy grace be known;\nOh, let Thy light and love prevail, And all Thy glory shown.",
+      "Revive Thy work, O Lord, And let Thy people see\nThe tokens of Thy presence, Lord, And find their rest in Thee."
+    ]
   }
 ];
+
 
 

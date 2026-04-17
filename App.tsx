@@ -29,8 +29,13 @@ const App: React.FC = () => {
   const [isSearchingArchive, setIsSearchingArchive] = useState(false);
   const [isOffline, setIsOffline] = useState(!navigator.onLine);
   const [favorites, setFavorites] = useState<number[]>(() => {
-    const saved = localStorage.getItem('favorites');
-    return saved ? JSON.parse(saved) : [];
+    try {
+      const saved = localStorage.getItem('favorites');
+      return saved ? JSON.parse(saved) : [];
+    } catch (e) {
+      console.error('Error parsing favorites from localStorage', e);
+      return [];
+    }
   });
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
