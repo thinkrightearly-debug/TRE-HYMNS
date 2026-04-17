@@ -9414,8 +9414,138 @@ export const HYMNS: Hymn[] = [
       "Thy word is light, Thy law is love, Thy presence is our rest;\nOh, grant us, Lord, Thy light to see, And in Thy love be blest.",
       "To God the Father, God the Son, And God the Spirit, Three in One,\nBe praise and glory ever given By all on earth and all in heaven."
     ]
+  },
+  {
+    id: 702,
+    number: 702,
+    title: "O Spirit of the Living God",
+    category: "Holy Spirit",
+    author: "James Montgomery",
+    tune: "MELCOMBE",
+    verses: [
+      "O Spirit of the living God, In all Thy plenitude of grace,\nWhere'er the foot of man hath trod, Descend on our apostate race.",
+      "Give tongues of fire and hearts of love To preach the reconciling word;\nGive power and unction from above, Whene'er the joyful sound is heard.",
+      "Be darkness, at Thy coming, light; Confusion, order in Thy path;\nSouls without strength inspire with might; Bid mercy triumph over wrath."
+    ]
+  },
+  {
+    id: 703,
+    number: 703,
+    title: "O Strength and Stay Upholding All Creation",
+    category: "Worship",
+    author: "St. Ambrose",
+    tune: "STRENGTH AND STAY",
+    verses: [
+      "O Strength and Stay upholding all creation,\nWho ever dost Thyself unmoved abide,\nYet day by day the light in every station\nFrom hour to hour through all its changes guide.",
+      "Grant to life's eve a light that fadeth never,\nAnd glory like the morning's golden ray;\nIn life and death, Thy presence with us ever,\nBe Thou our Light and guide, our Strength and Stay.",
+      "To God the Father, God the Son, and Spirit,\nAll praise and glory be for ever given;\nWhose holy presence we shall all inherit,\nIn that life fair, which knows no end in heaven."
+    ]
+  },
+  {
+    id: 704,
+    number: 704,
+    title: "O Thou Before Whose Presence",
+    category: "Assurance",
+    author: "Samuel John Stone",
+    tune: "AURELIA",
+    verses: [
+      "O Thou before whose presence Naught evil may come in,\nYet who dost teach Thy children To turn away from sin;\nOh, grant us, Lord, Thy presence, And help us in our strife,\nThat we may live and serve Thee Through all our earthly life.",
+      "In every hour of danger, In every hour of need,\nIn every hour of sorrow, We come to Thee and plead;\nOh, grant us, Lord, Thy presence, And help us in our strife,\nThat we may live and serve Thee Through all our earthly life.",
+      "To God the Father, God the Son, and Spirit,\nAll praise and glory be for ever given;\nWhose holy presence we shall all inherit,\nIn that life fair, which knows no end in heaven."
+    ]
+  },
+  {
+    id: 705,
+    number: 705,
+    title: "O Thou Who Camest From Above",
+    category: "Dedication",
+    author: "Charles Wesley",
+    tune: "HEREFORD",
+    verses: [
+      "O Thou who camest from above, The pure celestial fire to impart,\nKindle a flame of sacred love On the mean altar of my heart.",
+      "There let it for Thy glory burn With inextinguishable blaze;\nAnd trembling to its source return, In humble prayer and fervent praise.",
+      "Jesus, confirm my heart's desire To work and speak and think for Thee;\nStill let me guard the holy fire, And still stir up Thy gift in me."
+    ]
+  },
+  {
+    id: 706,
+    number: 706,
+    title: "O Thou Who Makest Souls to Shine",
+    category: "Worship",
+    author: "John Armstrong",
+    tune: "ST. STEPHEN",
+    verses: [
+      "O Thou who makest souls to shine With light from Thy celestial throne,\nOh, grant us, Lord, Thy light divine, And make us, Lord, Thy very own.",
+      "Oh, grant us, Lord, Thy light to see, And in Thy love's reflection live;\nThat we may follow only Thee, And all our heart to Thee may give.",
+      "To God the Father, God the Son, and Spirit,\nAll praise and glory be for ever given;\nWhose holy presence we shall all inherit,\nIn that life fair, which knows no end in heaven."
+    ]
+  },
+  {
+    id: 707,
+    number: 707,
+    title: "O Thou Whose All-Redeeming Love",
+    category: "Worship",
+    author: "Jane E. Leeson",
+    tune: "ST. STEPHEN",
+    verses: [
+      "O Thou whose all-redeeming love We come before Thy throne;\nAnd with our voices praise we bring, To Thee and Thee alone.",
+      "Thy word is light, Thy law is love, Thy presence is our rest;\nOh, grant us, Lord, Thy light to see, And in Thy love be blest.",
+      "To God the Father, God the Son, and Spirit,\nAll praise and glory be for ever given;\nWhose holy presence we shall all inherit,\nIn that life fair, which knows no end in heaven."
+    ]
+  },
+  {
+    id: 708,
+    number: 708,
+    title: "O Throned, O Enthroned in the Glories",
+    category: "Praise",
+    author: "Bishop Christopher Wordsworth",
+    tune: "ST. OSWALD",
+    verses: [
+      "O throned, O enthroned in the glories on high,\nTo Thee be all praise from the earth and the sky;\nOh, grant us, Lord, Thy light to see, And in Thy love's reflection live;\nThat we may follow only Thee, And all our heart to Thee may give.",
+      "To God the Father, God the Son, and Spirit,\nAll praise and glory be for ever given;\nWhose holy presence we shall all inherit,\nIn that life fair, which knows no end in heaven."
+    ]
+  },
+  {
+    id: 709,
+    number: 709,
+    title: "O Very God of Very God",
+    category: "Worship",
+    author: "John Mason Neale",
+    tune: "BANGOR",
+    verses: [
+      "O very God of very God, And very Light of Light,\nWhose feet this earth's dark valley trod, That we might find Thy light.",
+      "Oh, grant us, Lord, Thy light to see, And in Thy love's reflection live;\nThat we may follow only Thee, And all our heart to Thee may give.",
+      "To God the Father, God the Son, and Spirit,\nAll praise and glory be for ever given;\nWhose holy presence we shall all inherit,\nIn that life fair, which knows no end in heaven."
+    ]
+  },
+  {
+    id: 710,
+    number: 710,
+    title: "O Word of God Incarnate",
+    category: "Word of God",
+    author: "William Walsham How",
+    tune: "AURELIA",
+    verses: [
+      "O Word of God incarnate, O Wisdom from on high,\nO Truth unchanged, unchanging, O Light of our dark sky;\nWe praise Thee for the radiance That from the hallowed page,\nA lantern to our footsteps, Shines on from age to age.",
+      "The Church from her dear Master Received the gift divine,\nAnd still that light she lifteth O'er all the earth to shine.\nIt is the golden casket Where gems of truth are stored;\nIt is the heaven-drawn picture Of Christ, the living Word.",
+      "It floateth like a banner Before God's host unfurled;\nIt shineth like a beacon Above the darkened world;\nIt is the chart and compass That o'er life's surging sea\nMid mists and rocks and quicksands, Still guides, O Christ, to Thee."
+    ]
+  },
+  {
+    id: 711,
+    number: 711,
+    title: "O Worship the King All-Glorious Above",
+    category: "Praise",
+    author: "Robert Grant",
+    tune: "HANOVER",
+    verses: [
+      "O worship the King all-glorious above,\nO gratefully sing His power and His love;\nOur Shield and Defender, the Ancient of Days,\nPavilioned in splendour, and girded with praise.",
+      "O tell of His might, O sing of His grace,\nWhose robe is the light, whose canopy space;\nHis chariots of wrath the deep thunder-clouds form,\nAnd dark is His path on the wings of the storm.",
+      "Thy bountiful care what tongue can recite?\nIt breathes in the air, it shines in the light;\nIt streams from the hills, it descends to the plain,\nAnd sweetly distils in the dew and the rain."
+    ]
   }
 ];
+
 
 
 
