@@ -9284,8 +9284,139 @@ export const HYMNS: Hymn[] = [
       "Revive Thy work, O Lord, And let Thy grace be known;\nOh, let Thy light and love prevail, And all Thy glory shown.",
       "Revive Thy work, O Lord, And let Thy people see\nThe tokens of Thy presence, Lord, And find their rest in Thee."
     ]
+  },
+  {
+    id: 692,
+    number: 692,
+    title: "O Lord, the Maker of All Things",
+    category: "Worship",
+    author: "William Mundy",
+    tune: "ST. STEPHEN",
+    verses: [
+      "O Lord, the Maker of all things, We come before Thy throne;\nAnd with our voices praise we bring, To Thee and Thee alone.",
+      "The heavens and the earth are Thine, And all that they contain;\nThy glory and Thy power divine, Forever shall remain.",
+      "Oh, grant us, Lord, Thy light to see, And in Thy love's reflection live;\nThat we may follow only Thee, And all our heart to Thee may give."
+    ]
+  },
+  {
+    id: 693,
+    number: 693,
+    title: "O Love, How Deep, How Broad, How High",
+    category: "Worship",
+    author: "Thomas a Kempis",
+    tune: "DEO GRACIAS",
+    verses: [
+      "O love, how deep, how broad, how high, It fills the heart with ecstasy;\nThat God, the Son of God, should take Our mortal form for mortals' sake.",
+      "For us He prayed, for us He taught, For us His daily works He wrought;\nBy words and signs and actions thus Still seeking not Himself but us.",
+      "For us to wicked men betrayed, Scourged, mocked, in purple robe arrayed;\nHe bore the shameful cross and death, For us at length gave up His breath."
+    ]
+  },
+  {
+    id: 694,
+    number: 694,
+    title: "O Love, That Wilt Not Let Me Go",
+    category: "Comfort",
+    author: "George Matheson",
+    tune: "ST. MARGARET",
+    verses: [
+      "O Love, that wilt not let me go, I rest my weary soul in Thee;\nI give Thee back the life I owe, That in Thine ocean depths its flow\nMay richer, fuller be.",
+      "O Light, that followest all my way, I yield my flickering torch to Thee;\nMy heart restores its borrowed ray, That in Thy sunshine's blaze its day\nMay brighter, fairer be.",
+      "O Joy, that seekest me through pain, I cannot close my heart to Thee;\nI trace the rainbow through the rain, And feel the promise is not vain\nThat morn shall tearless be."
+    ]
+  },
+  {
+    id: 695,
+    number: 695,
+    title: "O Master, Let Me Walk With Thee",
+    category: "Dedication",
+    author: "Washington Gladden",
+    tune: "MARYTON",
+    verses: [
+      "O Master, let me walk with Thee In lowly paths of service free;\nTell me Thy secret; help me bear The strain of toil, the fret of care.",
+      "Help me the slow of heart to move By some clear, winning word of love;\nTeach me the wayward feet to stay, And guide them in the homeward way.",
+      "Teach me Thy patience; still with Thee In closer, dearer company;\nIn work that keeps faith sweet and strong, In trust that triumphs over wrong."
+    ]
+  },
+  {
+    id: 696,
+    number: 696,
+    title: "O Perfect Love",
+    category: "Other",
+    author: "Dorothy Blomfield Gurney",
+    tune: "O PERFECT LOVE",
+    verses: [
+      "O perfect Love, all human thought transcending,\nLowly we kneel in prayer before Thy throne,\nThat theirs may be the love which knows no ending,\nWhom Thou for evermore dost join in one.",
+      "O perfect Life, be Thou their full assurance\nOf tender charity and steadfast faith,\nOf patient hope and quiet, brave endurance,\nWith glad-hearted trust that triumphs over death.",
+      "Grant them the joy which brightens earthly sorrow;\nGrant them the peace which calms all earthly strife,\nAnd to life's day the glorious unknown morrow\nThat leads to ever-during, boundless life."
+    ]
+  },
+  {
+    id: 697,
+    number: 697,
+    title: "O Praise Ye the Lord! Praise Him in the Height",
+    category: "Praise",
+    author: "H. W. Baker",
+    tune: "LAUDATE DOMINUM",
+    verses: [
+      "O praise ye the Lord! Praise Him in the height;\nRejoice in His Word, ye angels of light;\nYe heavens, adore Him by whom ye were made,\nAnd worship before Him, in brightness arrayed.",
+      "O praise ye the Lord! Praise Him upon earth,\nIn tuneful accord, all ye of new birth;\nPraise Him who hath brought you His grace from above,\nPraise Him who hath taught you to sing of His love.",
+      "O praise ye the Lord, all things that give sound;\nEach jubilant chord, re-echo around;\nLoud organs, His glory forth tell in deep tone,\nAnd sweet harp, the story of what He hath done."
+    ]
+  },
+  {
+    id: 698,
+    number: 698,
+    title: "O Sacred Head, Now Wounded",
+    category: "Passion",
+    author: "Bernard of Clairvaux",
+    tune: "PASSION CHORALE",
+    verses: [
+      "O sacred Head, now wounded, With grief and shame weighed down,\nNow scornfully surrounded With thorns, Thine only crown;\nHow pale Thou art with anguish, With sore abuse and scorn!\nHow does that visage languish Which once was bright as morn!",
+      "What Thou, my Lord, hast suffered Was all for sinners' gain;\nMine, mine was the transgression, But Thine the deadly pain.\nLo, here I fall, my Saviour! 'Tis I deserve Thy place;\nLook on me with Thy favour, Vouchsafe to me Thy grace.",
+      "What language shall I borrow To thank Thee, dearest Friend,\nFor this Thy dying sorrow, Thy pity without end?\nOh, make me Thine forever; And should I fainting be,\nLord, let me never, never Outlive my love to Thee."
+    ]
+  },
+  {
+    id: 699,
+    number: 699,
+    title: "O Saviour, May We Never Rest",
+    category: "Worship",
+    author: "W. H. Bathurst",
+    tune: "ST. STEPHEN",
+    verses: [
+      "O Saviour, may we never rest Till Thou art formed within;\nTill Thou hast calmed our troubled breast, And cleansed our souls from sin.",
+      "May we Thy holy will obey, And in Thy footsteps tread;\nAnd find at length the homeward way, By Thy good Spirit led.",
+      "Oh, grant us, Lord, Thy light to see, And in Thy love's reflection live;\nThat we may follow only Thee, And all our heart to Thee may give."
+    ]
+  },
+  {
+    id: 700,
+    number: 700,
+    title: "O Saviour, Precious Saviour",
+    category: "Praise",
+    author: "Frances Ridley Havergal",
+    tune: "ANGEL'S STORY",
+    verses: [
+      "O Saviour, precious Saviour, Whom yet unseen we love,\nO Name of might and favour, All other names above!",
+      "We worship Thee, we bless Thee, To Thee alone we sing;\nWe praise Thee, and confess Thee Our holy Lord and King.",
+      "In Thee all fulness dwelleth, All grace and power divine;\nThe glory that excelleth, O Son of God, is Thine."
+    ]
+  },
+  {
+    id: 701,
+    number: 701,
+    title: "O Son of God, Our Prophet of the Skies",
+    category: "Worship",
+    author: "John Ellerton",
+    tune: "ST. STEPHEN",
+    verses: [
+      "O Son of God, our Prophet of the skies, We come before Thy throne;\nAnd with our voices praise we bring, To Thee and Thee alone.",
+      "Thy word is light, Thy law is love, Thy presence is our rest;\nOh, grant us, Lord, Thy light to see, And in Thy love be blest.",
+      "To God the Father, God the Son, And God the Spirit, Three in One,\nBe praise and glory ever given By all on earth and all in heaven."
+    ]
   }
 ];
+
 
 
 
