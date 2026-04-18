@@ -9543,8 +9543,141 @@ export const HYMNS: Hymn[] = [
       "O tell of His might, O sing of His grace,\nWhose robe is the light, whose canopy space;\nHis chariots of wrath the deep thunder-clouds form,\nAnd dark is His path on the wings of the storm.",
       "Thy bountiful care what tongue can recite?\nIt breathes in the air, it shines in the light;\nIt streams from the hills, it descends to the plain,\nAnd sweetly distils in the dew and the rain."
     ]
+  },
+  {
+    id: 712,
+    number: 712,
+    title: "O Worship the Lord in the Beauty of Holiness",
+    category: "Worship",
+    author: "John S. B. Monsell",
+    tune: "WAS LEBET",
+    verses: [
+      "O worship the Lord in the beauty of holiness,\nBow down before Him, His glory proclaim;\nWith gold of obedience and incense of lowliness,\nKneel and adore Him: the Lord is His Name.",
+      "Low at His feet lay thy burden of carefulness,\nHigh on His heart He will bear it for thee,\nComfort thy sorrows, and answer thy prayerfulness,\nGuiding thy steps as may best for thee be.",
+      "Fear not to enter His courts in the slenderness\nOf the poor wealth thou wouldst reckon as thine;\nTruth in its beauty, and love in its tenderness,\nThese are the offerings to lay on His shrine."
+    ]
+  },
+  {
+    id: 713,
+    number: 713,
+    title: "Of the Father's Love Begotten",
+    category: "Christmas",
+    author: "Aurelius Clemens Prudentius",
+    tune: "DIVINUM MYSTERIUM",
+    verses: [
+      "Of the Father's love begotten, Ere the worlds began to be,\nHe is Alpha and Omega, He the source, the ending He,\nOf the things that are, that have been, And that future years shall see,\nEvermore and evermore!",
+      "At His word the worlds were framed; He commanded; it was done:\nHeaven and earth and depths of ocean In their threefold order one;\nAll that grows beneath the high light Of the moon and burning sun,\nEvermore and evermore!",
+      "He is found in human fashion, Death and sorrow here to know,\nThat the race of Adam's children Freed from bondage of the foe,\nMight the joy of life eternal Through His victory bestow,\nEvermore and evermore!"
+    ]
+  },
+  {
+    id: 714,
+    number: 714,
+    title: "Oft in Danger, Oft in Woe",
+    category: "Assurance",
+    author: "Henry Kirke White",
+    tune: "UNIVERSITY COLLEGE",
+    verses: [
+      "Oft in danger, oft in woe, Onward, Christians, onward go;\nFight the fight, maintain the strife, Strengthened with the Bread of Life.",
+      "Onward, Christians, onward go, Join the war, and face the foe;\nWill ye flee in danger's hour? Know ye not your Captain's power?",
+      "Let your drooping hearts be glad; March in heavenly armour clad;\nFight, nor think the battle long, Soon shall victory tune your song."
+    ]
+  },
+  {
+    id: 715,
+    number: 715,
+    title: "On Jordan's Bank the Baptist's Cry",
+    category: "Advent",
+    author: "Charles Coffin",
+    tune: "WINCHESTER NEW",
+    verses: [
+      "On Jordan's bank the Baptist's cry Announces that the Lord is nigh;\nAwake and hearken, for he brings Glad tidings of the King of kings.",
+      "Then cleansed be every breast from sin; Make straight the way for God within;\nPrepare we in our hearts a home, Where such a mighty Guest may come.",
+      "For Thou art our Salvation, Lord, Our Refuge and our great Reward;\nWithout Thy grace we waste away, Like flowers that wither and decay."
+    ]
+  },
+  {
+    id: 716,
+    number: 716,
+    title: "Onward, Christian Soldiers",
+    category: "Assurance",
+    author: "Sabine Baring-Gould",
+    tune: "ST. GERTRUDE",
+    verses: [
+      "Onward, Christian soldiers, Marching as to war,\nWith the cross of Jesus Going on before.\nChrist the royal Master Leads against the foe;\nForward into battle, See Его banners go!",
+      "At the sign of triumph Satan's host doth flee;\nOn then, Christian soldiers, On to victory!\nHell's foundations quiver At the shout of praise;\nBrothers, lift your voices, Loud your anthems raise.",
+      "Like a mighty army Moves the Church of God;\nBrothers, we are treading Where the saints have trod;\nWe are not divided, All one body we,\nOne in hope and doctrine, One in charity."
+    ],
+    chorus: "Onward, Christian soldiers, Marching as to war,\nWith the cross of Jesus Going on before."
+  },
+  {
+    id: 717,
+    number: 717,
+    title: "Our Blest Redeemer, Ere He Breathed",
+    category: "Holy Spirit",
+    author: "Harriet Auber",
+    tune: "ST. CUTHBERT",
+    verses: [
+      "Our blest Redeemer, ere He breathed His tender last farewell,\nA Guide, a Comforter, bequeathed With us to dwell.",
+      "He came sweet influence to impart, A gracious, willing Guest,\nWhile He can find one humble heart Wherein to rest.",
+      "And His that gentle voice we hear, Soft as the breath of even,\nThat checks each fault, that calms each fear, And speaks of heaven."
+    ]
+  },
+  {
+    id: 718,
+    number: 718,
+    title: "Our Day of Praise Is Done",
+    category: "Evening",
+    author: "John Ellerton",
+    tune: "GARDEN CITY",
+    verses: [
+      "Our day of praise is done; The evening shadows fall;\nBut pass not from us with the sun, True Light that lightenest all.",
+      "Around the throne on high, Where night can never be,\nThe white-robed harpers of the sky Bring ceaseless hymns to Thee.",
+      "Too faint our anthems here; Too soon of sin we tire;\nBut Lord, the strains how full and clear Of that eternal choir!"
+    ]
+  },
+  {
+    id: 719,
+    number: 719,
+    title: "Our God, Our Help in Ages Past",
+    category: "Assurance",
+    author: "Isaac Watts",
+    tune: "ST. ANNE",
+    verses: [
+      "Our God, our help in ages past, Our hope for years to come,\nOur shelter from the stormy blast, And our eternal home.",
+      "Under the shadow of Thy throne Thy saints have dwelt secure;\nSufficient is Thine arm alone, And our defence is sure.",
+      "Before the hills in order stood, Or earth received her frame,\nFrom everlasting Thou art God, To endless years the same."
+    ]
+  },
+  {
+    id: 720,
+    number: 720,
+    title: "Our Lord Is Risen From the Dead",
+    category: "Easter",
+    author: "Charles Wesley",
+    tune: "DUKE STREET",
+    verses: [
+      "Our Lord is risen from the dead; Our Jesus is gone up on high;\nThe powers of hell are captive led, Dragged to the portals of the sky.",
+      "There His triumphal chariot waits, And angels chant the solemn lay;\nLift up your heads, ye heavenly gates; Ye everlasting doors, give way!",
+      "Loose all your bars of massy light, And wide unfold the ethereal scene;\nHe claims these mansions as His right; Receive the King of Glory in!"
+    ]
+  },
+  {
+    id: 721,
+    number: 721,
+    title: "Peace, Perfect Peace",
+    category: "Comfort",
+    author: "Edward H. Bickersteth",
+    tune: "PAX TECUM",
+    verses: [
+      "Peace, perfect peace, in this dark world of sin?\nThe blood of Jesus whispers peace within.",
+      "Peace, perfect peace, by thronging duties pressed?\nTo do the will of Jesus, this is rest.",
+      "Peace, perfect peace, with sorrows surging round?\nOn Jesus' bosom naught but calm is found.",
+      "Peace, perfect peace, with loved ones far away?\nIn Jesus' keeping we are safe, and they."
+    ]
   }
 ];
+
 
 
 
