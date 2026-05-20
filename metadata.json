@@ -3,5 +3,8 @@
   "description": "A comprehensive English hymnal app inspired by the Egba Diocese traditions, featuring 858+ sacred hymns and songs from Anglican Hymns Old & New, with organ tunes, lyrics, and AI-powered reflections.",
   "requestFramePermissions": [
     "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
   ]
 }

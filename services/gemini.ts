@@ -1,9 +1,31 @@
-
 import { GoogleGenAI, Type } from "@google/genai";
 import { Hymn, Note } from "../types";
 import { get, set } from 'idb-keyval';
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+let aiClient: GoogleGenAI | null = null;
+
+const getAI = (): GoogleGenAI | null => {
+  if (aiClient) return aiClient;
+  const apiKey = process.env.GEMINI_API_KEY || process.env.API_KEY;
+  if (!apiKey) {
+    console.warn("Gemini API key is not configured. Some AI features may be unavailable.");
+    return null;
+  }
+  try {
+    aiClient = new GoogleGenAI({
+      apiKey,
+      httpOptions: {
+        headers: {
+          'User-Agent': 'aistudio-build',
+        }
+      }
+    });
+    return aiClient;
+  } catch (err) {
+    console.error("Failed to initialize GoogleGenAI client:", err);
+    return null;
+  }
+};
 
 export const getCachedData = async (key: string) => {
   return await get(key);
@@ -15,8 +37,13 @@ export const getHymnReflection = async (hymnTitle: string, lyrics: string) => {
     const cached = await get(cacheKey);
     if (cached) return cached;
 
+    const ai = getAI();
+    if (!ai) {
+      return "Spiritual reflections are currently resting. Please set your GEMINI_API_KEY to see them.";
+    }
+
     const response = await ai.models.generateContent({
-      model: 'gemini-3-flash-preview',
+      model: 'gemini-3.5-flash',
       contents: `You are a theologian and devotional writer. Provide a short, inspiring spiritual reflection (3-4 sentences) on the following hymn titled "${hymnTitle}". Then suggest one Bible verse that fits the theme. 
       Lyrics: ${lyrics.substring(0, 1000)}`,
       config: {
@@ -39,8 +66,13 @@ export const modernizeHymn = async (hymnTitle: string, lyrics: string) => {
     const cached = await get(cacheKey);
     if (cached) return cached;
 
+    const ai = getAI();
+    if (!ai) {
+      return "Modernized translation is unavailable without a configured GEMINI_API_KEY.";
+    }
+
     const response = await ai.models.generateContent({
-      model: 'gemini-3-flash-preview',
+      model: 'gemini-3.5-flash',
       contents: `Rewrite the following hymn lyrics in modern English. Maintain original meaning but use contemporary language.
       Hymn: ${hymnTitle}
       Lyrics: ${lyrics}`,
@@ -60,8 +92,13 @@ export const generateHymnMelody = async (hymnTitle: string, tune: string, firstV
     const cached = await get(cacheKey);
     if (cached) return cached;
 
+    const ai = getAI();
+    if (!ai) {
+      throw new Error("Gemini API is not configured");
+    }
+
     const response = await ai.models.generateContent({
-      model: 'gemini-3-flash-preview',
+      model: 'gemini-3.5-flash',
       contents: `You are a world-class organist and musicologist. Provide the mathematically and musically accurate main melody for the hymn "${hymnTitle}" (Tune: ${tune}).
       ${firstVerse ? `Context (First Verse): "${firstVerse}"` : ''}
       Provide a sequence of 20-32 notes that represent the full first verse or the primary melodic theme.
@@ -100,8 +137,14 @@ export const generateHymnMelody = async (hymnTitle: string, tune: string, firstV
 
 export const fetchHymnFromArchive = async (query: string): Promise<Hymn | null> => {
   try {
+    const ai = getAI();
+    if (!ai) {
+      console.warn("Cannot fetch from archive: Gemini API key is missing.");
+      return null;
+    }
+
     const response = await ai.models.generateContent({
-      model: 'gemini-3-flash-preview',
+      model: 'gemini-3.5-flash',
       contents: `You are a hymnal archivist specializing in the English Anglican and Iwe Orin Mimo (IOM) traditions. 
       Retrieve the following hymn details for: "${query}". 
       If a number is provided, find that specific number from the standard 600+ English hymnal.
