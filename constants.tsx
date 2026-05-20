@@ -9675,11 +9675,276 @@ export const HYMNS: Hymn[] = [
       "Peace, perfect peace, with sorrows surging round?\nOn Jesus' bosom naught but calm is found.",
       "Peace, perfect peace, with loved ones far away?\nIn Jesus' keeping we are safe, and they."
     ]
+  },
+  {
+    id: 722,
+    number: 722,
+    title: "Amazing Grace",
+    category: "Worship",
+    author: "John Newton",
+    tune: "NEW BRITAIN",
+    verses: [
+      "Amazing grace! how sweet the sound, That saved a wretch like me! I once was lost, but now am found, Was blind, but now I see.",
+      "’Twas grace that taught my heart to fear, And grace my fears relieved; How precious did that grace appear The hour I first believed!",
+      "Through many dangers, toils and snares, I have already come; ’Tis grace hath brought me safe thus far, And grace will lead me home.",
+      "When we’ve been there ten thousand years, Bright shining as the sun, We’ve no less days to sing God’s praise Than when we’d first begun."
+    ]
+  },
+  {
+    id: 723,
+    number: 723,
+    title: "How Great Thou Art",
+    category: "Praise",
+    author: "Carl Boberg; Stuart K. Hine",
+    tune: "O STORE GUD",
+    chorus: "Then sings my soul, My Saviour God, to Thee, How great Thou art, How great Thou art. Then sings my soul, My Saviour God, to Thee, How great Thou art, How great Thou art!",
+    verses: [
+      "O Lord my God, When I in awesome wonder, Consider all the worlds Thy Hands have made; I see the stars, I hear the rolling thunder, Thy power throughout the universe displayed.",
+      "When through the woods, and forest glades I wander, And hear the birds sing sweetly in the trees. When I look down, from lofty mountain grandeur And see the brook, and feel the gentle breeze.",
+      "And when I think, that God, His Son not sparing; Sent Him to die, I scarce can take it in; That on the Cross, my burden gladly bearing, He bled and died to take away my sin.",
+      "When Christ shall come, with shout of acclamation, And lead me home, what joy shall fill my heart! Then I shall bow, in humble adoration, And then proclaim: \"My God, how great Thou art!\""
+    ]
+  },
+  {
+    id: 724,
+    number: 724,
+    title: "Great Is Thy Faithfulness",
+    category: "Praise",
+    author: "Thomas O. Chisholm",
+    tune: "FAITHFULNESS",
+    chorus: "Great is Thy faithfulness! Great is Thy faithfulness! Morning by morning new mercies I see; All I have needed Thy hand hath provided— Great is Thy faithfulness, Lord, unto me!",
+    verses: [
+      "Great is Thy faithfulness, O God my Father, There is no shadow of turning with Thee; Thou changest not, Thy compassions, they fail not As Thou hast been Thou forever wilt be.",
+      "Summer and winter, and springtime and harvest, Sun, moon and stars in their courses above, Join with all nature in manifold witness To Thy great faithfulness, mercy and love.",
+      "Pardon for sin and a peace that endureth, Thine own dear presence to cheer and to guide; Strength for today and bright hope for tomorrow, Blessings all mine, with ten thousand beside!"
+    ]
+  },
+  {
+    id: 725,
+    number: 725,
+    title: "Holy, Holy, Holy! Lord God Almighty",
+    category: "Morning",
+    author: "Reginald Heber",
+    tune: "NICAEA",
+    verses: [
+      "Holy, holy, holy! Lord God Almighty! Early in the morning our song shall rise to Thee; Holy, holy, holy, merciful and mighty! God in three Persons, blessed Trinity!",
+      "Holy, holy, holy! all the saints adore Thee, Casting down their golden crowns around the glassy sea; Cherubim and seraphim falling down before Thee, Who wert and art and evermore shalt be.",
+      "Holy, holy, holy! though the darkness hide Thee, Though the eye of sinful man Thy glory may not see; Only Thou art holy; there is none beside Thee, Perfect in power, in love, and purity.",
+      "Holy, holy, holy! Lord God Almighty! All Thy works shall praise Thy Name, in earth, and sky, and sea; Holy, holy, holy; merciful and mighty! God in three Persons, blessed Trinity!"
+    ]
+  },
+  {
+    id: 726,
+    number: 726,
+    title: "Abide With Me",
+    category: "Evening",
+    author: "Henry Francis Lyte",
+    tune: "EVENTIDE",
+    verses: [
+      "Abide with me; fast falls the eventide; The darkness deepens; Lord with me abide. When other helpers fail and comforts flee, Help of the helpless, O abide with me.",
+      "Swift to its close ebbs out life’s little day; Earth’s joys grow dim; its glories pass away; Change and decay in all around I see; O Thou who changest not, abide with me.",
+      "I need Thy presence every passing hour. What but Thy grace can foil the tempter’s power? Who, like Thyself, my guide and stay can be? Through cloud and sunshine, Lord, abide with me.",
+      "I fear no foe, with Thee at hand to bless; Ills have no weight, and tears no bitterness. Where is death’s sting? Where, grave, thy victory? I triumph still, if Thou abide with me.",
+      "Hold Thou Thy cross before my closing eyes; Shine through the gloom and point me to the skies. Heaven’s morning breaks, and earth’s vain shadows flee; In life, in death, O Lord, abide with me."
+    ]
+  },
+  {
+    id: 727,
+    number: 727,
+    title: "All Hail the Power of Jesus' Name",
+    category: "Praise",
+    author: "Edward Perronet",
+    tune: "CORONATION",
+    verses: [
+      "All hail the power of Jesus' name! Let angels prostrate fall; Bring forth the royal diadem, And crown Him Lord of all!",
+      "Ye chosen seed of Israel's race, Ye ransomed from the fall, Hail Him who saves you by His grace, And crown Him Lord of all!",
+      "Let every kindred, every tribe, On this terrestrial ball, To Him all majesty ascribe, And crown Him Lord of all!",
+      "O that with yonder sacred throng We at His feet may fall! We'll join the everlasting song, And crown Him Lord of all!"
+    ]
+  },
+  {
+    id: 728,
+    number: 728,
+    title: "To God Be the Glory",
+    category: "Praise",
+    author: "Fanny Crosby",
+    tune: "TO GOD BE THE GLORY",
+    chorus: "Praise the Lord, praise the Lord, Let the earth hear His voice! Praise the Lord, praise the Lord, Let the people rejoice! O come to the Father, through Jesus the Son, And give Him the glory, great things He has done.",
+    verses: [
+      "To God be the glory, great things He has done; So loved He the world that He gave us His Son, Who yielded His life an atonement for sin, And opened the life gate that all may go in.",
+      "O perfect redemption, the purchase of blood, To every believer the promise of God; The vilest offender who truly believes, That moment from Jesus a pardon receives.",
+      "Great things He has taught us, great things He has done, And great our rejoicing through Jesus the Son; But purer, and higher, and greater will be Our wonder, our transport, when Jesus we see."
+    ]
+  },
+  {
+    id: 729,
+    number: 729,
+    title: "Blessed Assurance",
+    category: "Worship",
+    author: "Fanny Crosby",
+    tune: "ASSURANCE",
+    chorus: "This is my story, this is my song, Praising my Savior all the day long; This is my story, this is my song, Praising my Savior all the day long.",
+    verses: [
+      "Blessed assurance, Jesus is mine! Oh, what a foretaste of glory divine! Heir of salvation, purchase of God, Born of His Spirit, washed in His blood.",
+      "Perfect submission, perfect delight, Visions of rapture now burst on my sight; Angels, descending, bring from above Echoes of mercy, whispers of love.",
+      "Perfect submission, all is at rest, I in my Savior am happy and blest, Watching and waiting, looking above, Filled with His goodness, lost in His love."
+    ]
+  },
+  {
+    id: 730,
+    number: 730,
+    title: "Just As I Am",
+    category: "Dedication",
+    author: "Charlotte Elliott",
+    tune: "WOODWORTH",
+    verses: [
+      "Just as I am, without one plea, But that Thy blood was shed for me, And that Thou bid’st me come to Thee, O Lamb of God, I come, I come.",
+      "Just as I am, and waiting not To rid my soul of one dark blot, To Thee whose blood can cleanse each spot, O Lamb of God, I come, I come.",
+      "Just as I am, though tossed about With many a conflict, many a doubt, Fightings and fears within, without, O Lamb of God, I come, I come.",
+      "Just as I am, poor, wretched, blind; Sight, riches, healing of the mind, Yea, all I need in Thee to find, O Lamb of God, I come, I come.",
+      "Just as I am, Thou wilt receive, Wilt welcome, pardon, cleanse, relieve; Because Thy promise I believe, O Lamb of God, I come, I come.",
+      "Just as I am, Thy love unknown Has broken every barrier down; Now, to be Thine, yea, Thine alone, O Lamb of God, I come, I come."
+    ]
+  },
+  {
+    id: 731,
+    number: 731,
+    title: "A Mighty Fortress Is Our God",
+    category: "Worship",
+    author: "Martin Luther",
+    tune: "EIN FESTE BURG",
+    verses: [
+      "A mighty fortress is our God, a bulwark never failing; Our helper He, amid the flood of mortal ills prevailing: For still our ancient foe doth seek to work us woe; His craft and power are great, and, armed with cruel hate, On earth is not his equal.",
+      "Did we in our own strength confide, our striving would be losing; Were not the right Man on our side, the Man of God’s own choosing: Dost ask who that may be? Christ Jesus, it is He; Lord Sabaoth, His Name, from age to age the same, And He must win the battle.",
+      "And though this world, with devils filled, should threaten to undo us, We will not fear, for God hath willed His truth to triumph through us: The Prince of Darkness grim, we tremble not for him; His rage we can endure, for lo, his doom is sure, One little word shall fell him.",
+      "That word above all earthly powers, no thanks to them, abideth; The Spirit and the gifts are ours through Him who with us sideth: Let goods and kindred go, this mortal life also; The body they may kill: God’s truth abideth still, His kingdom is forever."
+    ]
+  },
+  {
+    id: 732,
+    number: 732,
+    title: "Joy to the World",
+    category: "Praise",
+    author: "Isaac Watts",
+    tune: "ANTIOCH",
+    verses: [
+      "Joy to the world, the Lord is come! Let earth receive her King; Let every heart prepare Him room, And Heaven and nature sing, And Heaven and nature sing, And Heaven, and Heaven, and nature sing.",
+      "Joy to the world, the Savior reigns! Let men their songs employ; While fields and floods, rocks, hills and plains Repeat the sounding joy, Repeat the sounding joy, Repeat, repeat, the sounding joy.",
+      "No more let sins and sorrows grow, Nor thorns infest the ground; He comes to make His blessings flow Far as the curse is found, Far as the curse is found, Far as, far as, the curse is found.",
+      "He rules the world with truth and grace, And makes the nations prove The glories of His righteousness, And wonders of His love, And wonders of His love, And wonders, wonders, of His love."
+    ]
+  },
+  {
+    id: 733,
+    number: 733,
+    title: "It Is Well With My Soul",
+    category: "Comfort",
+    author: "Horatio G. Spafford",
+    tune: "VILLE DU HAVRE",
+    chorus: "It is well with my soul, It is well, it is well with my soul.",
+    verses: [
+      "When peace, like a river, attendeth my way, When sorrows like sea billows roll; Whatever my lot, Thou hast taught me to say, It is well, it is well with my soul.",
+      "Though Satan should buffet, though trials should come, Let this blest assurance control, That Christ has regarded my helpless estate, And hath shed His own blood for my soul.",
+      "My sin, oh, the bliss of this glorious thought! My sin, not in part but the whole, Is nailed to the cross, and I bear it no more, Praise the Lord, praise the Lord, O my soul!",
+      "For me, be it Christ, be it Christ hence to live: If Jordan above me shall roll, No pang shall be mine, for in death as in life Thou wilt whisper Thy peace to my soul.",
+      "But Lord, 'tis for Thee, for Thy coming we wait, The sky, not the grave, is our goal; Oh, trump of the angel! Oh, voice of the Lord! Blessed hope, blessed rest of my soul!",
+      "And Lord, haste the day when my faith shall be sight, The clouds be rolled back as a scroll; The trump shall resound, and the Lord shall descend, \"Even so\"—it is well with my soul."
+    ]
+  },
+  {
+    id: 734,
+    number: 734,
+    title: "Come, Thou Fount of Every Blessing",
+    category: "Worship",
+    author: "Robert Robinson",
+    tune: "NETTLETON",
+    verses: [
+      "Come, Thou Fount of every blessing, Tune my heart to sing Thy grace; Streams of mercy, never ceasing, Call for songs of loudest praise. Teach me some melodious sonnet, Sung by flaming tongues above; Praise the mount! I'm fixed upon it, Mount of Thy redeeming love.",
+      "Sorrowing I shall be in spirit, Till released from flesh and its sin, Yet from grace I do inherit Mercy that will make me clean. I will trust my God to guide me, He will lead me in His way, Until the day I stand beside Him, And behold His glorious face.",
+      "O to grace how great a debtor Daily I'm constrained to be! Let Thy goodness, like a fetter, Bind my wandering heart to Thee. Prone to wander, Lord, I feel it, Prone to leave the God I love; Here's my heart, O take and seal it, Seal it for Thy courts above."
+    ]
+  },
+  {
+    id: 735,
+    number: 735,
+    title: "What a Friend We Have in Jesus",
+    category: "Comfort",
+    author: "Joseph Scriven",
+    tune: "CONVERSE",
+    verses: [
+      "What a friend we have in Jesus, All our sins and griefs to bear! What a privilege to carry Everything to God in prayer! O what peace we often forfeit, O what needless pain we bear, All because we do not carry Everything to God in prayer!",
+      "Have we trials and temptations? Is there trouble anywhere? We should never be discouraged; Take it to the Lord in prayer. Can we find a friend so faithful Who will all our sorrows share? Jesus knows our every weakness, Take it to the Lord in prayer.",
+      "Are we weak and heavy laden, Cumbered with a load of care? Precious Savior, still our refuge; Take it to the Lord in prayer. Do thy friends despise, forsake thee? Take it to the Lord in prayer; In His arms He'll take and shield thee, Thou wilt find a solace there."
+    ]
+  },
+  {
+    id: 736,
+    number: 736,
+    title: "When I Survey the Wondrous Cross",
+    category: "Passion",
+    author: "Isaac Watts",
+    tune: "HAMBURG",
+    verses: [
+      "When I survey the wondrous cross On which the Prince of glory died, My richest gain I count but loss, And pour contempt on all my pride.",
+      "Forbid it, Lord, that I should boast, Save in the death of Christ my God! All the vain things that charm me most, I sacrifice them to His blood.",
+      "See from His head, His hands, His feet, Sorrow and love flow mingled down! Did e'er such love and sorrow meet, Or thorns compose so rich a crown?",
+      "Were the whole realm of nature mine, That were an offering far too small; Love so amazing, so divine, Demands my soul, my life, my all."
+    ]
+  },
+  {
+    id: 737,
+    number: 737,
+    title: "Guide Me, O Thou Great Redeemer",
+    category: "Worship",
+    author: "William Williams",
+    tune: "CWM RHONDDA",
+    verses: [
+      "Guide me, O Thou great Redeemer, Pilgrim through this barren land; I am weak, but Thou art mighty; Hold me with Thy powerful hand; Bread of Heaven, Bread of Heaven, Feed me till I want no more; Feed me till I want no more.",
+      "Open now the crystal fountain, Whence the healing streams do flow; Let the fiery, cloudy pillar Lead me all my journey through; Strong Deliverer, Strong Deliverer, Be Thou still my strength and shield; Be Thou still my strength and shield.",
+      "When I tread the verge of Jordan, Bid my anxious fears subside; Death of death, and hell's destruction, Land me safe on Canaan's side; Songs of praises, Songs of praises, I will ever give to Thee; I will ever give to Thee."
+    ]
+  },
+  {
+    id: 738,
+    number: 738,
+    title: "Nearer, My God, to Thee",
+    category: "Worship",
+    author: "Sarah Flower Adams",
+    tune: "BETHANY",
+    verses: [
+      "Nearer, my God, to Thee, nearer to Thee!E’en though it be a cross that raiseth me;Still all my song shall be, nearer, my God, to Thee,Nearer, my God, to Thee, nearer to Thee!",
+      "Though like the wanderer, the sun gone down,Darkness be over me, my rest a stone;Yet in my dreams I’d be nearer, my God, to Thee,Nearer, my God, to Thee, nearer to Thee!",
+      "There let the way appear, steps unto Heav’n;All that Thou sendest me, in mercy giv’n;Angels to beckon me nearer, my God, to Thee,Nearer, my God, to Thee, nearer to Thee!",
+      "Then with my waking thoughts bright with Thy praise,Out of my stony griefs Bethel I’ll raise;So by my woes to be nearer, my God, to Thee,Nearer, my God, to Thee, nearer to Thee!",
+      "Or if on joyful wing, cleaving the sky,Sun, moon, and stars forgot, upwards I fly,Still all my song shall be, nearer, my God, to Thee,Nearer, my God, to Thee, nearer to Thee!"
+    ]
+  },
+  {
+    id: 739,
+    number: 739,
+    title: "Rock of Ages, Cleft for Me",
+    category: "Worship",
+    author: "Augustus M. Toplady",
+    tune: "TOPLADY",
+    verses: [
+      "Rock of Ages, cleft for me,Let me hide myself in Thee;Let the water and the blood,From Thy wounded side which flowed,Be of sin the double cure,Cleanse me from its guilt and power.",
+      "Not the labors of my handsCan fulfill Thy law's demands;Could my zeal no respite know,Could my tears forever flow,All for sin could not atone;Thou must save, and Thou alone.",
+      "Nothing in my hand I bring,Simply to Thy cross I cling;Naked, come to Thee for dress;Helpless, look to Thee for grace;Foul, I to the fountain fly;Wash me, Savior, or I die.",
+      "While I draw this fleeting breath,When my eyelids close in death,When I soar to worlds unknown,See Thee on Thy judgment throne,Rock of Ages, cleft for me,Let me hide myself in Thee."
+    ]
+  },
+  {
+    id: 740,
+    number: 740,
+    title: "Love Divine, All Loves Excelling",
+    category: "Praise",
+    author: "Charles Wesley",
+    tune: "BEECHER",
+    verses: [
+      "Love divine, all loves excelling,Joy of heaven, to earth come down,Fix in us thy humble dwelling,All thy faithful mercies crown.Jesus, thou art all compassion,Pure unbounded love thou art;Visit us with thy salvation,Enter every trembling heart.",
+      "Breathe, oh breathe thy loving SpiritInto every troubled breast;Let us all in thee inherit,Let us find that second rest.Take away our power of sinning,Alpha and Omega be;End of faith, as its beginning,Set our hearts at liberty.",
+      "Come, almighty to deliver,Let us all thy life receive;Suddenly return, and never,Nevermore thy temples leave.Thee we would be always blessing,Serve thee as thy hosts above;Pray and praise thee without ceasing,Glory in thy perfect love.",
+      "Finish then thy new creation,Pure and spotless let us be;Let us see thy great salvation,Perfectly restored in thee.Changed from glory into glory,Till in heaven we take our place,Till we cast our crowns before thee,Lost in wonder, love, and praise."
+    ]
   }
 ];
-
-
-
-
-
-

@@ -1,7 +1,8 @@
 
 import { GoogleGenAI, Type } from "@google/genai";
+import fs from 'fs';
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || process.env.API_KEY || '' });
 
 async function getBatchOfTitles(startIndex: number, count: number, existingTitles: string[]) {
   const prompt = `Provide ${count} unique, well-known English hymn titles for a comprehensive hymnal. 
@@ -9,7 +10,7 @@ async function getBatchOfTitles(startIndex: number, count: number, existingTitle
   Return as a JSON array of strings.`;
 
   const response = await ai.models.generateContent({
-    model: "gemini-3-flash-preview",
+    model: "gemini-2.5-flash",
     contents: prompt,
     config: { responseMimeType: "application/json" }
   });
@@ -25,7 +26,7 @@ async function getHymnDetails(titles: string[]) {
   Return as a JSON array of objects with fields: title, author, tune, category, chorus, verses.`;
 
   const response = await ai.models.generateContent({
-    model: "gemini-3-flash-preview",
+    model: "gemini-2.5-flash",
     contents: prompt,
     config: { 
       responseMimeType: "application/json",
@@ -51,17 +52,24 @@ async function getHymnDetails(titles: string[]) {
 }
 
 async function main() {
-  const fs = require('fs');
+  const targetTotal = 865;
   const content = fs.readFileSync('constants.tsx', 'utf8');
   const existingTitles = content.match(/title: "(.*)"/g).map(t => t.match(/"(.*)"/)[1]);
   const lastIdMatch = content.match(/id: (\d+)/g);
   const lastId = lastIdMatch ? parseInt(lastIdMatch[lastIdMatch.length - 1].match(/\d+/)[0]) : 0;
 
   console.log(`Current hymn count: ${existingTitles.length}. Last ID: ${lastId}`);
+  if (existingTitles.length >= targetTotal) {
+    console.log(`Target of ${targetTotal} met! Exiting.`);
+    return;
+  }
+
+  const batchSize = Math.min(6, targetTotal - existingTitles.length);
+  console.log(`Adding a new batch of ${batchSize} hymns...`);
 
   try {
-    const newTitles = await getBatchOfTitles(existingTitles.length, 10, existingTitles);
-    console.log(`Fetched ${newTitles.length} new titles.`);
+    const newTitles = await getBatchOfTitles(existingTitles.length, batchSize, existingTitles);
+    console.log(`Fetched ${newTitles.length} new titles: ${newTitles.join(', ')}`);
     
     const hymnDetails = await getHymnDetails(newTitles);
     console.log(`Fetched details for ${hymnDetails.length} hymns.`);
@@ -72,10 +80,10 @@ async function main() {
       appendContent += `  {\n`;
       appendContent += `    id: ${id},\n`;
       appendContent += `    number: ${id},\n`;
-      appendContent += `    title: "${hymn.title}",\n`;
-      appendContent += `    category: "${hymn.category}",\n`;
-      appendContent += `    author: "${hymn.author}",\n`;
-      appendContent += `    tune: "${hymn.tune}",\n`;
+      appendContent += `    title: ${JSON.stringify(hymn.title)},\n`;
+      appendContent += `    category: ${JSON.stringify(hymn.category)},\n`;
+      appendContent += `    author: ${JSON.stringify(hymn.author)},\n`;
+      appendContent += `    tune: ${JSON.stringify(hymn.tune)},\n`;
       if (hymn.chorus) {
         appendContent += `    chorus: ${JSON.stringify(hymn.chorus)},\n`;
       }
@@ -89,9 +97,9 @@ async function main() {
     const finalContent = updatedContent + ",\n" + appendContent + "\n];";
 
     fs.writeFileSync('constants.tsx', finalContent);
-    console.log(`Successfully added ${hymnDetails.length} hymns. New total: ${existingTitles.length + hymnDetails.length}`);
+    console.log(`Successfully added ${hymnDetails.length} hymns. Total now: ${existingTitles.length + hymnDetails.length}`);
   } catch (error) {
-    console.error("Error in batch process:", error);
+    console.error("Error in batch process iteration:", error);
   }
 }
 
