@@ -25,6 +25,18 @@ import {
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<ViewState>('list');
   const [selectedHymn, setSelectedHymn] = useState<Hymn | null>(null);
+  const [allHymns, setAllHymns] = useState<Hymn[]>(() => {
+    try {
+      const savedOverrides = localStorage.getItem('hymn_overrides');
+      if (savedOverrides) {
+        const overrides = JSON.parse(savedOverrides);
+        return HYMNS.map(h => overrides[h.id] ? { ...h, ...overrides[h.id] } : h);
+      }
+    } catch (e) {
+      console.error('Error loading hymn overrides', e);
+    }
+    return HYMNS;
+  });
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearchingArchive, setIsSearchingArchive] = useState(false);
   const [isOffline, setIsOffline] = useState(!navigator.onLine);
@@ -42,6 +54,25 @@ const App: React.FC = () => {
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
 
   const organPlayer = useOrganPlayer();
+
+  const handleUpdateHymn = (updated: Hymn) => {
+    setAllHymns(prev => prev.map(h => h.id === updated.id ? updated : h));
+    setSelectedHymn(prev => prev && prev.id === updated.id ? updated : prev);
+    try {
+      const savedOverrides = localStorage.getItem('hymn_overrides');
+      const overrides = savedOverrides ? JSON.parse(savedOverrides) : {};
+      overrides[updated.id] = {
+        verses: updated.verses,
+        chorus: updated.chorus,
+        author: updated.author,
+        tune: updated.tune,
+        title: updated.title
+      };
+      localStorage.setItem('hymn_overrides', JSON.stringify(overrides));
+    } catch (e) {
+      console.error('Error saving hymn override', e);
+    }
+  };
 
   useEffect(() => {
     const handleOnline = () => setIsOffline(false);
@@ -61,10 +92,10 @@ const App: React.FC = () => {
   }, [favorites]);
 
   const filteredHymns = useMemo(() => {
-    let list = HYMNS;
+    let list = allHymns;
     
     if (currentView === 'favorites' || showFavoritesOnly) {
-      list = HYMNS.filter(h => favorites.includes(h.id));
+      list = allHymns.filter(h => favorites.includes(h.id));
     }
     
     if (selectedCategory !== 'All') {
@@ -76,7 +107,6 @@ const App: React.FC = () => {
       list = list.filter(h => 
         h.title.toLowerCase().includes(q) || 
         h.number.toString() === q ||
-        h.alternateNumbers?.some(n => n.toString() === q) ||
         h.tune?.toLowerCase().includes(q) ||
         h.verses.some(v => v.toLowerCase().includes(q))
       );
@@ -207,6 +237,7 @@ const App: React.FC = () => {
             onToggleFavorite={toggleFavorite}
             onBack={() => { setCurrentView('list'); setSelectedHymn(null); }}
             organPlayer={organPlayer}
+            onUpdateHymn={handleUpdateHymn}
           />
         ) : (
           <>
@@ -351,7 +382,7 @@ const App: React.FC = () => {
                   {organPlayer.isLoadingAudio ? 'Preparing Sacred Tune...' : 'Now Playing Organ'}
                 </p>
                 <h5 className="font-bold truncate text-sm">
-                  {HYMNS.find(h => h.id === organPlayer.playingHymnId)?.title || 'Sacred Hymn'}
+                  {allHymns.find(h => h.id === organPlayer.playingHymnId)?.title || 'Sacred Hymn'}
                 </h5>
               </div>
               

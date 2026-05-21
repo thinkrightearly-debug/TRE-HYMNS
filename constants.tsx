@@ -10213,5 +10213,21 @@ export const HYMNS: Hymn[] = [
       "And in one Lord Jesus Christ, the only-begotten Son of God, Begotten of his Father before all worlds, God of God, Light of Light, Very God of very God, Begotten, not made, Being of one substance with the Father, By whom all things were made: Who for us men, and for our salvation came down from heaven, And was incarnate by the Holy Ghost of the Virgin Mary, And was made man, And was crucified also for us under Pontius Pilate. He suffered and was buried, And the third day he rose again according to the Scriptures, And ascended into heaven, And sittest on the right hand of the Father. And he shall come again with glory to judge both the quick and the dead: Whose kingdom shall have no end.",
       "And I believe in the Holy Ghost, The Lord and giver of life, Who proceedeth from the Father and the Son, Who with the Father and the Son together is worshipped and glorified, Who spake by the Prophets. And I believe one Catholick and Apostolick Church. I acknowledge one Baptism for the remission of sins. And I look for the Resurrection of the dead, And the life of the world to come. Amen."
     ]
+  },
+  {
+    id: 859,
+    number: 859,
+    title: "Victory Ahead",
+    category: "Praise",
+    author: "William Grum",
+    tune: "VICTORY AHEAD",
+    chorus: "Victory ahead, victory ahead,\nThrough the blood of Jesus, victory ahead.\nTrusting in the Lord, I hear the conqueror’s tread,\nBy faith I see the victory ahead.",
+    verses: [
+      "When the hosts of Israel led by God,\nRound the walls of Jericho softly trod,\nTrusting in the Lord, they felt the conqueror’s tread,\nBy faith they saw the victory ahead.",
+      "David with a shepherd’s sling and five stones,\nMet the giant on the field all alone,\nTrusting in the Lord, he knew what God had said,\nBy faith he saw the victory ahead.",
+      "Daniel prayed unto the Lord thrice each day,\nThen unto the lion’s den led the way,\nTrusting in the Lord, he did not fear or dread,\nBy faith he saw the victory ahead.",
+      "Often with the carnal mind I was tried,\nAsking for deliverance oft I cried,\nTrusting in the Lord, I reckoned I was dead,\nBy faith I see the victory ahead.",
+      "When like those who’ve gone before to that land,\nBy death’s river cold and dark I shall stand,\nTrusting in the Lord, I will not fear or dread,\nBy faith I see the victory ahead."
+    ]
   }
 ];

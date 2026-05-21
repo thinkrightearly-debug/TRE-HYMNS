@@ -96,6 +96,98 @@ export const ACCURATE_TUNES: Record<string, Note[]> = {
   'DUKE STREET': makeMelody([
     ['G4', 1.0], ['G4', 1.0], ['A4', 1.0], ['B4', 1.0], ['C5', 1.0], ['B4', 1.0], ['A4', 1.0], ['G4', 2.0],
     ['B4', 1.0], ['C5', 1.0], ['D5', 1.0], ['E5', 1.0], ['D5', 1.0], ['C5', 1.0], ['B4', 1.0], ['A4', 2.0],
+  ]),
+  'NEW BRITAIN': makeMelody([
+    ['D4', 0.6], ['G4', 1.2], ['B4', 0.6], ['B4', 1.2], ['A4', 0.6], ['G4', 1.2], ['E4', 0.6], ['D4', 1.2],
+    ['D4', 0.6], ['G4', 1.2], ['B4', 0.6], ['B4', 1.2], ['A4', 0.6], ['D5', 2.4],
+    ['B4', 0.6], ['D5', 1.2], ['B4', 0.6], ['G4', 1.2], ['D4', 0.6], ['E4', 1.2], ['D4', 0.6], ['D4', 1.2],
+    ['D4', 0.6], ['G4', 1.2], ['B4', 0.6], ['B4', 1.2], ['A4', 0.6], ['G4', 2.4]
+  ]),
+  'VILLE DU HAVRE': makeMelody([
+    ['G4', 1.0], ['G4', 1.0], ['F#4', 1.0], ['G4', 1.0], ['A4', 1.5], ['B4', 0.5], ['A4', 1.0], ['G4', 1.0],
+    ['D5', 1.0], ['B4', 1.0], ['C5', 1.0], ['D5', 2.0],
+    ['D5', 1.0], ['C5', 1.0], ['B4', 1.0], ['A4', 1.0], ['B4', 1.5], ['C5', 0.5], ['D5', 1.0], ['G4', 1.0],
+    ['A4', 1.0], ['B4', 1.0], ['C5', 1.0], ['B4', 2.0], ['A4', 2.0], ['G4', 3.0]
+  ]),
+  'LOBE DEN HERREN': makeMelody([
+    ['G4', 1.0], ['G4', 1.0], ['D5', 1.0], ['B4', 1.0], ['A4', 1.0], ['G4', 1.0], ['F#4', 1.0], ['E4', 1.0], ['D4', 1.0],
+    ['E4', 1.0], ['F#4', 1.0], ['G4', 1.0], ['A4', 1.0], ['B4', 1.5], ['A4', 0.5], ['G4', 3.0]
+  ]),
+  'FAITHFULNESS': makeMelody([
+    ['G4', 1.0], ['B4', 1.0], ['A4', 1.0], ['G4', 1.0], ['C5', 1.5], ['B4', 0.5], ['A4', 1.0], ['G4', 1.0],
+    ['A4', 1.0], ['B4', 1.0], ['C5', 1.0], ['A4', 1.0], ['D5', 2.0], ['C5', 2.0], ['B4', 3.0]
+  ]),
+  'TOPLADY': makeMelody([
+    ['G4', 1.0], ['B4', 1.0], ['D5', 1.5], ['D5', 0.5], ['C5', 1.0], ['B4', 1.0],
+    ['A4', 1.0], ['G4', 1.0], ['A4', 1.5], ['G4', 0.5], ['F#4', 1.0], ['G4', 2.0]
+  ]),
+  'ASSURANCE': makeMelody([
+    ['B4', 1.0], ['B4', 1.0], ['B4', 1.0], ['B4', 1.5], ['A4', 0.5], ['G4', 1.0],
+    ['G4', 1.0], ['A4', 1.0], ['B4', 1.0], ['C5', 3.0],
+    ['B4', 1.0], ['B4', 1.0], ['B4', 1.0], ['B4', 1.5], ['A4', 0.5], ['G4', 1.0],
+    ['A4', 1.0], ['B4', 1.0], ['A4', 1.0], ['G4', 3.0]
+  ]),
+  'HAMBURG': makeMelody([
+    ['F4', 1.0], ['F4', 1.0], ['G4', 1.0], ['A4', 1.0], ['G4', 1.0], ['F4', 1.0], ['G4', 1.5], ['F4', 0.5], ['G4', 2.0],
+    ['A4', 1.0], ['A4', 1.0], ['B4', 1.0], ['C5', 1.0], ['B4', 1.0], ['A4', 1.0], ['B4', 1.5], ['A4', 0.5], ['G4', 2.0]
+  ]),
+  'HYMN TO JOY': makeMelody([
+    ['B4', 1.0], ['B4', 1.0], ['C5', 1.0], ['D5', 1.0], ['D5', 1.0], ['C5', 1.0], ['B4', 1.0], ['A4', 1.0],
+    ['G4', 1.0], ['G4', 1.0], ['A4', 1.0], ['B4', 1.0], ['B4', 1.5], ['A4', 0.5], ['A4', 2.0],
+    ['B4', 1.0], ['B4', 1.0], ['C5', 1.0], ['D5', 1.0], ['D5', 1.0], ['C5', 1.0], ['B4', 1.0], ['A4', 1.0],
+    ['G4', 1.0], ['G4', 1.0], ['A4', 1.0], ['B4', 1.0], ['A4', 1.5], ['G4', 0.5], ['G4', 2.0]
+  ]),
+  'SLANE': makeMelody([
+    ['D4', 1.0], ['D4', 1.0], ['E4', 1.0], ['F#4', 1.5], ['E4', 0.5], ['D4', 1.0], ['E4', 1.0], ['D4', 2.0],
+    ['A4', 1.0], ['B4', 1.0], ['D5', 2.0], ['C#5', 1.0], ['B4', 1.5], ['A4', 0.5], ['F#4', 1.0], ['A4', 2.0]
+  ]),
+  'DIADEMATA': makeMelody([
+    ['G4', 1.0], ['G4', 1.0], ['G4', 1.0], ['B4', 1.5], ['A4', 0.5], ['G4', 1.0],
+    ['A4', 1.0], ['A4', 1.0], ['A4', 1.0], ['C5', 1.5], ['B4', 0.5], ['A4', 1.0],
+    ['D5', 1.0], ['C5', 1.0], ['B4', 1.0], ['A4', 2.0], ['G4', 2.0], ['F#4', 3.0]
+  ]),
+  'TO GOD BE THE GLORY': makeMelody([
+    ['G4', 1.0], ['G4', 1.0], ['B4', 1.0], ['D5', 2.0], ['D5', 1.0], ['D5', 1.0], ['C5', 1.0], ['B4', 1.0], ['A4', 3.0],
+    ['A4', 1.0], ['A4', 1.0], ['C5', 1.0], ['E5', 2.0], ['E5', 1.0], ['D5', 1.0], ['C5', 1.0], ['B4', 1.0], ['D5', 3.0]
+  ]),
+  'EIN FESTE BURG': makeMelody([
+    ['C5', 1.0], ['C5', 1.0], ['C5', 1.0], ['G4', 1.0], ['C5', 1.0], ['D5', 1.0], ['E5', 1.0], ['D5', 1.0], ['C5', 2.0],
+    ['C5', 1.0], ['B4', 1.0], ['A4', 1.0], ['G4', 2.0]
+  ]),
+  'NETTLETON': makeMelody([
+    ['G4', 1.0], ['G4', 1.0], ['A4', 1.0], ['B4', 1.0], ['A4', 1.0], ['G4', 1.0], ['F#4', 1.0], ['G4', 2.0],
+    ['G4', 1.0], ['G4', 1.0], ['A4', 1.0], ['B4', 1.0], ['A4', 1.0], ['G4', 1.0], ['F#4', 1.0], ['G4', 2.0]
+  ]),
+  'O STORE GUD': makeMelody([
+    ['G4', 1.0], ['G4', 1.0], ['B4', 1.5], ['A4', 0.5], ['G4', 1.0], ['A4', 1.5], ['G4', 0.5], ['F#4', 1.0], ['G4', 2.0],
+    ['G4', 1.0], ['G4', 1.0], ['B4', 1.5], ['C5', 0.5], ['D5', 1.0], ['C5', 1.5], ['B4', 0.5], ['A4', 1.0], ['G4', 2.0]
+  ]),
+  'OLD RUGGED CROSS': makeMelody([
+    ['G4', 1.0], ['B4', 1.0], ['D5', 1.5], ['D5', 0.5], ['D5', 1.0], ['C5', 1.0], ['B4', 1.0], ['A4', 1.0], ['G4', 3.0]
+  ]),
+  'SILENT NIGHT': makeMelody([
+    ['G4', 1.5], ['A4', 0.5], ['G4', 1.0], ['E4', 3.0],
+    ['G4', 1.5], ['A4', 0.5], ['G4', 1.0], ['E4', 3.0],
+    ['D5', 2.0], ['D5', 1.0], ['B4', 3.0],
+    ['C5', 2.0], ['C5', 1.0], ['G4', 3.0]
+  ]),
+  'ANTIOCH': makeMelody([
+    ['D5', 2.0], ['C#5', 1.5], ['B4', 0.5], ['A4', 3.0], ['G4', 1.0], ['F#4', 2.0], ['E4', 2.0], ['D4', 4.0],
+    ['A4', 3.0], ['B4', 1.0], ['B4', 3.0], ['C#5', 1.0], ['C#5', 3.0], ['D5', 4.0]
+  ]),
+  'MENDELSSOHN': makeMelody([
+    ['D4', 1.0], ['G4', 1.0], ['G4', 1.5], ['F#4', 0.5], ['G4', 1.0], ['B4', 1.0], ['B4', 1.0], ['A4', 1.0],
+    ['D5', 1.0], ['D5', 1.0], ['D5', 1.5], ['C5', 0.5], ['B4', 1.0], ['A4', 1.0], ['B4', 2.0]
+  ]),
+  'ADESTE FIDELES': makeMelody([
+    ['G4', 1.0], ['G4', 2.0], ['D4', 1.0], ['G4', 2.0], ['A4', 2.0], ['D4', 2.0],
+    ['B4', 1.5], ['A4', 0.5], ['B4', 1.0], ['C5', 1.0], ['B4', 2.0], ['A4', 2.0]
+  ]),
+  'VICTORY AHEAD': makeMelody([
+    ['D4', 0.5], ['G4', 1.0], ['G4', 1.0], ['G4', 1.0], ['B4', 1.5], ['A4', 0.5], ['G4', 1.0], ['E4', 1.0], ['D4', 2.0],
+    ['G4', 1.0], ['B4', 1.0], ['B4', 1.0], ['B4', 1.0], ['D5', 1.5], ['C5', 0.5], ['B4', 1.0], ['A4', 3.0],
+    ['D5', 1.0], ['D5', 1.0], ['B4', 1.0], ['G4', 1.0], ['C5', 1.5], ['C5', 0.5], ['A4', 1.0], ['F#4', 1.0],
+    ['G4', 1.0], ['A4', 1.0], ['B4', 1.0], ['C5', 1.0], ['B4', 1.5], ['A4', 0.5], ['G4', 3.0]
   ])
 };
 
@@ -111,6 +203,7 @@ export function getAccurateMelody(tuneName: string, title?: string): Note[] | nu
     'LAUDAANIMA': 'LAUDA ANIMA',
     'OLD100TH': 'OLD HUNDREDTH',
     'OLDHUNDREDTH': 'OLD HUNDREDTH',
+    'VICTORYAHEAD': 'VICTORY AHEAD',
   };
 
   const resolved = synonyms[normTune];
@@ -127,7 +220,88 @@ export function getAccurateMelody(tuneName: string, title?: string): Note[] | nu
     if (normTitle.includes('guide me, o thou great redeemer')) return ACCURATE_TUNES['CWM RHONDDA'];
     if (normTitle.includes('praise, my soul, the king of heaven')) return ACCURATE_TUNES['LAUDA ANIMA'];
     if (normTitle.includes('o worship the king')) return ACCURATE_TUNES['HANOVER'];
+    if (normTitle.includes('amazing grace')) return ACCURATE_TUNES['NEW BRITAIN'];
+    if (normTitle.includes('it is well with my soul')) return ACCURATE_TUNES['VILLE DU HAVRE'];
+    if (normTitle.includes('praise to the lord, the almighty')) return ACCURATE_TUNES['LOBE DEN HERREN'];
+    if (normTitle.includes('great is thy faithfulness')) return ACCURATE_TUNES['FAITHFULNESS'];
+    if (normTitle.includes('rock of ages')) return ACCURATE_TUNES['TOPLADY'];
+    if (normTitle.includes('blessed assurance')) return ACCURATE_TUNES['ASSURANCE'];
+    if (normTitle.includes('when i survey the wondrous cross')) return ACCURATE_TUNES['HAMBURG'];
+    if (normTitle.includes('joyful, joyful, we adore thee')) return ACCURATE_TUNES['HYMN TO JOY'];
+    if (normTitle.includes('be thou my vision')) return ACCURATE_TUNES['SLANE'];
+    if (normTitle.includes('crown him with many crowns')) return ACCURATE_TUNES['DIADEMATA'];
+    if (normTitle.includes('to god be the glory')) return ACCURATE_TUNES['TO GOD BE THE GLORY'];
+    if (normTitle.includes('a mighty fortress is our god')) return ACCURATE_TUNES['EIN FESTE BURG'];
+    if (normTitle.includes('come, thou fount of every blessing')) return ACCURATE_TUNES['NETTLETON'];
+    if (normTitle.includes('how great thou art')) return ACCURATE_TUNES['O STORE GUD'];
+    if (normTitle.includes('the old rugged cross')) return ACCURATE_TUNES['OLD RUGGED CROSS'];
+    if (normTitle.includes('silent night')) return ACCURATE_TUNES['SILENT NIGHT'];
+    if (normTitle.includes('joy to the world')) return ACCURATE_TUNES['ANTIOCH'];
+    if (normTitle.includes('hark! the herald angels sing')) return ACCURATE_TUNES['MENDELSSOHN'];
+    if (normTitle.includes('o come, all ye faithful')) return ACCURATE_TUNES['ADESTE FIDELES'];
+    if (normTitle.includes('victory ahead')) return ACCURATE_TUNES['VICTORY AHEAD'];
   }
 
   return null;
 }
+
+export function generateProceduralMelody(hymnId: number, title: string): Note[] {
+  // Use hymnId to seed a deterministic helper so the tune for a specific hymn is always the same!
+  // This makes it sound like a real, consistent, offline hymn tune!
+  const seed = hymnId + title.length;
+  const scale = ['G4', 'A4', 'B4', 'C5', 'D5', 'E5', 'F#5', 'G5']; // G major scale for a bright, sacred, traditional organ tune
+  
+  const notes: Note[] = [];
+  
+  // Simple deterministic pseudorandom generator
+  let rSeed = seed;
+  const rand = () => {
+    const x = Math.sin(rSeed++) * 10000;
+    return x - Math.floor(x);
+  };
+  
+  // Phrase A (4 notes)
+  const phraseA = [
+    scale[Math.floor(rand() * 3)],       // Start on lower notes (G4, A4, B4)
+    scale[Math.floor(rand() * 4) + 1],   // Step up
+    scale[Math.floor(rand() * 4) + 2],   // Pivot
+    scale[Math.floor(rand() * 3)]        // Return
+  ];
+  
+  // Phrase B (4 notes) - goes higher for contrast/climax
+  const phraseB = [
+    scale[Math.floor(rand() * 3) + 4],   // High note (D5, E5, F#5)
+    scale[Math.floor(rand() * 3) + 3],   // Step down
+    scale[Math.floor(rand() * 4) + 2],   // Pivot
+    scale[Math.floor(rand() * 4) + 1]    // Step down
+  ];
+
+  // Map into a full A-A-B-A structure (16 notes total) for genuine hymn form
+  const fullSequence = [
+    ...phraseA,
+    ...phraseA,
+    ...phraseB,
+    phraseA[0],
+    phraseA[1],
+    scale[1], // Ending steps
+    'G4'      // Clean resolution on tonic G4
+  ];
+  
+  // Assign durations and pitches
+  fullSequence.forEach((noteName, idx) => {
+    // Beautiful cadenced duration pattern (e.g., 4/4 meter with final notes held)
+    let duration = 0.8;
+    if ((idx + 1) % 4 === 0) {
+      duration = 1.6; // Holds at the end of each musical line
+    }
+    
+    notes.push({
+      name: noteName,
+      pitch: PITCHES[noteName] || 392.00,
+      duration: duration
+    });
+  });
+  
+  return notes;
+}
+

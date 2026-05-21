@@ -206,3 +206,39 @@ export const translateHymn = async (hymnTitle: string, lyrics: string, targetLan
   }
 };
 
+export const verifyAndCompleteLyrics = async (
+  hymnNumber: number,
+  title: string,
+  currentLyrics: string
+): Promise<{ verses: string[]; chorus?: string | null; author?: string; tune?: string } | null> => {
+  try {
+    const apiKey = getApiKey();
+    if (!apiKey) return null;
+
+    const prompt = `You are a world-class sacred hymnal expert and archivist. Verify and retrieve the absolute 100% complete and accurate traditional English lyrics for the following hymn:
+    Number: ${hymnNumber}
+    Title: "${title}"
+    
+    Current version text:
+    ${currentLyrics}
+    
+    Compare this against the official traditional hymnal registry. Correct any typos, recover any completely missing traditional verses, and critically, make sure any traditional chorus (if the hymn has a chorus) is completely restored in its accurate, full form. Also verify and re-identify the correct traditional Tune (e.g. NICAEA, BEECHER, EVENTIDE, etc.) and Author.
+    
+    Return the result strictly as a JSON object of this structure:
+    {
+      "verses": ["fully formatted verse 1 text", "fully formatted verse 2 text", ...],
+      "chorus": "chorus text if any, or null",
+      "author": "verified author name",
+      "tune": "verified tune name"
+    }
+    
+    Provide only the raw JSON. Do not write markdown wrapping.`;
+
+    const text = await callGemini(prompt, "application/json");
+    return JSON.parse(text.trim());
+  } catch (error) {
+    console.error("verifyAndCompleteLyrics Error:", error);
+    return null;
+  }
+};
+
