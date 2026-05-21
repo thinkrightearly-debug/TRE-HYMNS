@@ -2,6 +2,144 @@
 import { useState, useRef, useEffect } from 'react';
 import { generateHymnMelody } from '../services/gemini';
 import { Hymn, Note } from '../types';
+import { get, set, del } from 'idb-keyval';
+
+export const FAMOUS_TUNES: Record<string, Note[]> = {
+  "NICAEA": [
+    { pitch: 261.63, duration: 0.6, name: "C4" },
+    { pitch: 261.63, duration: 0.6, name: "C4" },
+    { pitch: 329.63, duration: 0.6, name: "E4" },
+    { pitch: 329.63, duration: 0.6, name: "E4" },
+    { pitch: 392.00, duration: 0.6, name: "G4" },
+    { pitch: 392.00, duration: 1.2, name: "G4" },
+    { pitch: 440.00, duration: 0.6, name: "A4" },
+    { pitch: 493.88, duration: 0.6, name: "B4" },
+    { pitch: 523.25, duration: 0.6, name: "C5" },
+    { pitch: 523.25, duration: 0.6, name: "C5" },
+    { pitch: 493.88, duration: 0.6, name: "B4" },
+    { pitch: 392.00, duration: 1.2, name: "G4" },
+    { pitch: 392.00, duration: 0.6, name: "G4" },
+    { pitch: 440.00, duration: 0.6, name: "A4" },
+    { pitch: 493.88, duration: 0.6, name: "B4" },
+    { pitch: 440.00, duration: 0.6, name: "A4" },
+    { pitch: 392.00, duration: 0.6, name: "G4" },
+    { pitch: 349.23, duration: 0.6, name: "F4" },
+    { pitch: 261.63, duration: 1.2, name: "C4" }
+  ],
+  "NEW BRITAIN": [
+    { pitch: 261.63, duration: 0.6, name: "C4" },
+    { pitch: 349.23, duration: 1.2, name: "F4" },
+    { pitch: 440.00, duration: 0.3, name: "A4" },
+    { pitch: 349.23, duration: 0.3, name: "F4" },
+    { pitch: 440.00, duration: 1.2, name: "A4" },
+    { pitch: 392.00, duration: 0.6, name: "G4" },
+    { pitch: 349.23, duration: 1.2, name: "F4" },
+    { pitch: 293.66, duration: 0.6, name: "D4" },
+    { pitch: 261.63, duration: 1.2, name: "C4" },
+    { pitch: 261.63, duration: 0.6, name: "C4" },
+    { pitch: 349.23, duration: 1.2, name: "F4" },
+    { pitch: 440.00, duration: 0.3, name: "A4" },
+    { pitch: 349.23, duration: 0.3, name: "F4" },
+    { pitch: 440.00, duration: 1.2, name: "A4" },
+    { pitch: 392.00, duration: 0.6, name: "G4" },
+    { pitch: 523.25, duration: 1.8, name: "C5" }
+  ],
+  "EVENTIDE": [
+    { pitch: 349.23, duration: 0.8, name: "F4" },
+    { pitch: 349.23, duration: 0.8, name: "F4" },
+    { pitch: 329.63, duration: 0.8, name: "E4" },
+    { pitch: 293.66, duration: 0.8, name: "D4" },
+    { pitch: 392.00, duration: 0.8, name: "G4" },
+    { pitch: 349.23, duration: 1.6, name: "F4" },
+    { pitch: 261.63, duration: 1.6, name: "C4" },
+    { pitch: 349.23, duration: 0.8, name: "F4" },
+    { pitch: 392.00, duration: 0.8, name: "G4" },
+    { pitch: 440.00, duration: 0.8, name: "A4" },
+    { pitch: 349.23, duration: 0.8, name: "F4" },
+    { pitch: 293.66, duration: 1.6, name: "D4" },
+    { pitch: 349.23, duration: 1.6, name: "F4" }
+  ],
+  "HYFRYDOL": [
+    { pitch: 261.63, duration: 0.6, name: "C4" },
+    { pitch: 293.66, duration: 0.6, name: "D4" },
+    { pitch: 329.63, duration: 0.6, name: "E4" },
+    { pitch: 349.23, duration: 0.6, name: "F4" },
+    { pitch: 329.63, duration: 0.6, name: "E4" },
+    { pitch: 293.66, duration: 0.6, name: "D4" },
+    { pitch: 261.63, duration: 1.2, name: "C4" },
+    { pitch: 392.00, duration: 0.6, name: "G4" },
+    { pitch: 392.00, duration: 0.6, name: "G4" },
+    { pitch: 440.00, duration: 0.6, name: "A4" },
+    { pitch: 392.00, duration: 0.6, name: "G4" },
+    { pitch: 349.23, duration: 0.6, name: "F4" },
+    { pitch: 329.63, duration: 0.6, name: "E4" },
+    { pitch: 293.66, duration: 1.2, name: "D4" }
+  ],
+  "CWM RHONDDA": [
+    { pitch: 392.00, duration: 0.6, name: "G4" },
+    { pitch: 392.00, duration: 0.6, name: "G4" },
+    { pitch: 392.00, duration: 0.6, name: "G4" },
+    { pitch: 293.66, duration: 0.6, name: "D4" },
+    { pitch: 392.00, duration: 0.6, name: "G4" },
+    { pitch: 493.88, duration: 0.6, name: "B4" },
+    { pitch: 440.00, duration: 1.2, name: "A4" },
+    { pitch: 392.00, duration: 0.6, name: "G4" },
+    { pitch: 440.00, duration: 0.6, name: "A4" },
+    { pitch: 493.88, duration: 0.6, name: "B4" },
+    { pitch: 523.25, duration: 0.6, name: "C5" },
+    { pitch: 493.88, duration: 0.6, name: "B4" },
+    { pitch: 440.00, duration: 0.6, name: "A4" },
+    { pitch: 392.00, duration: 1.2, name: "G4" }
+  ],
+  "OLD HUNDREDTH": [
+    { pitch: 392.00, duration: 0.8, name: "G4" },
+    { pitch: 392.00, duration: 0.8, name: "G4" },
+    { pitch: 369.99, duration: 0.8, name: "F#4" },
+    { pitch: 329.63, duration: 0.8, name: "E4" },
+    { pitch: 293.66, duration: 0.8, name: "D4" },
+    { pitch: 392.00, duration: 0.8, name: "G4" },
+    { pitch: 440.00, duration: 0.8, name: "A4" },
+    { pitch: 493.88, duration: 1.6, name: "B4" },
+    { pitch: 493.88, duration: 0.8, name: "B4" },
+    { pitch: 493.88, duration: 0.8, name: "B4" },
+    { pitch: 440.00, duration: 0.8, name: "A4" },
+    { pitch: 392.00, duration: 0.8, name: "G4" },
+    { pitch: 349.23, duration: 0.8, name: "F4" },
+    { pitch: 392.00, duration: 0.8, name: "G4" },
+    { pitch: 440.00, duration: 0.8, name: "A4" },
+    { pitch: 293.66, duration: 1.6, name: "D4" }
+  ],
+  "OLD RUGGED CROSS": [
+    { pitch: 293.66, duration: 0.6, name: "D4" },
+    { pitch: 349.23, duration: 0.6, name: "F4" },
+    { pitch: 440.00, duration: 0.6, name: "A4" },
+    { pitch: 440.00, duration: 0.6, name: "A4" },
+    { pitch: 440.00, duration: 0.6, name: "A4" },
+    { pitch: 392.00, duration: 0.6, name: "G4" },
+    { pitch: 349.23, duration: 1.2, name: "F4" },
+    { pitch: 392.00, duration: 0.6, name: "G4" },
+    { pitch: 440.00, duration: 0.6, name: "A4" },
+    { pitch: 466.16, duration: 0.6, name: "Bb4" },
+    { pitch: 466.16, duration: 0.6, name: "Bb4" },
+    { pitch: 440.00, duration: 0.6, name: "A4" },
+    { pitch: 392.00, duration: 1.2, name: "G4" }
+  ],
+  "VILLE DU HAVRE": [
+    { pitch: 329.63, duration: 0.8, name: "E4" },
+    { pitch: 329.63, duration: 0.8, name: "E4" },
+    { pitch: 293.66, duration: 0.8, name: "D4" },
+    { pitch: 261.63, duration: 1.6, name: "C4" },
+    { pitch: 392.00, duration: 0.8, name: "G4" },
+    { pitch: 392.00, duration: 0.8, name: "G4" },
+    { pitch: 349.23, duration: 0.8, name: "F4" },
+    { pitch: 329.63, duration: 1.6, name: "E4" },
+    { pitch: 440.00, duration: 0.8, name: "A4" },
+    { pitch: 440.00, duration: 0.8, name: "A4" },
+    { pitch: 523.25, duration: 0.8, name: "C5" },
+    { pitch: 440.00, duration: 0.8, name: "A4" },
+    { pitch: 392.00, duration: 2.4, name: "G4" }
+  ]
+};
 
 export const useOrganPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -141,15 +279,27 @@ export const useOrganPlayer = () => {
       stopAudio();
     }
 
-    let melody = hymn.melody || melodyCacheRef.current[hymn.id];
-    
+    const customKey = `custom_melody_${hymn.id}`;
+    let melody = await get(customKey);
+
     if (!melody) {
-      setIsLoadingAudio(true);
-      setPlayingHymnId(hymn.id);
-      melody = await generateHymnMelody(hymn.title, hymn.tune || 'Traditional', hymn.verses[0]);
-      setIsLoadingAudio(false);
-      if (melody && melody.length > 0) {
-        melodyCacheRef.current[hymn.id] = melody;
+      melody = hymn.melody || melodyCacheRef.current[hymn.id];
+      
+      if (!melody && hymn.tune) {
+        const tuneKey = hymn.tune.toUpperCase().trim();
+        if (FAMOUS_TUNES[tuneKey]) {
+          melody = FAMOUS_TUNES[tuneKey];
+        }
+      }
+      
+      if (!melody) {
+        setIsLoadingAudio(true);
+        setPlayingHymnId(hymn.id);
+        melody = await generateHymnMelody(hymn.title, hymn.tune || 'Traditional', hymn.verses[0]);
+        setIsLoadingAudio(false);
+        if (melody && melody.length > 0) {
+          melodyCacheRef.current[hymn.id] = melody;
+        }
       }
     }
 
@@ -221,6 +371,20 @@ export const useOrganPlayer = () => {
     setCurrentNoteName("");
   };
 
+  const saveCustomMelody = async (hymnId: number, notes: Note[]) => {
+    await set(`custom_melody_${hymnId}`, notes);
+    melodyCacheRef.current[hymnId] = notes;
+  };
+
+  const deleteCustomMelody = async (hymnId: number) => {
+    await del(`custom_melody_${hymnId}`);
+    delete melodyCacheRef.current[hymnId];
+  };
+
+  const getCustomMelody = async (hymnId: number): Promise<Note[] | null> => {
+    return await get(`custom_melody_${hymnId}`) as Note[] | null;
+  };
+
   return {
     isPlaying,
     isLoadingAudio,
@@ -230,6 +394,9 @@ export const useOrganPlayer = () => {
     setVolume,
     analyser: analyserRef.current,
     playHymn,
-    stopAudio
+    stopAudio,
+    saveCustomMelody,
+    deleteCustomMelody,
+    getCustomMelody
   };
 };

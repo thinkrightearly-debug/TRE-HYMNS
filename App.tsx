@@ -76,6 +76,7 @@ const App: React.FC = () => {
       list = list.filter(h => 
         h.title.toLowerCase().includes(q) || 
         h.number.toString() === q ||
+        h.alternateNumbers?.some(n => n.toString() === q) ||
         h.tune?.toLowerCase().includes(q) ||
         h.verses.some(v => v.toLowerCase().includes(q))
       );

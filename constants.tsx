@@ -3292,20 +3292,6 @@ export const HYMNS: Hymn[] = [
     ]
   },
   {
-    id: 233,
-    number: 233,
-    title: "Praise the Lord! Ye Heavens Adore Him",
-    category: "Praise",
-    author: "Anonymous",
-    tune: "AUSTRIA",
-    verses: [
-      "Praise the Lord! ye heavens adore Him; praise Him, angels, in the height.",
-      "Sun and moon, rejoice before Him; praise Him, all ye stars of light.",
-      "Praise the Lord! for He hath spoken; worlds His mighty voice obeyed.",
-      "Laws which never shall be broken for their guidance He hath made."
-    ]
-  },
-  {
     id: 234,
     number: 234,
     title: "The Head That Once Was Crowned",
@@ -3923,21 +3909,6 @@ export const HYMNS: Hymn[] = [
       "Let my hands perform His bidding, Let my feet run in His ways;\nLet my eyes see Jesus only, Let my lips speak forth His praise.",
       "Since my eyes were fixed on Jesus, I've lost sight of all beside;\nSo enchained my spirit's vision, Looking at the Crucified.",
       "Oh, what wonder! how amazing! Jesus, glorious King of kings,\nDeigns to call me His beloved, Lets me rest beneath His wings."
-    ]
-  },
-  {
-    id: 282,
-    number: 282,
-    title: "All Glory, Laud, and Honor",
-    category: "Passion",
-    author: "Theodulph of Orleans",
-    tune: "ST. THEODULPH",
-    chorus: "All glory, laud, and honor To Thee, Redeemer, King,\nTo whom the lips of children Made sweet hosannas ring.",
-    verses: [
-      "Thou art the King of Israel, Thou David's royal Son,\nWho in the Lord's Name comest, The King and Blessed One.",
-      "The company of angels Are praising Thee on high,\nAnd mortal men and all things Created make reply.",
-      "The people of the Hebrews With palms before Thee went;\nOur prayer and praise and anthems Before Thee we present.",
-      "To Thee, before Thy passion, They sang their hymns of praise;\nTo Thee, now high exalted, Our melody we raise."
     ]
   },
   {
@@ -4575,19 +4546,6 @@ export const HYMNS: Hymn[] = [
     ]
   },
   {
-    id: 330,
-    number: 330,
-    title: "Lead, kindly Light",
-    category: "Comfort",
-    author: "John Henry Newman",
-    tune: "SANDON",
-    verses: [
-      "Lead, kindly Light, amid the encircling gloom, lead thou me on; the night is dark, and I am far from home; lead thou me on. Keep thou my feet; I do not ask to see the distant scene; one step enough for me.",
-      "I was not ever thus, nor prayed that thou shouldst lead me on; I loved to choose and see my path; but now lead thou me on. I loved the garish day, and, spite of fears, pride ruled my will: remember not past years.",
-      "So long thy power hath blest me, sure it still will lead me on, o'er moor and fen, o'er crag and torrent, till the night is gone, and with the morn those angel faces smile, which I have loved long since, and lost awhile."
-    ]
-  },
-  {
     id: 331,
     number: 331,
     title: "O Thou in All Thy Might So Far",
@@ -4598,20 +4556,6 @@ export const HYMNS: Hymn[] = [
       "O Thou in all Thy might so far, In all Thy love so near,\nBeyond the range of sun and star, And yet within the ear.",
       "What if Thy form we cannot see? We know and feel that Thou art here;\nAnd in Thy love's great holiness, We find our rest and dwelling-place.",
       "Oh, grant us, Lord, Thy light to see, And in Thy love's reflection live;\nThat we may follow only Thee, And all our heart to Thee may give."
-    ]
-  },
-  {
-    id: 332,
-    number: 332,
-    title: "O Thou, Who Camest from Above",
-    category: "Worship",
-    author: "Charles Wesley",
-    tune: "HEREFORD",
-    verses: [
-      "O Thou who camest from above, The pure celestial fire t' impart,\nKindle a flame of sacred love On the mean altar of my heart.",
-      "There let it for Thy glory burn With inextinguishable blaze;\nAnd trembling to its source return, In humble prayer and fervent praise.",
-      "Jesus, confirm my heart's desire To work and speak and think for Thee;\nStill let me guard the holy fire, And still stir up Thy gift in me.",
-      "Ready for all Thy perfect will, My acts of faith and love repeat,\nTill death Thy endless mercies seal, And make my sacrifice complete."
     ]
   },
   {
@@ -4859,19 +4803,6 @@ export const HYMNS: Hymn[] = [
       "Pray that Jerusalem may have Peace and felicity;\nLet them that love thee and thy peace Have still prosperity.",
       "Therefore I wish that peace may still Within thy walls remain,\nAnd ever may thy palaces Prosperity retain.",
       "Now, for my friends' and brethren's sakes, 'Peace be in thee,' I'll say;\nAnd for the house of God our Lord, I'll seek thy good alway."
-    ]
-  },
-  {
-    id: 352,
-    number: 352,
-    title: "Praise the Lord, Ye Heavens Adore Him",
-    category: "Praise",
-    author: "Foundling Hospital Collection",
-    tune: "AUSTRIA",
-    verses: [
-      "Praise the Lord, ye heavens adore Him; Praise Him, angels, in the height;\nSun and moon, rejoice before Him; Praise Him, all ye stars of light.",
-      "Praise the Lord, for He hath spoken; Worlds His mighty voice obeyed;\nLaws which never shall be broken For their guidance He hath made.",
-      "Praise the Lord, for He is glorious; Never shall His promise fail;\nGod hath made His saints victorious; Sin and death shall not prevail."
     ]
   },
   {
@@ -5969,19 +5900,6 @@ export const HYMNS: Hymn[] = [
     ]
   },
   {
-    id: 437,
-    number: 437,
-    title: "Alleluia, Alleluia! Hearts to Heaven and Voices Raise",
-    category: "Easter",
-    author: "Christopher Wordsworth",
-    tune: "LUX EOI",
-    verses: [
-      "Alleluia, Alleluia! Hearts to heaven and voices raise;\nSing to God a hymn of gladness, Sing to God a hymn of praise.",
-      "He who on the cross a victim For the world's salvation bled,\nJesus Christ, the King of glory, Now is risen from the dead.",
-      "Christ is risen, Christ the first-fruits Of the holy harvest field,\nWhich will all its full abundance At His second coming yield."
-    ]
-  },
-  {
     id: 438,
     number: 438,
     title: "Alleluia, Song of Gladness",
@@ -6264,19 +6182,6 @@ export const HYMNS: Hymn[] = [
       "Christian, seek not yet repose, Cast thy dreams of ease away;\nThou art in the midst of foes: Watch and pray.",
       "Principalities and powers, Mustering their unseen array,\nWait for thy unguarded hours: Watch and pray.",
       "Gird thy heavenly armor on, Wear it ever night and day;\nAmbushed lies the evil one: Watch and pray."
-    ]
-  },
-  {
-    id: 460,
-    number: 460,
-    title: "Christians, Awake, Salute the Happy Morn",
-    category: "Christmas",
-    author: "John Byrom",
-    tune: "YORKSHIRE",
-    verses: [
-      "Christians, awake, salute the happy morn Whereon the Saviour of the world was born;\nRise to adore the mystery of love, Which hosts of angels chanted from above.",
-      "With them the joyful tidings first begun Of God incarnate and the Virgin's Son;\nThen to the watchful shepherds it was told, Who heard the angelic herald's voice of old.",
-      "He spake; and straightway the celestial choir In hymns of joy, unknown before, conspire;\nThe praises of redeeming love they sang, And heaven's whole orb with alleluias rang."
     ]
   },
   {
@@ -9207,19 +9112,6 @@ export const HYMNS: Hymn[] = [
     ]
   },
   {
-    id: 686,
-    number: 686,
-    title: "O Little Town of Bethlehem",
-    category: "Other",
-    author: "Phillips Brooks",
-    tune: "ST. LOUIS",
-    verses: [
-      "O little town of Bethlehem, How still we see thee lie!\nAbove thy deep and dreamless sleep The silent stars go by.",
-      "Yet in thy dark streets shineth The everlasting Light;\nThe hopes and fears of all the years Are met in thee tonight.",
-      "O holy Child of Bethlehem, Descend to us, we pray;\nCast out our sin and enter in, Be born in us today."
-    ]
-  },
-  {
     id: 687,
     number: 687,
     title: "O Lord and Master of Us All",
@@ -9230,32 +9122,6 @@ export const HYMNS: Hymn[] = [
       "O Lord and Master of us all, Whate'er our name or sign,\nWe own Thy sway, we hear Thy call, We test our lives by Thine.",
       "Thou art the Way, the Truth, the Life; Oh, guide us to the goal;\nBeyond the reach of earthly strife, In peace of heart and soul.",
       "Oh, grant us, Lord, Thy light to see, And in Thy love's reflection live;\nThat we may follow only Thee, And all our heart to Thee may give."
-    ]
-  },
-  {
-    id: 688,
-    number: 688,
-    title: "O Lord, How Happy Should We Be",
-    category: "Worship",
-    author: "Joseph Anstice",
-    tune: "ST. STEPHEN",
-    verses: [
-      "O Lord, how happy should we be If we could cast our care on Thee,\nIf we from self could rest;",
-      "And feel at heart that One above In perfect wisdom, perfect love,\nIs working for the best.",
-      "Oh, grant us, Lord, Thy light to see, And in Thy love's reflection live;\nThat we may follow only Thee, And all our heart to Thee may give."
-    ]
-  },
-  {
-    id: 689,
-    number: 689,
-    title: "O Lord of Heaven and Earth and Sea",
-    category: "Worship",
-    author: "Christopher Wordsworth",
-    tune: "ALMSGIVING",
-    verses: [
-      "O Lord of heaven and earth and sea, To Thee all praise and glory be;\nHow shall we show our love to Thee, Giver of all?",
-      "The golden sunshine, vernal air, Sweet flowers and fruits Thy love declare;\nWhere harvests ripen, Thou art there, Giver of all.",
-      "Thou didst not spare Thine only Son, But gav'st Him for a world undone,\nAnd freely with that Blessed One Thou givest all."
     ]
   },
   {
@@ -9311,32 +9177,6 @@ export const HYMNS: Hymn[] = [
     ]
   },
   {
-    id: 694,
-    number: 694,
-    title: "O Love, That Wilt Not Let Me Go",
-    category: "Comfort",
-    author: "George Matheson",
-    tune: "ST. MARGARET",
-    verses: [
-      "O Love, that wilt not let me go, I rest my weary soul in Thee;\nI give Thee back the life I owe, That in Thine ocean depths its flow\nMay richer, fuller be.",
-      "O Light, that followest all my way, I yield my flickering torch to Thee;\nMy heart restores its borrowed ray, That in Thy sunshine's blaze its day\nMay brighter, fairer be.",
-      "O Joy, that seekest me through pain, I cannot close my heart to Thee;\nI trace the rainbow through the rain, And feel the promise is not vain\nThat morn shall tearless be."
-    ]
-  },
-  {
-    id: 695,
-    number: 695,
-    title: "O Master, Let Me Walk With Thee",
-    category: "Dedication",
-    author: "Washington Gladden",
-    tune: "MARYTON",
-    verses: [
-      "O Master, let me walk with Thee In lowly paths of service free;\nTell me Thy secret; help me bear The strain of toil, the fret of care.",
-      "Help me the slow of heart to move By some clear, winning word of love;\nTeach me the wayward feet to stay, And guide them in the homeward way.",
-      "Teach me Thy patience; still with Thee In closer, dearer company;\nIn work that keeps faith sweet and strong, In trust that triumphs over wrong."
-    ]
-  },
-  {
     id: 696,
     number: 696,
     title: "O Perfect Love",
@@ -9347,19 +9187,6 @@ export const HYMNS: Hymn[] = [
       "O perfect Love, all human thought transcending,\nLowly we kneel in prayer before Thy throne,\nThat theirs may be the love which knows no ending,\nWhom Thou for evermore dost join in one.",
       "O perfect Life, be Thou their full assurance\nOf tender charity and steadfast faith,\nOf patient hope and quiet, brave endurance,\nWith glad-hearted trust that triumphs over death.",
       "Grant them the joy which brightens earthly sorrow;\nGrant them the peace which calms all earthly strife,\nAnd to life's day the glorious unknown morrow\nThat leads to ever-during, boundless life."
-    ]
-  },
-  {
-    id: 697,
-    number: 697,
-    title: "O Praise Ye the Lord! Praise Him in the Height",
-    category: "Praise",
-    author: "H. W. Baker",
-    tune: "LAUDATE DOMINUM",
-    verses: [
-      "O praise ye the Lord! Praise Him in the height;\nRejoice in His Word, ye angels of light;\nYe heavens, adore Him by whom ye were made,\nAnd worship before Him, in brightness arrayed.",
-      "O praise ye the Lord! Praise Him upon earth,\nIn tuneful accord, all ye of new birth;\nPraise Him who hath brought you His grace from above,\nPraise Him who hath taught you to sing of His love.",
-      "O praise ye the Lord, all things that give sound;\nEach jubilant chord, re-echo around;\nLoud organs, His glory forth tell in deep tone,\nAnd sweet harp, the story of what He hath done."
     ]
   },
   {
@@ -9415,32 +9242,6 @@ export const HYMNS: Hymn[] = [
     ]
   },
   {
-    id: 702,
-    number: 702,
-    title: "O Spirit of the Living God",
-    category: "Holy Spirit",
-    author: "James Montgomery",
-    tune: "MELCOMBE",
-    verses: [
-      "O Spirit of the living God, In all Thy plenitude of grace,\nWhere'er the foot of man hath trod, Descend on our apostate race.",
-      "Give tongues of fire and hearts of love To preach the reconciling word;\nGive power and unction from above, Whene'er the joyful sound is heard.",
-      "Be darkness, at Thy coming, light; Confusion, order in Thy path;\nSouls without strength inspire with might; Bid mercy triumph over wrath."
-    ]
-  },
-  {
-    id: 703,
-    number: 703,
-    title: "O Strength and Stay Upholding All Creation",
-    category: "Worship",
-    author: "St. Ambrose",
-    tune: "STRENGTH AND STAY",
-    verses: [
-      "O Strength and Stay upholding all creation,\nWho ever dost Thyself unmoved abide,\nYet day by day the light in every station\nFrom hour to hour through all its changes guide.",
-      "Grant to life's eve a light that fadeth never,\nAnd glory like the morning's golden ray;\nIn life and death, Thy presence with us ever,\nBe Thou our Light and guide, our Strength and Stay.",
-      "To God the Father, God the Son, and Spirit,\nAll praise and glory be for ever given;\nWhose holy presence we shall all inherit,\nIn that life fair, which knows no end in heaven."
-    ]
-  },
-  {
     id: 704,
     number: 704,
     title: "O Thou Before Whose Presence",
@@ -9450,32 +9251,6 @@ export const HYMNS: Hymn[] = [
     verses: [
       "O Thou before whose presence Naught evil may come in,\nYet who dost teach Thy children To turn away from sin;\nOh, grant us, Lord, Thy presence, And help us in our strife,\nThat we may live and serve Thee Through all our earthly life.",
       "In every hour of danger, In every hour of need,\nIn every hour of sorrow, We come to Thee and plead;\nOh, grant us, Lord, Thy presence, And help us in our strife,\nThat we may live and serve Thee Through all our earthly life.",
-      "To God the Father, God the Son, and Spirit,\nAll praise and glory be for ever given;\nWhose holy presence we shall all inherit,\nIn that life fair, which knows no end in heaven."
-    ]
-  },
-  {
-    id: 705,
-    number: 705,
-    title: "O Thou Who Camest From Above",
-    category: "Dedication",
-    author: "Charles Wesley",
-    tune: "HEREFORD",
-    verses: [
-      "O Thou who camest from above, The pure celestial fire to impart,\nKindle a flame of sacred love On the mean altar of my heart.",
-      "There let it for Thy glory burn With inextinguishable blaze;\nAnd trembling to its source return, In humble prayer and fervent praise.",
-      "Jesus, confirm my heart's desire To work and speak and think for Thee;\nStill let me guard the holy fire, And still stir up Thy gift in me."
-    ]
-  },
-  {
-    id: 706,
-    number: 706,
-    title: "O Thou Who Makest Souls to Shine",
-    category: "Worship",
-    author: "John Armstrong",
-    tune: "ST. STEPHEN",
-    verses: [
-      "O Thou who makest souls to shine With light from Thy celestial throne,\nOh, grant us, Lord, Thy light divine, And make us, Lord, Thy very own.",
-      "Oh, grant us, Lord, Thy light to see, And in Thy love's reflection live;\nThat we may follow only Thee, And all our heart to Thee may give.",
       "To God the Father, God the Son, and Spirit,\nAll praise and glory be for ever given;\nWhose holy presence we shall all inherit,\nIn that life fair, which knows no end in heaven."
     ]
   },
@@ -9505,137 +9280,6 @@ export const HYMNS: Hymn[] = [
     ]
   },
   {
-    id: 709,
-    number: 709,
-    title: "O Very God of Very God",
-    category: "Worship",
-    author: "John Mason Neale",
-    tune: "BANGOR",
-    verses: [
-      "O very God of very God, And very Light of Light,\nWhose feet this earth's dark valley trod, That we might find Thy light.",
-      "Oh, grant us, Lord, Thy light to see, And in Thy love's reflection live;\nThat we may follow only Thee, And all our heart to Thee may give.",
-      "To God the Father, God the Son, and Spirit,\nAll praise and glory be for ever given;\nWhose holy presence we shall all inherit,\nIn that life fair, which knows no end in heaven."
-    ]
-  },
-  {
-    id: 710,
-    number: 710,
-    title: "O Word of God Incarnate",
-    category: "Word of God",
-    author: "William Walsham How",
-    tune: "AURELIA",
-    verses: [
-      "O Word of God incarnate, O Wisdom from on high,\nO Truth unchanged, unchanging, O Light of our dark sky;\nWe praise Thee for the radiance That from the hallowed page,\nA lantern to our footsteps, Shines on from age to age.",
-      "The Church from her dear Master Received the gift divine,\nAnd still that light she lifteth O'er all the earth to shine.\nIt is the golden casket Where gems of truth are stored;\nIt is the heaven-drawn picture Of Christ, the living Word.",
-      "It floateth like a banner Before God's host unfurled;\nIt shineth like a beacon Above the darkened world;\nIt is the chart and compass That o'er life's surging sea\nMid mists and rocks and quicksands, Still guides, O Christ, to Thee."
-    ]
-  },
-  {
-    id: 711,
-    number: 711,
-    title: "O Worship the King All-Glorious Above",
-    category: "Praise",
-    author: "Robert Grant",
-    tune: "HANOVER",
-    verses: [
-      "O worship the King all-glorious above,\nO gratefully sing His power and His love;\nOur Shield and Defender, the Ancient of Days,\nPavilioned in splendour, and girded with praise.",
-      "O tell of His might, O sing of His grace,\nWhose robe is the light, whose canopy space;\nHis chariots of wrath the deep thunder-clouds form,\nAnd dark is His path on the wings of the storm.",
-      "Thy bountiful care what tongue can recite?\nIt breathes in the air, it shines in the light;\nIt streams from the hills, it descends to the plain,\nAnd sweetly distils in the dew and the rain."
-    ]
-  },
-  {
-    id: 712,
-    number: 712,
-    title: "O Worship the Lord in the Beauty of Holiness",
-    category: "Worship",
-    author: "John S. B. Monsell",
-    tune: "WAS LEBET",
-    verses: [
-      "O worship the Lord in the beauty of holiness,\nBow down before Him, His glory proclaim;\nWith gold of obedience and incense of lowliness,\nKneel and adore Him: the Lord is His Name.",
-      "Low at His feet lay thy burden of carefulness,\nHigh on His heart He will bear it for thee,\nComfort thy sorrows, and answer thy prayerfulness,\nGuiding thy steps as may best for thee be.",
-      "Fear not to enter His courts in the slenderness\nOf the poor wealth thou wouldst reckon as thine;\nTruth in its beauty, and love in its tenderness,\nThese are the offerings to lay on His shrine."
-    ]
-  },
-  {
-    id: 713,
-    number: 713,
-    title: "Of the Father's Love Begotten",
-    category: "Christmas",
-    author: "Aurelius Clemens Prudentius",
-    tune: "DIVINUM MYSTERIUM",
-    verses: [
-      "Of the Father's love begotten, Ere the worlds began to be,\nHe is Alpha and Omega, He the source, the ending He,\nOf the things that are, that have been, And that future years shall see,\nEvermore and evermore!",
-      "At His word the worlds were framed; He commanded; it was done:\nHeaven and earth and depths of ocean In their threefold order one;\nAll that grows beneath the high light Of the moon and burning sun,\nEvermore and evermore!",
-      "He is found in human fashion, Death and sorrow here to know,\nThat the race of Adam's children Freed from bondage of the foe,\nMight the joy of life eternal Through His victory bestow,\nEvermore and evermore!"
-    ]
-  },
-  {
-    id: 714,
-    number: 714,
-    title: "Oft in Danger, Oft in Woe",
-    category: "Assurance",
-    author: "Henry Kirke White",
-    tune: "UNIVERSITY COLLEGE",
-    verses: [
-      "Oft in danger, oft in woe, Onward, Christians, onward go;\nFight the fight, maintain the strife, Strengthened with the Bread of Life.",
-      "Onward, Christians, onward go, Join the war, and face the foe;\nWill ye flee in danger's hour? Know ye not your Captain's power?",
-      "Let your drooping hearts be glad; March in heavenly armour clad;\nFight, nor think the battle long, Soon shall victory tune your song."
-    ]
-  },
-  {
-    id: 715,
-    number: 715,
-    title: "On Jordan's Bank the Baptist's Cry",
-    category: "Advent",
-    author: "Charles Coffin",
-    tune: "WINCHESTER NEW",
-    verses: [
-      "On Jordan's bank the Baptist's cry Announces that the Lord is nigh;\nAwake and hearken, for he brings Glad tidings of the King of kings.",
-      "Then cleansed be every breast from sin; Make straight the way for God within;\nPrepare we in our hearts a home, Where such a mighty Guest may come.",
-      "For Thou art our Salvation, Lord, Our Refuge and our great Reward;\nWithout Thy grace we waste away, Like flowers that wither and decay."
-    ]
-  },
-  {
-    id: 716,
-    number: 716,
-    title: "Onward, Christian Soldiers",
-    category: "Assurance",
-    author: "Sabine Baring-Gould",
-    tune: "ST. GERTRUDE",
-    chorus: "Onward, Christian soldiers, Marching as to war,\nWith the cross of Jesus Going on before.",
-    verses: [
-      "Onward, Christian soldiers, Marching as to war,\nWith the cross of Jesus Going on before.\nChrist the royal Master Leads against the foe;\nForward into battle, See Его banners go!",
-      "At the sign of triumph Satan's host doth flee;\nOn then, Christian soldiers, On to victory!\nHell's foundations quiver At the shout of praise;\nBrothers, lift your voices, Loud your anthems raise.",
-      "Like a mighty army Moves the Church of God;\nBrothers, we are treading Where the saints have trod;\nWe are not divided, All one body we,\nOne in hope and doctrine, One in charity."
-    ]
-  },
-  {
-    id: 717,
-    number: 717,
-    title: "Our Blest Redeemer, Ere He Breathed",
-    category: "Holy Spirit",
-    author: "Harriet Auber",
-    tune: "ST. CUTHBERT",
-    verses: [
-      "Our blest Redeemer, ere He breathed His tender last farewell,\nA Guide, a Comforter, bequeathed With us to dwell.",
-      "He came sweet influence to impart, A gracious, willing Guest,\nWhile He can find one humble heart Wherein to rest.",
-      "And His that gentle voice we hear, Soft as the breath of even,\nThat checks each fault, that calms each fear, And speaks of heaven."
-    ]
-  },
-  {
-    id: 718,
-    number: 718,
-    title: "Our Day of Praise Is Done",
-    category: "Evening",
-    author: "John Ellerton",
-    tune: "GARDEN CITY",
-    verses: [
-      "Our day of praise is done; The evening shadows fall;\nBut pass not from us with the sun, True Light that lightenest all.",
-      "Around the throne on high, Where night can never be,\nThe white-robed harpers of the sky Bring ceaseless hymns to Thee.",
-      "Too faint our anthems here; Too soon of sin we tire;\nBut Lord, the strains how full and clear Of that eternal choir!"
-    ]
-  },
-  {
     id: 719,
     number: 719,
     title: "Our God, Our Help in Ages Past",
@@ -9662,291 +9306,6 @@ export const HYMNS: Hymn[] = [
     ]
   },
   {
-    id: 721,
-    number: 721,
-    title: "Peace, Perfect Peace",
-    category: "Comfort",
-    author: "Edward H. Bickersteth",
-    tune: "PAX TECUM",
-    verses: [
-      "Peace, perfect peace, in this dark world of sin?\nThe blood of Jesus whispers peace within.",
-      "Peace, perfect peace, by thronging duties pressed?\nTo do the will of Jesus, this is rest.",
-      "Peace, perfect peace, with sorrows surging round?\nOn Jesus' bosom naught but calm is found.",
-      "Peace, perfect peace, with loved ones far away?\nIn Jesus' keeping we are safe, and they."
-    ]
-  },
-  {
-    id: 722,
-    number: 722,
-    title: "Amazing Grace",
-    category: "Worship",
-    author: "John Newton",
-    tune: "NEW BRITAIN",
-    verses: [
-      "Amazing grace! how sweet the sound, That saved a wretch like me! I once was lost, but now am found, Was blind, but now I see.",
-      "’Twas grace that taught my heart to fear, And grace my fears relieved; How precious did that grace appear The hour I first believed!",
-      "Through many dangers, toils and snares, I have already come; ’Tis grace hath brought me safe thus far, And grace will lead me home.",
-      "When we’ve been there ten thousand years, Bright shining as the sun, We’ve no less days to sing God’s praise Than when we’d first begun."
-    ]
-  },
-  {
-    id: 723,
-    number: 723,
-    title: "How Great Thou Art",
-    category: "Praise",
-    author: "Carl Boberg; Stuart K. Hine",
-    tune: "O STORE GUD",
-    chorus: "Then sings my soul, My Saviour God, to Thee, How great Thou art, How great Thou art. Then sings my soul, My Saviour God, to Thee, How great Thou art, How great Thou art!",
-    verses: [
-      "O Lord my God, When I in awesome wonder, Consider all the worlds Thy Hands have made; I see the stars, I hear the rolling thunder, Thy power throughout the universe displayed.",
-      "When through the woods, and forest glades I wander, And hear the birds sing sweetly in the trees. When I look down, from lofty mountain grandeur And see the brook, and feel the gentle breeze.",
-      "And when I think, that God, His Son not sparing; Sent Him to die, I scarce can take it in; That on the Cross, my burden gladly bearing, He bled and died to take away my sin.",
-      "When Christ shall come, with shout of acclamation, And lead me home, what joy shall fill my heart! Then I shall bow, in humble adoration, And then proclaim: \"My God, how great Thou art!\""
-    ]
-  },
-  {
-    id: 724,
-    number: 724,
-    title: "Great Is Thy Faithfulness",
-    category: "Praise",
-    author: "Thomas O. Chisholm",
-    tune: "FAITHFULNESS",
-    chorus: "Great is Thy faithfulness! Great is Thy faithfulness! Morning by morning new mercies I see; All I have needed Thy hand hath provided— Great is Thy faithfulness, Lord, unto me!",
-    verses: [
-      "Great is Thy faithfulness, O God my Father, There is no shadow of turning with Thee; Thou changest not, Thy compassions, they fail not As Thou hast been Thou forever wilt be.",
-      "Summer and winter, and springtime and harvest, Sun, moon and stars in their courses above, Join with all nature in manifold witness To Thy great faithfulness, mercy and love.",
-      "Pardon for sin and a peace that endureth, Thine own dear presence to cheer and to guide; Strength for today and bright hope for tomorrow, Blessings all mine, with ten thousand beside!"
-    ]
-  },
-  {
-    id: 725,
-    number: 725,
-    title: "Holy, Holy, Holy! Lord God Almighty",
-    category: "Morning",
-    author: "Reginald Heber",
-    tune: "NICAEA",
-    verses: [
-      "Holy, holy, holy! Lord God Almighty! Early in the morning our song shall rise to Thee; Holy, holy, holy, merciful and mighty! God in three Persons, blessed Trinity!",
-      "Holy, holy, holy! all the saints adore Thee, Casting down their golden crowns around the glassy sea; Cherubim and seraphim falling down before Thee, Who wert and art and evermore shalt be.",
-      "Holy, holy, holy! though the darkness hide Thee, Though the eye of sinful man Thy glory may not see; Only Thou art holy; there is none beside Thee, Perfect in power, in love, and purity.",
-      "Holy, holy, holy! Lord God Almighty! All Thy works shall praise Thy Name, in earth, and sky, and sea; Holy, holy, holy; merciful and mighty! God in three Persons, blessed Trinity!"
-    ]
-  },
-  {
-    id: 726,
-    number: 726,
-    title: "Abide With Me",
-    category: "Evening",
-    author: "Henry Francis Lyte",
-    tune: "EVENTIDE",
-    verses: [
-      "Abide with me; fast falls the eventide; The darkness deepens; Lord with me abide. When other helpers fail and comforts flee, Help of the helpless, O abide with me.",
-      "Swift to its close ebbs out life’s little day; Earth’s joys grow dim; its glories pass away; Change and decay in all around I see; O Thou who changest not, abide with me.",
-      "I need Thy presence every passing hour. What but Thy grace can foil the tempter’s power? Who, like Thyself, my guide and stay can be? Through cloud and sunshine, Lord, abide with me.",
-      "I fear no foe, with Thee at hand to bless; Ills have no weight, and tears no bitterness. Where is death’s sting? Where, grave, thy victory? I triumph still, if Thou abide with me.",
-      "Hold Thou Thy cross before my closing eyes; Shine through the gloom and point me to the skies. Heaven’s morning breaks, and earth’s vain shadows flee; In life, in death, O Lord, abide with me."
-    ]
-  },
-  {
-    id: 727,
-    number: 727,
-    title: "All Hail the Power of Jesus' Name",
-    category: "Praise",
-    author: "Edward Perronet",
-    tune: "CORONATION",
-    verses: [
-      "All hail the power of Jesus' name! Let angels prostrate fall; Bring forth the royal diadem, And crown Him Lord of all!",
-      "Ye chosen seed of Israel's race, Ye ransomed from the fall, Hail Him who saves you by His grace, And crown Him Lord of all!",
-      "Let every kindred, every tribe, On this terrestrial ball, To Him all majesty ascribe, And crown Him Lord of all!",
-      "O that with yonder sacred throng We at His feet may fall! We'll join the everlasting song, And crown Him Lord of all!"
-    ]
-  },
-  {
-    id: 728,
-    number: 728,
-    title: "To God Be the Glory",
-    category: "Praise",
-    author: "Fanny Crosby",
-    tune: "TO GOD BE THE GLORY",
-    chorus: "Praise the Lord, praise the Lord, Let the earth hear His voice! Praise the Lord, praise the Lord, Let the people rejoice! O come to the Father, through Jesus the Son, And give Him the glory, great things He has done.",
-    verses: [
-      "To God be the glory, great things He has done; So loved He the world that He gave us His Son, Who yielded His life an atonement for sin, And opened the life gate that all may go in.",
-      "O perfect redemption, the purchase of blood, To every believer the promise of God; The vilest offender who truly believes, That moment from Jesus a pardon receives.",
-      "Great things He has taught us, great things He has done, And great our rejoicing through Jesus the Son; But purer, and higher, and greater will be Our wonder, our transport, when Jesus we see."
-    ]
-  },
-  {
-    id: 729,
-    number: 729,
-    title: "Blessed Assurance",
-    category: "Worship",
-    author: "Fanny Crosby",
-    tune: "ASSURANCE",
-    chorus: "This is my story, this is my song, Praising my Savior all the day long; This is my story, this is my song, Praising my Savior all the day long.",
-    verses: [
-      "Blessed assurance, Jesus is mine! Oh, what a foretaste of glory divine! Heir of salvation, purchase of God, Born of His Spirit, washed in His blood.",
-      "Perfect submission, perfect delight, Visions of rapture now burst on my sight; Angels, descending, bring from above Echoes of mercy, whispers of love.",
-      "Perfect submission, all is at rest, I in my Savior am happy and blest, Watching and waiting, looking above, Filled with His goodness, lost in His love."
-    ]
-  },
-  {
-    id: 730,
-    number: 730,
-    title: "Just As I Am",
-    category: "Dedication",
-    author: "Charlotte Elliott",
-    tune: "WOODWORTH",
-    verses: [
-      "Just as I am, without one plea, But that Thy blood was shed for me, And that Thou bid’st me come to Thee, O Lamb of God, I come, I come.",
-      "Just as I am, and waiting not To rid my soul of one dark blot, To Thee whose blood can cleanse each spot, O Lamb of God, I come, I come.",
-      "Just as I am, though tossed about With many a conflict, many a doubt, Fightings and fears within, without, O Lamb of God, I come, I come.",
-      "Just as I am, poor, wretched, blind; Sight, riches, healing of the mind, Yea, all I need in Thee to find, O Lamb of God, I come, I come.",
-      "Just as I am, Thou wilt receive, Wilt welcome, pardon, cleanse, relieve; Because Thy promise I believe, O Lamb of God, I come, I come.",
-      "Just as I am, Thy love unknown Has broken every barrier down; Now, to be Thine, yea, Thine alone, O Lamb of God, I come, I come."
-    ]
-  },
-  {
-    id: 731,
-    number: 731,
-    title: "A Mighty Fortress Is Our God",
-    category: "Worship",
-    author: "Martin Luther",
-    tune: "EIN FESTE BURG",
-    verses: [
-      "A mighty fortress is our God, a bulwark never failing; Our helper He, amid the flood of mortal ills prevailing: For still our ancient foe doth seek to work us woe; His craft and power are great, and, armed with cruel hate, On earth is not his equal.",
-      "Did we in our own strength confide, our striving would be losing; Were not the right Man on our side, the Man of God’s own choosing: Dost ask who that may be? Christ Jesus, it is He; Lord Sabaoth, His Name, from age to age the same, And He must win the battle.",
-      "And though this world, with devils filled, should threaten to undo us, We will not fear, for God hath willed His truth to triumph through us: The Prince of Darkness grim, we tremble not for him; His rage we can endure, for lo, his doom is sure, One little word shall fell him.",
-      "That word above all earthly powers, no thanks to them, abideth; The Spirit and the gifts are ours through Him who with us sideth: Let goods and kindred go, this mortal life also; The body they may kill: God’s truth abideth still, His kingdom is forever."
-    ]
-  },
-  {
-    id: 732,
-    number: 732,
-    title: "Joy to the World",
-    category: "Praise",
-    author: "Isaac Watts",
-    tune: "ANTIOCH",
-    verses: [
-      "Joy to the world, the Lord is come! Let earth receive her King; Let every heart prepare Him room, And Heaven and nature sing, And Heaven and nature sing, And Heaven, and Heaven, and nature sing.",
-      "Joy to the world, the Savior reigns! Let men their songs employ; While fields and floods, rocks, hills and plains Repeat the sounding joy, Repeat the sounding joy, Repeat, repeat, the sounding joy.",
-      "No more let sins and sorrows grow, Nor thorns infest the ground; He comes to make His blessings flow Far as the curse is found, Far as the curse is found, Far as, far as, the curse is found.",
-      "He rules the world with truth and grace, And makes the nations prove The glories of His righteousness, And wonders of His love, And wonders of His love, And wonders, wonders, of His love."
-    ]
-  },
-  {
-    id: 733,
-    number: 733,
-    title: "It Is Well With My Soul",
-    category: "Comfort",
-    author: "Horatio G. Spafford",
-    tune: "VILLE DU HAVRE",
-    chorus: "It is well with my soul, It is well, it is well with my soul.",
-    verses: [
-      "When peace, like a river, attendeth my way, When sorrows like sea billows roll; Whatever my lot, Thou hast taught me to say, It is well, it is well with my soul.",
-      "Though Satan should buffet, though trials should come, Let this blest assurance control, That Christ has regarded my helpless estate, And hath shed His own blood for my soul.",
-      "My sin, oh, the bliss of this glorious thought! My sin, not in part but the whole, Is nailed to the cross, and I bear it no more, Praise the Lord, praise the Lord, O my soul!",
-      "For me, be it Christ, be it Christ hence to live: If Jordan above me shall roll, No pang shall be mine, for in death as in life Thou wilt whisper Thy peace to my soul.",
-      "But Lord, 'tis for Thee, for Thy coming we wait, The sky, not the grave, is our goal; Oh, trump of the angel! Oh, voice of the Lord! Blessed hope, blessed rest of my soul!",
-      "And Lord, haste the day when my faith shall be sight, The clouds be rolled back as a scroll; The trump shall resound, and the Lord shall descend, \"Even so\"—it is well with my soul."
-    ]
-  },
-  {
-    id: 734,
-    number: 734,
-    title: "Come, Thou Fount of Every Blessing",
-    category: "Worship",
-    author: "Robert Robinson",
-    tune: "NETTLETON",
-    verses: [
-      "Come, Thou Fount of every blessing, Tune my heart to sing Thy grace; Streams of mercy, never ceasing, Call for songs of loudest praise. Teach me some melodious sonnet, Sung by flaming tongues above; Praise the mount! I'm fixed upon it, Mount of Thy redeeming love.",
-      "Sorrowing I shall be in spirit, Till released from flesh and its sin, Yet from grace I do inherit Mercy that will make me clean. I will trust my God to guide me, He will lead me in His way, Until the day I stand beside Him, And behold His glorious face.",
-      "O to grace how great a debtor Daily I'm constrained to be! Let Thy goodness, like a fetter, Bind my wandering heart to Thee. Prone to wander, Lord, I feel it, Prone to leave the God I love; Here's my heart, O take and seal it, Seal it for Thy courts above."
-    ]
-  },
-  {
-    id: 735,
-    number: 735,
-    title: "What a Friend We Have in Jesus",
-    category: "Comfort",
-    author: "Joseph Scriven",
-    tune: "CONVERSE",
-    verses: [
-      "What a friend we have in Jesus, All our sins and griefs to bear! What a privilege to carry Everything to God in prayer! O what peace we often forfeit, O what needless pain we bear, All because we do not carry Everything to God in prayer!",
-      "Have we trials and temptations? Is there trouble anywhere? We should never be discouraged; Take it to the Lord in prayer. Can we find a friend so faithful Who will all our sorrows share? Jesus knows our every weakness, Take it to the Lord in prayer.",
-      "Are we weak and heavy laden, Cumbered with a load of care? Precious Savior, still our refuge; Take it to the Lord in prayer. Do thy friends despise, forsake thee? Take it to the Lord in prayer; In His arms He'll take and shield thee, Thou wilt find a solace there."
-    ]
-  },
-  {
-    id: 736,
-    number: 736,
-    title: "When I Survey the Wondrous Cross",
-    category: "Passion",
-    author: "Isaac Watts",
-    tune: "HAMBURG",
-    verses: [
-      "When I survey the wondrous cross On which the Prince of glory died, My richest gain I count but loss, And pour contempt on all my pride.",
-      "Forbid it, Lord, that I should boast, Save in the death of Christ my God! All the vain things that charm me most, I sacrifice them to His blood.",
-      "See from His head, His hands, His feet, Sorrow and love flow mingled down! Did e'er such love and sorrow meet, Or thorns compose so rich a crown?",
-      "Were the whole realm of nature mine, That were an offering far too small; Love so amazing, so divine, Demands my soul, my life, my all."
-    ]
-  },
-  {
-    id: 737,
-    number: 737,
-    title: "Guide Me, O Thou Great Redeemer",
-    category: "Worship",
-    author: "William Williams",
-    tune: "CWM RHONDDA",
-    verses: [
-      "Guide me, O Thou great Redeemer, Pilgrim through this barren land; I am weak, but Thou art mighty; Hold me with Thy powerful hand; Bread of Heaven, Bread of Heaven, Feed me till I want no more; Feed me till I want no more.",
-      "Open now the crystal fountain, Whence the healing streams do flow; Let the fiery, cloudy pillar Lead me all my journey through; Strong Deliverer, Strong Deliverer, Be Thou still my strength and shield; Be Thou still my strength and shield.",
-      "When I tread the verge of Jordan, Bid my anxious fears subside; Death of death, and hell's destruction, Land me safe on Canaan's side; Songs of praises, Songs of praises, I will ever give to Thee; I will ever give to Thee."
-    ]
-  },
-  {
-    id: 738,
-    number: 738,
-    title: "Nearer, My God, to Thee",
-    category: "Worship",
-    author: "Sarah Flower Adams",
-    tune: "BETHANY",
-    verses: [
-      "Nearer, my God, to Thee, nearer to Thee!E’en though it be a cross that raiseth me;Still all my song shall be, nearer, my God, to Thee,Nearer, my God, to Thee, nearer to Thee!",
-      "Though like the wanderer, the sun gone down,Darkness be over me, my rest a stone;Yet in my dreams I’d be nearer, my God, to Thee,Nearer, my God, to Thee, nearer to Thee!",
-      "There let the way appear, steps unto Heav’n;All that Thou sendest me, in mercy giv’n;Angels to beckon me nearer, my God, to Thee,Nearer, my God, to Thee, nearer to Thee!",
-      "Then with my waking thoughts bright with Thy praise,Out of my stony griefs Bethel I’ll raise;So by my woes to be nearer, my God, to Thee,Nearer, my God, to Thee, nearer to Thee!",
-      "Or if on joyful wing, cleaving the sky,Sun, moon, and stars forgot, upwards I fly,Still all my song shall be, nearer, my God, to Thee,Nearer, my God, to Thee, nearer to Thee!"
-    ]
-  },
-  {
-    id: 739,
-    number: 739,
-    title: "Rock of Ages, Cleft for Me",
-    category: "Worship",
-    author: "Augustus M. Toplady",
-    tune: "TOPLADY",
-    verses: [
-      "Rock of Ages, cleft for me,Let me hide myself in Thee;Let the water and the blood,From Thy wounded side which flowed,Be of sin the double cure,Cleanse me from its guilt and power.",
-      "Not the labors of my handsCan fulfill Thy law's demands;Could my zeal no respite know,Could my tears forever flow,All for sin could not atone;Thou must save, and Thou alone.",
-      "Nothing in my hand I bring,Simply to Thy cross I cling;Naked, come to Thee for dress;Helpless, look to Thee for grace;Foul, I to the fountain fly;Wash me, Savior, or I die.",
-      "While I draw this fleeting breath,When my eyelids close in death,When I soar to worlds unknown,See Thee on Thy judgment throne,Rock of Ages, cleft for me,Let me hide myself in Thee."
-    ]
-  },
-  {
-    id: 740,
-    number: 740,
-    title: "Love Divine, All Loves Excelling",
-    category: "Praise",
-    author: "Charles Wesley",
-    tune: "BEECHER",
-    verses: [
-      "Love divine, all loves excelling,Joy of heaven, to earth come down,Fix in us thy humble dwelling,All thy faithful mercies crown.Jesus, thou art all compassion,Pure unbounded love thou art;Visit us with thy salvation,Enter every trembling heart.",
-      "Breathe, oh breathe thy loving SpiritInto every troubled breast;Let us all in thee inherit,Let us find that second rest.Take away our power of sinning,Alpha and Omega be;End of faith, as its beginning,Set our hearts at liberty.",
-      "Come, almighty to deliver,Let us all thy life receive;Suddenly return, and never,Nevermore thy temples leave.Thee we would be always blessing,Serve thee as thy hosts above;Pray and praise thee without ceasing,Glory in thy perfect love.",
-      "Finish then thy new creation,Pure and spotless let us be;Let us see thy great salvation,Perfectly restored in thee.Changed from glory into glory,Till in heaven we take our place,Till we cast our crowns before thee,Lost in wonder, love, and praise."
-    ]
-  },
-  {
     id: 741,
     number: 741,
     title: "We cannot measure how you heal",
@@ -9957,67 +9316,6 @@ export const HYMNS: Hymn[] = [
       "We cannot measure how you heal or answer every sufferer's prayer, but we believe your grace is near, and all our trials are yours to share. Our wounds are hurt by human anger, and broken hearts are slow to mend, yet hope lies risen in our path, and love's first steps can now begin.",
       "So, Saviour, if indeed you care to share our conflict and our pain, then let our wounds be healed by yours, and let us live for you again. We do not ask for instant ease, or miracles that make us blind, but for the strength to bear our cross, and in our weakness peace to find.",
       "And if our hearts are hard and dry, and cannot feel your healing touch, forgive our doubt and let us know that you still love us very much. So let your healing grace begin, and let your presence make us whole, till we can trust you in our dark, and find the peace that heals the soul."
-    ]
-  },
-  {
-    id: 742,
-    number: 742,
-    title: "We give thee but thine own",
-    category: "Dedication",
-    author: "William Walsham How",
-    tune: "DONCASTER",
-    verses: [
-      "We give thee but thine own, whate'er the gift may be; all that we have is thine alone, a trust, O Lord, from thee.",
-      "May we thy bounties share as stewards of thy store, and gladly, as thou blessest us, to thee keep giving more.",
-      "To comfort and to bless, to find a balm for woe, to minister to helplessness, is angels' work below.",
-      "The captive to release, to God the lost to bring, to teach the way of life and peace, it is a Christ-like thing.",
-      "And we believe thy word, though dim our faith may be; whate'er for thine we do, O Lord, we do it unto thee."
-    ]
-  },
-  {
-    id: 743,
-    number: 743,
-    title: "We have a gospel to proclaim",
-    category: "Missionary",
-    author: "Edward J. Burns",
-    tune: "FULDA",
-    verses: [
-      "We have a gospel to proclaim, good news for all throughout the earth; the gospel of a Saviour's name: we sing his glory, tell his worth.",
-      "Tell of his birth at Bethlehem, not in a royal house or hall, but in a stable dark and dim, the Word made flesh, a light for all.",
-      "Tell of his death at Calvary, hated by those he came to save, in lonely suffering on the tree, for all he loved his life he gave.",
-      "Tell of that glorious Easter morn, empty the tomb, for he was free; he broke the power of death and hell, and lives in immortality.",
-      "Tell of his reign in highest heaven, praising the Father's majesty; to him all authority is given, the Lord of all eternity.",
-      "Now we declare him Lord and King, Jesus, who reigns in power above; with one accord his praise we sing, and share the triumph of his love."
-    ]
-  },
-  {
-    id: 744,
-    number: 744,
-    title: "We love the place, O God",
-    category: "Worship",
-    author: "William Bullock and Henry Williams Baker",
-    tune: "QUAM DILECTA",
-    verses: [
-      "We love the place, O God, wherein thine honour dwells; the joy of thine abode all earthly joy excels.",
-      "We love the house of prayer, wherein thy servants meet; and thou, O Lord, art there thy chosen flock to greet.",
-      "We love the sacred font; for there the holy Dove pours out, as he is wont, the water of thy love.",
-      "We love thine altar, Lord; oh, what on earth so dear? For there, in faith adored, we find thy presence near.",
-      "We love the word of life, the word that tells of peace, of comfort in the strife, and joys that never cease.",
-      "Lord Jesus, give us grace on earth to love thee more, in heaven to see thy face, and with thy saints adore."
-    ]
-  },
-  {
-    id: 745,
-    number: 745,
-    title: "We plough the fields, and scatter",
-    category: "Praise",
-    author: "Matthias Claudius, trans. Jane Montgomery Campbell",
-    tune: "WIR PFLÜGEN",
-    chorus: "All good gifts around us are sent from heaven above, then thank the Lord, O thank the Lord for all his love.",
-    verses: [
-      "We plough the fields, and scatter the good seed on the land, but it is fed and watered by God's almighty hand; he sends the snow in winter, the warmth to swell the grain, the breezes and the sunshine, and soft refreshing rain.",
-      "He only is the Maker of all things near and far; he paints the wayside flower, he lights the evening star; the winds and waves obey him, by him the birds are fed; much more to us, his children, he gives our daily bread.",
-      "We thank thee, then, O Father, for all things bright and good, the seed-time and the harvest, our life, our health, our food: no gifts have we to offer for all thy love imparts, but that which thou desirest, our humble, thankful hearts."
     ]
   },
   {
@@ -10035,35 +9333,6 @@ export const HYMNS: Hymn[] = [
     ]
   },
   {
-    id: 747,
-    number: 747,
-    title: "We pray thee, heavenly Father",
-    category: "Communion",
-    author: "Albert William Chatfield",
-    tune: "MEINAU",
-    verses: [
-      "We pray thee, heavenly Father, to hear us in thy love, and pour upon thy children the unction from above; that so in love abiding, from all defilement free, we may in death be worthy to rise and live with thee.",
-      "Here on thine altar, Lord, we lay our hearts to-day; oh, let them be acceptable to thee, we humbly pray; we have no other offering to bring before thy face, but only this poor tribute of gratitude and grace.",
-      "And grant us now, we pray thee, to draw with faith most pure to this thy holy table, of thy forgiveness sure; where Christ, our great High Priest, is evermore adored, and we, in him, are offered to thee, our Sovereign Lord.",
-      "Oh, wash us, Saviour, wash us, and make us clean within; may we, in white apparel, be rescued from our sin; that so, in pureness walking, we may thy presence see, and with the saints in glory for ever dwell with thee."
-    ]
-  },
-  {
-    id: 748,
-    number: 748,
-    title: "We sing the praise of him who died",
-    category: "Passion",
-    author: "Thomas Kelly",
-    tune: "BOW BRICKHILL",
-    verses: [
-      "We sing the praise of him who died, of him who died upon the cross; the sinner's hope let men deride: for this we count the world but loss.",
-      "Inscribed upon the cross we see in shining letters, 'God is love'; he bears our sins upon the tree: he brings us mercy from above.",
-      "The cross! it takes our guilt away; it holds the fainting spirit up; it cheers with hope the gloomy day, and sweetens every bitter cup.",
-      "It makes the coward spirit brave, and nerves the feeble arm for fight; it takes its terror from the grave, and gilds the bed of death with light.",
-      "The balm of life, the cure of woe, the measure and the pledge of love, the sinner's refuge here below, the angels' theme in heaven above."
-    ]
-  },
-  {
     id: 749,
     number: 749,
     title: "We want to see Jesus high",
@@ -10074,49 +9343,6 @@ export const HYMNS: Hymn[] = [
     verses: [
       "We want to see Jesus lifted high, a banner that flies across this land, that all men might see the truth and know he is the way to heaven.",
       "Step by step, we're moving forward, little by step, we're taking ground, every prayer a powerful weapon, strongholds come tumbling down and down and down."
-    ]
-  },
-  {
-    id: 750,
-    number: 750,
-    title: "Welcome, happy morning! age to age shall say",
-    category: "Resurrection",
-    author: "Venantius Fortunatus, trans. John Ellerton",
-    tune: "FORTUNATUS",
-    verses: [
-      "'Welcome, happy morning!' age to age shall say; hell today is vanquished, heaven is won today! Lo! the dead is living, God for evermore! Him their true Creator, all his works adore! 'Welcome, happy morning!' age to age shall say.",
-      "Earth her joy confesses, clothing her for spring, all fresh gifts returned with her returning King: bloom in every meadow, leaves on every bough, speak his sorrow ended, hail his triumph now. Hell today is vanquished, heaven is won today!",
-      "Months in due succession, days of lengthening light, hours and passing moments praise thee in their flight; brightness of the morning, sky and solemn sea, vanquisher of darkness, render praise to thee! 'Welcome, happy morning!' age to age shall say.",
-      "Maker and Redeemer, life and health of all, thou from heaven beholding human nature's fall, of the Father's Godhead true and only Son, man-hood to deliver, manhood didst put on. Hell today is vanquished, heaven is won today!",
-      "Thou, of life the author, death didst undergo, tread the path of darkness, saving strength to show; come then, True and Faithful, now fulfill thy word; 'tis thine own third morning: rise, O buried Lord! 'Welcome, happy morning!' age to age shall say."
-    ]
-  },
-  {
-    id: 751,
-    number: 751,
-    title: "Were you there when they crucified my Lord?",
-    category: "Passion",
-    author: "African-American spiritual",
-    tune: "WERE YOU THERE",
-    verses: [
-      "Were you there when they crucified my Lord? Were you there when they crucified my Lord? Oh! sometimes it causes me to tremble, tremble, tremble. Were you there when they crucified my Lord?",
-      "Were you there when they nailed him to the tree? Were you there when they nailed him to the tree? Oh! sometimes it causes me to tremble, tremble, tremble. Were you there when they nailed him to the tree?",
-      "Were you there when they pierced him in the side? Were you there when they pierced him in the side? Oh! sometimes it causes me to tremble, tremble, tremble. Were you there when they pierced him in the side?",
-      "Were you there when they laid him in the tomb? Were you there when they laid him in the tomb? Oh! sometimes it causes me to tremble, tremble, tremble. Were you there when they laid him in the tomb?",
-      "Were you there when he rose up from the grave? Were you there when he rose up from the grave? Oh! sometimes it causes me to tremble, tremble, tremble. Were you there when he rose up from the grave?"
-    ]
-  },
-  {
-    id: 752,
-    number: 752,
-    title: "What a friend we have in Jesus",
-    category: "Comfort",
-    author: "Joseph Medlicott Scriven",
-    tune: "CONVERSE",
-    verses: [
-      "What a friend we have in Jesus, all our sins and griefs to bear! What a privilege to carry everything to God in prayer! O what peace we often forfeit, O what needless pain we bear, all because we do not carry everything to God in prayer!",
-      "Have we trials and temptations? Is there trouble anywhere? We should never be discouraged: take it to the Lord in prayer! Can we find a friend so faithful who will all our sorrows share? Jesus knows our every weakness: take it to the Lord in prayer!",
-      "Are we weak and heavy-laden, cumbered with a load of care? Precious Saviour, still our refuge— take it to the Lord in prayer! Do thy friends despise, forsake thee? Take it to the Lord in prayer! In his arms he'll take and shield thee; thou wilt find a solace there."
     ]
   },
   {
@@ -10144,21 +9370,6 @@ export const HYMNS: Hymn[] = [
       "When a knight won his spurs in the stories of old, he was gentle and brave, he was gallant and bold; with a shield on his arm and a lance in his hand, for God and for king he went riding the land.",
       "No giants he feared and no paths he eschewed, where a dark castle frowned or a dragon pursued; and his armour was bright and his helmet was laced, and his sword in the scabbard was worthily placed.",
       "Let faith be my shield and let truth be my sword, I will war for the right in the name of the Lord, with no giant to fear and no pathway to dread, since the Lord is my captain and goes on ahead."
-    ]
-  },
-  {
-    id: 755,
-    number: 755,
-    title: "We sing the praise of him who died",
-    category: "Passion",
-    author: "Thomas Kelly",
-    tune: "Bow Brickhill",
-    verses: [
-      "We sing the praise of him who died, of him who died upon the cross; the sinner's hope let men deride, for this we count the world but loss.",
-      "Inscribed upon the cross we see in shining letters, 'God is love'; he bears our sins upon the tree; he brings us mercy from above.",
-      "The cross! it takes our guilt away; it holds the fainting spirit up; it cheers with hope the gloomy day, and sweetens every bitter cup.",
-      "It makes the coward spirit brave, and nerves the feeble arm for fight; it takes its terror from the grave, and gilds the bed of death with light.",
-      "The balm of life, the cure of woe, the measure and the pledge of love, the sinner's refuge here below, the angels' theme in heaven above."
     ]
   },
   {
@@ -10202,50 +9413,6 @@ export const HYMNS: Hymn[] = [
     ]
   },
   {
-    id: 759,
-    number: 759,
-    title: "Welcome, happy morning! age to age shall say",
-    category: "Resurrection",
-    author: "Venantius Fortunatus, tr. John Ellerton",
-    tune: "Ellerton",
-    chorus: "'Welcome, happy morning!' age to age shall say: hell today is vanquished, heaven is won today! Lo! the dead is living, God for evermore! Him, their true Creator, all his works adore!",
-    verses: [
-      "Earth her joy confesses, clothing her for spring, all fresh gifts returned with her returning King: bloom in every meadow, leaves on every bough, speak his sorrows over, his triumphing now.",
-      "Months in due succession, days of lengthening light, hours and passing moments praise thee in their flight; brightness of the morning, sky and solemn sea, vanquisher of darkness, bring their praise to thee.",
-      "Maker and Redeemer, life and health of all, thou from heaven beholding human nature's fall, of the Father's Godhead true and only Son, manhood to deliver, manhood didst put on.",
-      "Loose the souls now prisoned, bound with Satan's chain; all that now is fallen raise to life again; show thy face in brightness, bid the nations see; bring on earth our Easter, day of liberty."
-    ]
-  },
-  {
-    id: 760,
-    number: 760,
-    title: "Were you there when they crucified my Lord?",
-    category: "Passion",
-    author: "African-American spiritual",
-    tune: "Were You There",
-    verses: [
-      "Were you there when they crucified my Lord? Were you there when they crucified my Lord? Oh! sometimes it causes me to tremble, tremble, tremble. Were you there when they crucified my Lord?",
-      "Were you there when they nailed him to the tree? Were you there when they nailed him to the tree? Oh! sometimes it causes me to tremble, tremble, tremble. Were you there when they nailed him to the tree?",
-      "Were you there when they pierced him in the side? Were you there when they pierced him in the side? Oh! sometimes it causes me to tremble, tremble, tremble. Were you there when they pierced him in the side?",
-      "Were you there when the sun refused to shine? Were you there when the sun refused to shine? Oh! sometimes it causes me to tremble, tremble, tremble. Were you there when the sun refused to shine?",
-      "Were you there when they laid him in the tomb? Were you there when they laid him in the tomb? Oh! sometimes it causes me to tremble, tremble, tremble. Were you there when they laid him in the tomb?",
-      "Were you there when he rose up from the grave? Were you there when he rose up from the grave? Oh! sometimes it causes me to tremble, tremble, tremble. Were you there when he rose up from the grave?"
-    ]
-  },
-  {
-    id: 761,
-    number: 761,
-    title: "What a friend we have in Jesus",
-    category: "Comfort",
-    author: "Joseph Medlicott Scriven",
-    tune: "Converse",
-    verses: [
-      "What a friend we have in Jesus, all our sins and griefs to bear! What a privilege to carry everything to God in prayer! O what peace we often forfeit, O what needless pain we bear, all because we do not carry everything to God in prayer!",
-      "Have we trials and temptations? Is there trouble anywhere? We should never be discouraged; take it to the Lord in prayer. Can we find a friend so faithful who will all our sorrows share? Jesus knows our every weakness; take it to the Lord in prayer.",
-      "Are we weak and heavy laden, cumbered with a load of care? Precious Saviour, still our refuge, take it to the Lord in prayer. Do thy friends despise, forsake thee? Take it to the Lord in prayer! In his arms he'll take and shield thee; thou wilt find a solace there."
-    ]
-  },
-  {
     id: 762,
     number: 762,
     title: "What shall we pray for those who reign",
@@ -10257,19 +9424,6 @@ export const HYMNS: Hymn[] = [
       "First, for the wisdom from above that seeks the truth and does the right, and governs with a patient love that rules as in their Maker's sight.",
       "Then, for a heart of sympathy to hear the cry of the oppressed, to guard the weak, set captives free, and give the weary nation rest.",
       "So may they rule in peace and grace, and we in quietness obey, till every kingdom, tribe and race shall own your everlasting sway."
-    ]
-  },
-  {
-    id: 763,
-    number: 763,
-    title: "When a knight won his spurs",
-    category: "Children",
-    author: "Jan Struther",
-    tune: "Stowey",
-    verses: [
-      "When a knight won his spurs, in the stories of old, he had breastplate of steel, and a helmet of gold, with a shield and a lance and a sword at his side, and a coal-black charger that he rode with pride.",
-      "No armour have I, and no helmet of gold, yet I will be gallant, and I will be bold; for the promise of youth is my helmet and shield, and the strong name of Jesus the sword that I wield.",
-      "Let faith be my shield, and let love be my steed, against the giants of anger and the demons of greed; and I will ride forward, if, master, you say, to the beautiful city of the King of the day."
     ]
   },
   {
@@ -10321,35 +9475,6 @@ export const HYMNS: Hymn[] = [
     ]
   },
   {
-    id: 767,
-    number: 767,
-    title: "When I survey the wondrous cross",
-    category: "Passion",
-    author: "Isaac Watts",
-    tune: "Rockingham",
-    verses: [
-      "When I survey the wondrous cross on which the Prince of glory died, my richest gain I count but loss, and pour contempt on all my pride.",
-      "Forbid it, Lord, that I should boast save in the death of Christ, my God; all the vain things that charm me most, I sacrifice them to his blood.",
-      "See, from his head, his hands, his feet, sorrow and love flow mingled down; did e'er such love and sorrow meet, or thorns compose so rich a crown?",
-      "Were the whole realm of nature mine, that were an offering far too small; love so amazing, so divine, demands my soul, my life, my all."
-    ]
-  },
-  {
-    id: 768,
-    number: 768,
-    title: "When morning gilds the skies",
-    category: "Morning",
-    author: "German, tr. Edward Caswall",
-    tune: "Laudes Domini",
-    verses: [
-      "When morning gilds the skies, my heart awaking cries: may Jesus Christ be praised! Alike at work and prayer to Jesus I repair: may Jesus Christ be praised!",
-      "The night becomes as day when from the heart we say: may Jesus Christ be praised! The powers of darkness fear when this sweet chant they hear: may Jesus Christ be praised!",
-      "In heaven's eternal bliss the loveliest strain is this: may Jesus Christ be praised! To God, the Word on high, the hosts of angels cry: may Jesus Christ be praised!",
-      "Let earth's wide circle round in joyful notes resound: may Jesus Christ be praised! Let air and sea and sky from depth to height reply: may Jesus Christ be praised!",
-      "Be this, while life is mine, my canticle divine: may Jesus Christ be praised! Be this the eternal song through all the ages long: may Jesus Christ be praised!"
-    ]
-  },
-  {
     id: 769,
     number: 769,
     title: "Where is death's sting?",
@@ -10390,21 +9515,6 @@ export const HYMNS: Hymn[] = [
       "To God our Creator our voices we raise, / for all of his mercy and wonderful ways; / he made us, he keeps us, he gives us our breath, / and saves us from darkness and shadow of death.",
       "Our Savior and Brother, our Lord and our Friend, / who loves us and keeps us right up to the end; / he took our own nature, he died on the cross, / to save us from ruin and ultimate loss.",
       "To Father, and Son, and the Spirit of grace, / be glory and worship from every race; / the church of the living, both here and above, / shall praise without ceasing his infinite love."
-    ]
-  },
-  {
-    id: 772,
-    number: 772,
-    title: "With joy we meditate the grace",
-    category: "Comfort",
-    author: "Isaac Watts",
-    tune: "ARDEN",
-    verses: [
-      "With joy we meditate the grace of our High Priest above; / his heart is full of tenderness, his pity overflows with love.",
-      "Touched with a sympathy within, he knows our feeble frame; / he knows what sore temptations mean, for he has felt the same.",
-      "But spotless, innocent, and pure, the great Redeemer stood, / while Satan's fiery darts he bore, and did resist to blood.",
-      "He in the days of feeble flesh poured out his cries and tears, / and in his measure feels afresh what every member bears.",
-      "Then let our humble faith address his mercy and his power; / we shall obtain delivering grace in each distressing hour."
     ]
   },
   {
@@ -10458,65 +9568,6 @@ export const HYMNS: Hymn[] = [
     verses: [
       "Worship, honour, glory, blessing, / Lord, we offer to thy name; / young and old, thy praise expressing, / join thy goodness to proclaim. / As the saints in heaven adore thee, / we would bow before thy throne; / as the angels serve before thee, / so on earth thy will be done.",
       "As the years are passing o'er us, / still thy goodness we'll proclaim; / singing with the heavenly chorus / praises to thy holy name. / Keep us, Lord, in faith and duty, / till we see thee face to face, / in the king's transcendent beauty, / in the heaven of thy grace."
-    ]
-  },
-  {
-    id: 777,
-    number: 777,
-    title: "Ye choirs of new Jerusalem",
-    category: "Resurrection",
-    author: "Robert Campbell",
-    tune: "ST. FULBERT",
-    verses: [
-      "Ye choirs of new Jerusalem, / your sweetest notes employ, / the Paschal victory to hymn / in strains of holy joy.",
-      "How Judah's Lion bursts his chains, / and crushed the serpent's head; / and cries aloud through death's domains / to wake the imprisoned dead.",
-      "From hell's devouring jaws the prey / he tears with sovereign hand; / and hosts of ransom'd souls this day / attend their Lord's command.",
-      "Triumphant in his glory now / his sceptre ruleth all; / whom master of the world we know, / before his footstool fall.",
-      "While we, his soldiers, praise our King, / his mercy we implore, / within his palace bright to bring / and keep us evermore.",
-      "All glory to the Father be, / all glory to the Son, / all glory, Holy Ghost, to thee, / while endless ages run. / Amen."
-    ]
-  },
-  {
-    id: 778,
-    number: 778,
-    title: "Ye holy angels bright",
-    category: "Praise",
-    author: "Richard Baxter and John Hampden Gurney",
-    tune: "DARWALL'S 148TH",
-    verses: [
-      "Ye holy angels bright, / who wait at God's right hand, / or through the realms of light / fly at your Lord's command, / assist our song, / for else the theme / too high doth seem / for mortal tongue.",
-      "Ye blessed souls at rest, / who ran this earthly race, / and now, from sin released, / behold the Savior's face, / God's praises sound, / as in his sight / with sweet delight / ye do abound.",
-      "Ye saints, who toil below, / adore your heavenly King, / and onward as ye go / some humble tribute bring; / no voice be dumb, / sing out his love, / who from above / to earth is come.",
-      "My soul, bear thou thy part, / triumph in God above: / and with a well-tuned heart / sing thou the songs of love; / let all thy days / till life shall end, / whate'er he send, / be filled with praise."
-    ]
-  },
-  {
-    id: 779,
-    number: 779,
-    title: "Ye servants of God, your Master proclaim",
-    category: "Praise",
-    author: "Charles Wesley",
-    tune: "PADERBORN",
-    verses: [
-      "Ye servants of God, your Master proclaim, / and publish abroad his wonderful name; / the name all-victorious of Jesus extol: / his kingdom is glorious, and rules over all.",
-      "God ruleth on high, almighty to save; / and still he is nigh, his presence we have: / the great congregation his triumph shall sing, / ascribing salvation to Jesus our King.",
-      "Salvation to God who sits on the throne! / Let all cry aloud, and honor the Son: / the praises of Jesus the angels proclaim, / fall down on their faces, and worship the Lamb.",
-      "Then let us adore, and give him his right: / all glory and power, all wisdom and might, / all honor and blessing, with angels above, / and thanks never-ceasing, and infinite love."
-    ]
-  },
-  {
-    id: 780,
-    number: 780,
-    title: "Ye servants of the Lord",
-    category: "Dedication",
-    author: "Philip Doddridge",
-    tune: "NARENZA",
-    verses: [
-      "Ye servants of the Lord, / each in his office, wait, / observant of his heavenly word, / and watchful at his gate.",
-      "Let all your lamps be bright, / and trim the golden flame; / gird up your loins as in his sight, / for awful is his name.",
-      "Watch! 'tis your Lord's command, / and while we speak, he's near; / mark the first signal of his hand, / and ready all appear.",
-      "O happy servant he, / in such a posture found! / He shall his Lord with rapture see, / and be with honor crowned.",
-      "Christ shall the banquet spread / with his own royal hand, / and raise that faithful servant's head / amid the angelic band."
     ]
   },
   {
@@ -10647,21 +9698,6 @@ export const HYMNS: Hymn[] = [
     ]
   },
   {
-    id: 790,
-    number: 790,
-    title: "Who are these like stars appearing?",
-    category: "Praise",
-    author: "Heinrich Theobald Schenk, tr. Frances Elizabeth Cox",
-    tune: "All Saints",
-    verses: [
-      "Who are these like stars appearing, these before God's throne who stand? Each a golden crown is wearing; who are all this glorious band? Alleluia! hark, they sing, praising loud their heavenly King.",
-      "Who are these in dazzling brightness, clothed in God's own righteousness, these whose robes of purest whiteness shall their lustre still possess, still untouched by time's decay? Whence came all this bright array?",
-      "These are they who have contended for their Saviour's honour long, wrestling on till life was ended, following not the sinful throng; these, who well the fight sustained, triumph by the Lamb have gained.",
-      "These are they whose hearts were riven, sore with woe and anguish tried, who in prayer full oft have striven with the God they glorified; now, their painful conflict o'er, God has bid them weep no more.",
-      "These, the Almighty contemplating, did as priests before him stand, soul and body consecrating day and night to his command: now in God's most holy place blest they stand before his face."
-    ]
-  },
-  {
     id: 791,
     number: 791,
     title: "Who would true valour see",
@@ -10686,21 +9722,6 @@ export const HYMNS: Hymn[] = [
     ]
   },
   {
-    id: 793,
-    number: 793,
-    title: "Will you come and follow me",
-    category: "Missionary",
-    author: "John L. Bell and Graham Maule",
-    tune: "Kelvingrove",
-    verses: [
-      "Will you come and follow me if I but call your name? Will you go where you don't know and never be the same? Will you let my love be shown, will you let my name be known, will you let my life be grown in you and you in me?",
-      "Will you leave yourself behind if I but call your name? Will you care for cruel and kind and never be the same? Will you risk the hostile stare should your life attract or scare? Will you let me answer prayer in you and you in me?",
-      "Will you let the blinded see if I but call your name? Will you set the prisoners free and never be the same? Will you kiss the leper clean, and do such as this unseen, and admit to what I mean in you and you in me?",
-      "Will you love the 'you' you hide if I but call your name? Will you quell the fear inside and never be the same? Will you use the faith you've found to reshape the world around, through my sight and touch and sound in you and you in me?",
-      "Lord, your summons echoes true when you but call my name. Let me turn and follow you and never be the same. In your company I'll go where your love and footsteps show. Thus I'll move and live and grow in you and you in me."
-    ]
-  },
-  {
     id: 794,
     number: 794,
     title: "Will your anchor hold",
@@ -10714,20 +9735,6 @@ export const HYMNS: Hymn[] = [
       "It will firmly hold in the straits of fear, when the breakers have told that the reef is near; though the tempest rave and the wild winds blow, not an angry wave shall our bark o'erflow.",
       "It will surely hold in the floods of death, when the waters cold chill our latest breath; on the rising tide it can never fail, while our hopes abide within the veil.",
       "When our eyes behold through the gathering night the city of gold, our harbour bright, we shall anchor fast by the heavenly shore, with the storms all past forevermore."
-    ]
-  },
-  {
-    id: 795,
-    number: 795,
-    title: "With gladness we worship, rejoice as we sing",
-    category: "Praise",
-    author: "George B. Timms",
-    tune: "Laus Deo",
-    verses: [
-      "With gladness we worship, rejoice as we sing, our praises we offer to Jesus our King; who, reigning in glory, yet dwells in our heart, and promises never from us to depart.",
-      "We praise him who came as a servant on earth, and chose for his mother a maiden of worth; who lived with the simple, the poor and the weak, and died for the sinners he came here to seek.",
-      "We praise him who rose from the dark of the grave, with power all-glorious to heal and to save; who ascended to heaven, our place to prepare, and pours out his Spirit to answer our prayer.",
-      "With hearts full of wonder we lift up our voice, and in his great mercy we ever rejoice; to Father, and Son, and to Spirit of love, be praise from all people on earth and above."
     ]
   },
   {
@@ -10758,78 +9765,6 @@ export const HYMNS: Hymn[] = [
     ]
   },
   {
-    id: 798,
-    number: 798,
-    title: "Ye choirs of new Jerusalem",
-    category: "Resurrection",
-    author: "St. Fulbert of Chartres, tr. Robert Campbell",
-    tune: "St. Fulbert",
-    verses: [
-      "Ye choirs of new Jerusalem, your sweetest notes employ, the paschal victory to hymn in strains of holy joy.",
-      "For Judah’s Lion bursts his chains, crushing the serpent’s head; and cries aloud through death’s domains to wake the imprisoned dead.",
-      "Devouring depths of hell their prey at his command restore; his ransomed hosts pursue their way where he hath gone before.",
-      "Triumphant in his glory now to him all power is given; to him in humble homage bow all things in earth and heaven.",
-      "While we, his soldiers, praise our King, his mercy we implore, within his palace bright to bring and keep us evermore.",
-      "All glory to the Father be, all glory to the Son, all glory, Holy Ghost, to thee, while endless ages run. Amen."
-    ]
-  },
-  {
-    id: 799,
-    number: 799,
-    title: "Ye holy angels bright",
-    category: "Praise",
-    author: "Richard Baxter",
-    tune: "Darwall's 148th",
-    verses: [
-      "Ye holy angels bright, who stand before God’s throne, and dwell in glorious light, make ye his praises known; for ye behold the King’s own face, and taste his grace, both day and night.",
-      "Ye blessed souls at rest, who ran this earthly race and now, from sin released, behold the Saviour's face, God’s praises sound, as in his sight with sweet delight ye do abound.",
-      "Ye saints, who toil below, adore your heavenly King, and onward as ye go some joyful anthem sing; take what he gives, and praise his name, who still the same forever lives.",
-      "My soul, bear thou thy part, triumph in God above, and with a well-tuned heart sing thou the songs of love; let all thy days till life shall end, whate'er he send, be filled with praise."
-    ]
-  },
-  {
-    id: 800,
-    number: 800,
-    title: "Ye servants of God, your Master proclaim",
-    category: "Praise",
-    author: "Charles Wesley",
-    tune: "Paderborn",
-    verses: [
-      "Ye servants of God, your Master proclaim, / and publish abroad his wonderful name; / the name all-victorious of Jesus extol: / his kingdom is glorious, and rules over all.",
-      "God ruleth on high, almighty to save; / and still he is nigh, his presence we have; / the great congregation his triumph shall sing, / ascribing salvation to Jesus our King.",
-      "'Salvation to God who sits on the throne!' / let all cry aloud, and honor the Son; / the praises of Jesus the angels proclaim, / fall down on their faces, and worship the Lamb.",
-      "Then let us adore, and give him his right: / all glory and power, all wisdom and might, / all honor and blessing, with angels above, / and thanks never-ceasing, and infinite love."
-    ]
-  },
-  {
-    id: 801,
-    number: 801,
-    title: "Ye servants of the Lord",
-    category: "Dedication",
-    author: "Philip Doddridge",
-    tune: "Narenza",
-    verses: [
-      "Ye servants of the Lord, / each in his office wait, / observant of his heavenly word, / and watchful at his gate.",
-      "Let all your lamps be bright, / and trim the golden flame; / gird up your loins, as in his sight, / for awful is his name.",
-      "Watch! 'tis your Lord's command, / and while we speak, he's near; / mark the first signal of his hand, / and ready all appear.",
-      "O happy servant he / in such a posture found! / he shall his Lord with rapture see, / and be with honor crowned.",
-      "Christ shall the banquet spread / with his own royal hand, / and raise that faithful servant's head / amid the angelic band."
-    ]
-  },
-  {
-    id: 802,
-    number: 802,
-    title: "Ye that know the Lord is gracious",
-    category: "Praise",
-    author: "Cyril A. Alington",
-    tune: "Abbot's Leigh",
-    verses: [
-      "Ye that know the Lord is gracious, / ye who know his holy will, / be your lives of him reflective, / and his purposes fulfill. / Ye whom he has called to light, / out of darkness, out of night, / tell of his redeeming power, / praise him every day and hour.",
-      "Fellow-citizens with saints / of the household of our God, / ye are they whom he hath purchased / with his own most precious blood: / temples of the Holy Spirit, / ye must speak of him to men; / make his love your life's endeavor, / till the Lord shall come again.",
-      "Ye who have the word of scripture, / ye who hear the voice of prayer, / ye who share the church's worship, / ye who all her blessings share, / praise the Lord for all his mercies, / tell of his redeeming power, / glorify his name for ever, / praise him every day and hour."
-    ]
-  },
-  {
     id: 803,
     number: 803,
     title: "Yield not to temptation",
@@ -10841,17 +9776,6 @@ export const HYMNS: Hymn[] = [
       "Yield not to temptation, for yielding is sin; / each victory will help you some other to win; / fight manfully onward, dark passions subdue; / look ever to Jesus, he will carry you through.",
       "Shun evil companions, bad language disdain; / God’s name hold in reverence, nor take it in vain; / be thoughtful and earnest, kind-hearted and true; / look ever to Jesus, he will carry you through.",
       "To him that o'ercometh, God giveth a crown; / through faith we shall conquer, though often cast down; / he who is our Savior our strength will renew; / look ever to Jesus, he will carry you through."
-    ]
-  },
-  {
-    id: 804,
-    number: 804,
-    title: "You are the King of glory",
-    category: "Praise",
-    author: "M. D. Browne",
-    tune: "King of Glory",
-    verses: [
-      "You are the King of glory, / you are the Prince of peace, / you are the Lord of heaven and earth, / you're the Son of righteousness. / Angels bow down before you, / worship and adore you, / for you have the words of eternal life, / you are the Son of God."
     ]
   },
   {
@@ -11010,76 +9934,6 @@ export const HYMNS: Hymn[] = [
     ]
   },
   {
-    id: 815,
-    number: 815,
-    title: "Ye holy angels bright",
-    category: "Praise",
-    author: "Richard Baxter (1615-1691) and John Hampden Gurney (1802-1862)",
-    tune: "DARWALL'S 148TH",
-    verses: [
-      "Ye holy angels bright,\nwho stand before God's throne\nand dwell in glorious light,\npraise ye the Lord each one;\nassist our song, for else the theme\ntoo high doth seem for mortal tongue.",
-      "Ye blessed souls at rest,\nwho ran this earthly race,\nand now, from sin released,\nbehold the Saviour's face,\nGod's praises sound, as in his sight\nwith sweet delight ye do combine.",
-      "Ye saints, who toil below,\nadore your heavenly King,\nand onward as ye go\nsome joyful anthem sing;\ntake what he gives and praise him still,\nthrough good or ill, who ever lives.",
-      "My soul, bear thou thy part,\ntriumph in God above:\nand with a well-tuned heart\nsing thou the songs of love;\nlet all thy days till life shall end,\nwhate'er he send, be filled with praise."
-    ]
-  },
-  {
-    id: 816,
-    number: 816,
-    title: "Ye servants of God, your Master proclaim",
-    category: "Praise",
-    author: "Charles Wesley (1707-1788)",
-    tune: "PADERBORN",
-    verses: [
-      "Ye servants of God, your Master proclaim,\nand publish abroad his wonderful name;\nthe name all-victorious of Jesus extol:\nhis kingdom is glorious, and rules over all.",
-      "God ruleth on high, almighty to save;\nand still he is nigh, his presence we have:\nthe great congregation his triumph shall sing,\nascribing salvation to Jesus our King.",
-      "\"Salvation to God who sits on the throne!\"\nlet all cry aloud, and honour the Son:\nthe praises of Jesus the angels proclaim,\nfall down on their faces, and worship the Lamb.",
-      "Then let us adore, and give him his right:\nall glory and power, all wisdom and might,\nall honour and blessing, with angels above,\nand thanks never-ceasing, and infinite love."
-    ]
-  },
-  {
-    id: 817,
-    number: 817,
-    title: "Ye servants of the Lord",
-    category: "Dedication",
-    author: "Philip Doddridge (1702-1751)",
-    tune: "NARENZA",
-    verses: [
-      "Ye servants of the Lord,\neach in his office wait,\nobservant of his heavenly word,\nand watchful at his gate.",
-      "Let all your lamps be bright,\nand trim the golden flame;\ngird up your loins, as in his sight,\nfor awful is his name.",
-      "Watch: 'tis your Lord's command,\nand while we speak, he's near;\nmark the first signal of his hand,\nand ready all appear.",
-      "O happy servant he\nin such a posture found!\nHe shall his Lord with rapture see,\nand be with honour crowned.",
-      "Christ shall the banquet spread\nwith his own royal hand,\nand raise that faithful servant's head\namid the angelic band."
-    ]
-  },
-  {
-    id: 818,
-    number: 818,
-    title: "Ye that know the Lord is gracious",
-    category: "Praise",
-    author: "Cyril Argentine Alington (1872-1955)",
-    tune: "HYFRYDOL",
-    verses: [
-      "Ye that know the Lord is gracious,\nye who have his love received,\nye that are his temple spacious,\nand have in his name believed,\ncome, and with true adoration\nsing the praises of your King;\nye who see his great salvation,\nnow your thankful tribute bring.",
-      "Honour him who first did choose you,\nhim who washed you in his blood;\nhe who died will not refuse you,\nhe will make you priests to God.\nIn his temple spacious, holy,\nnever-ceasing praises sound;\nglorify the Lord of glory,\ntell his wonders all around.",
-      "Ye that on his name are founded,\nby his power from day to day,\nby his loving-kindness surrounded,\nwalk the safe and narrow way;\ntill, your earthly journey ended,\nyou shall see him face to face,\nand with all his saints attended,\nsing the triumphs of his grace."
-    ]
-  },
-  {
-    id: 819,
-    number: 819,
-    title: "Ye watchers and ye holy ones",
-    category: "Praise",
-    author: "Athelstan Riley (1858-1945)",
-    tune: "LASST UNS ERFREUEN",
-    verses: [
-      "Ye watchers and ye holy ones,\nbright seraphs, cherubim, and thrones,\nraise the glad strain, Alleluya!\nCry out, dominions, princedoms, powers,\nvirtues, archangels, angels' choirs,\nAlleluya, Alleluya, Alleluya, Alleluya, Alleluya!",
-      "O higher than the cherubim,\nmore glorious than the seraphim,\nlead their praises, Alleluya!\nThou bearer of the eternal Word,\nmost gracious, magnify the Lord,\nAlleluya, Alleluya, Alleluya, Alleluya, Alleluya!",
-      "Respond, ye souls in endless rest,\nye patriarchs and prophets blest,\nAlleluya, Alleluya!\nYe holy twelve, ye martyrs strong,\nall saints triumphant, raise the song,\nAlleluya, Alleluya, Alleluya, Alleluya, Alleluya!",
-      "O friends, in gladness let us sing,\nsupernal anthems echoing,\nAlleluya, Alleluya!\nTo God the Father, God the Son,\nand God the Spirit, Three in One,\nAlleluya, Alleluya, Alleluya, Alleluya, Alleluya!"
-    ]
-  },
-  {
     id: 820,
     number: 820,
     title: "Yes, God is good",
@@ -11123,17 +9977,6 @@ export const HYMNS: Hymn[] = [
     ]
   },
   {
-    id: 823,
-    number: 823,
-    title: "You are the King of glory",
-    category: "Praise",
-    author: "Mervyn Warren",
-    tune: "KING OF GLORY",
-    verses: [
-      "You are the King of glory,\nyou are the Prince of peace,\nyou are the Lord of heaven and earth,\nyou're the Son of righteousness.\nAngels bow down before you,\nworship and adore you,\nsinging glory to the King of kings,\nglory to the King of kings."
-    ]
-  },
-  {
     id: 824,
     number: 824,
     title: "You are the vine, we are the branches",
@@ -11159,33 +10002,6 @@ export const HYMNS: Hymn[] = [
     ]
   },
   {
-    id: 826,
-    number: 826,
-    title: "You shall go out with joy",
-    category: "Praise",
-    author: "Steffi Geiser Rubin and Stuart Dauermann",
-    tune: "THE TREES OF THE FIELD",
-    chorus: "And all the trees of the field shall clap their hands,\nthe trees of the field shall clap their hands,\nthe trees of the field shall clap their hands,\nwhile you go out with joy.",
-    verses: [
-      "You shall go out with joy,\nand be led forth with peace;\nthe mountains and the hills\nshall break forth before you.\nThere'll be shouts of joy,\nand all the trees of the field\nshall clap, shall clap their hands."
-    ]
-  },
-  {
-    id: 827,
-    number: 827,
-    title: "Your hand, O God, has guided",
-    category: "Worship",
-    author: "Edward Hayes Plumptre (1821-1891)",
-    tune: "THORNBURY",
-    verses: [
-      "Your hand, O God, has guided\nyour flock from age to age;\nthe wondrous tale is written\non history's ample page;\nour fathers owned your goodness,\nand we their deeds record;\nand both of this bear witness:\none Church, one faith, one Lord.",
-      "Your heralds brought glad tidings\nto many a foreign shore,\nand those who heard obeisance made\nand hastened to adore;\nand tracks of country dark and wild\nwere cleared of sin and shame,\nand temples rose to honour\nyour great and glorious name.",
-      "Through many a day of darkness,\nthrough many a scene of strife,\nthe faithful few of Israel\nheld fast the word of life;\ntheir rocks of strength they gathered,\ntheir stores of faith they stored,\nand still they rose to witness:\none Church, one faith, one Lord.",
-      "And we, shall we be faithless?\nShall hearts fail, hands hang down?\nShall we evade the conflict,\nand cast away our crown?\nNot so: in God's deep splendour\nwe march to our reward,\nand still the watchword rises:\none Church, one faith, one Lord.",
-      "Your mercy will not fail us,\nnor leave your work undone;\nwith your right hand to help us,\nthe victory shall be won;\nand then, by all creation,\nyour name shall be adored,\nwhen this world's hosts are gathered:\none Church, one faith, one Lord."
-    ]
-  },
-  {
     id: 828,
     number: 828,
     title: "Zion, at thy shining gates",
@@ -11197,32 +10013,6 @@ export const HYMNS: Hymn[] = [
       "Christ, for Whom the world prepares\nSilent ways and secret prayers,\nComes to seek His lost again,\nComes to find His home with men.",
       "He shall sit on David's throne,\nHe shall rule and He alone;\nTo His hand the sceptre yield,\nWhom the prophet's word revealed.",
       "Zion, at thy shining gates,\nLo, the King of Glory waits;\nHaste, O haste, the Lord to greet,\nCast thy crowns before His feet."
-    ]
-  },
-  {
-    id: 829,
-    number: 829,
-    title: "Zion's King shall reign victorious",
-    category: "Worship",
-    author: "Thomas Kelly (1769-1855)",
-    tune: "HELMSLEY",
-    verses: [
-      "Zion's King shall reign victorious;\nall the earth shall own his sway;\nhe will make his kingdom glorious;\nhe will reign through endless day.\nNations now from God estranged\nthen shall see a glorious light;\nnight to day shall then be changed,\nheaven shall triumph in the sight.",
-      "Then shall Israel, long dispersed,\nmourning seek their father's God,\nlook on him whom once they pierced,\nown and kiss the chastening rod:\nthen all nations in a chorus\nshall their tribute bring along,\nlively hope shall go before us,\nand be subject of our song.",
-      "Mighty King, thine arm revealing,\nnow thy glorious cause maintain,\nbring the nations help and healing,\nmake them subject to thy reign:\nangels now are hovering o'er us,\nlately round thy glowing throne,\nand all heaven is in a chorus,\nsinging praise to thee alone."
-    ]
-  },
-  {
-    id: 830,
-    number: 830,
-    title: "We cannot measure how you heal",
-    category: "Comfort",
-    author: "John L. Bell & Graham Maule",
-    tune: "YE BANKS AND BRAES",
-    verses: [
-      "We cannot measure how you heal or answer every sufferer's prayer, yet we believe your grace we feel, what time and hurt can never wear. Alike in those who meet with death, and those who are to life restored, in both we feel the vital breath of Jesus Christ, our risen Lord.",
-      "The diabolic forces thrive on lack of faith and love's decay, and make us feel we're half-alive, and take our joys and hopes away. But when we find our lives made whole, our minds restored, our spirits free, we find the image of your face, and put our trust, O Lord, in thee.",
-      "So some have come who need your touch, and some have come who need your peace, and some who feel the pain of sin and long to find a full release. We bring them all to you, O Lord, in simple faith, with one accord, and pray that you will now impart your healing grace to every heart."
     ]
   },
   {
@@ -11239,107 +10029,6 @@ export const HYMNS: Hymn[] = [
     ]
   },
   {
-    id: 832,
-    number: 832,
-    title: "We love the place, O God",
-    category: "Dedication",
-    author: "William Bullock & Sir H. W. Baker",
-    tune: "QUAM DILECTA",
-    verses: [
-      "We love the place, O God, wherein thine honour dwells; the joy of thine abode all earthly joy excels.",
-      "It is the house of prayer, wherein thy servants meet; and thou, O Lord, art there thy waiting flock to greet.",
-      "We love the sacred font; for there the holy Dove to pour is ever wont his blessing from above.",
-      "We love thine altar, Lord; O what on earth so dear? For there, in faith adored, we find thy presence near.",
-      "We love the word of life, the word that tells of peace, of comfort in the strife, and joys that never cease.",
-      "Lord Jesus, give us grace on earth to love thee more, in heaven to see thy face, and with thy saints adore."
-    ]
-  },
-  {
-    id: 833,
-    number: 833,
-    title: "We plough the fields, and scatter",
-    category: "Praise",
-    author: "Matthias Claudius, tr. Jane Montgomery Campbell",
-    tune: "WIR PFLÜGEN",
-    chorus: "All good gifts around us are sent from heaven above, then thank the Lord, O thank the Lord for all his love.",
-    verses: [
-      "We plough the fields, and scatter the good seed on the land, but it is fed and watered by God's almighty hand; he sends the snow in winter, the warmth to swell the grain, the breezes and the sunshine, and soft refreshing rain.",
-      "He only is the Maker of all things near and far; he paints the wayside flower, he lights the evening star; the winds and waves obey him, by him the birds are fed; much more to us, his children, he gives our daily bread.",
-      "We thank thee, then, O Father, for all things bright and good, the seed-time and the harvest, our life, our health, our food; no gifts have we to offer for all thy love imparts, but that which thou desirest, our humble, thankful hearts."
-    ]
-  },
-  {
-    id: 834,
-    number: 834,
-    title: "We pray thee, heavenly Father",
-    category: "Communion",
-    author: "William Bright",
-    tune: "MEIRIONYDD",
-    verses: [
-      "We pray thee, heavenly Father, to hear us in thy love, and pour upon thy children the unction from above; that so in pureness bending before thy throne of grace, we may meetly offer our sacrifice of praise.",
-      "Our sins and imperfections, O Lord, do thou forgive, and let thy gracious Spirit restore us, that we live; so shall we now before thee with clean hearts appear, and offer up our worship with reverence and fear.",
-      "In mercy and in pity this offering receive, and for thy Christ's dear merit our many sins forgive; may he, the holy Comforter, keep our minds and bodies clean, that we may serve thee better, and love thee, though unseen.",
-      "O Father, with the Spirit, and thy beloved Son, one God whom we adore, while endless ages run, to thee be praise and glory, all-holy Trinity, both now and evermore, through all eternity."
-    ]
-  },
-  {
-    id: 835,
-    number: 835,
-    title: "We sing the praise of him who died",
-    category: "Passion",
-    author: "Thomas Kelly",
-    tune: "BOW BRICKHILL",
-    verses: [
-      "We sing the praise of him who died, of him who died upon the cross; the sinner's hope let men deride, for this we count the world but loss.",
-      "Inscribed upon the cross we see in shining letters, \"God is love\"; he bears our sins upon the tree; he brings us mercy from above.",
-      "The cross! It takes our guilt away; it holds the fainting spirit up; it cheers with hope the gloomy day, and sweetens every bitter cup.",
-      "It makes the coward spirit brave, and nerves the feeble arm for fight; it takes its terror from the grave, and gilds the bed of death with light.",
-      "The balm of life, the cure of woe, the measure and the pledge of love, the sinner's refuge here below, the angels' theme in heaven above."
-    ]
-  },
-  {
-    id: 836,
-    number: 836,
-    title: "We sing the glorious conquest",
-    category: "Other",
-    author: "John Ellerton",
-    tune: "MUNICH",
-    verses: [
-      "We sing the glorious conquest before Damascus' gate, when Saul, the Church's spoiler, came down in blindest hate; the Saviour deigned to meet him, and showed his power and love, and changed the persecutor to champion from above.",
-      "O voice of God almighty, what power thy terms impart, which in a moment shattered the blind reformer's heart! The light of God's own presence flashed on his dazzled eyes, and in the dust he prostrate before his Saviour lies.",
-      "O love, all love excelling, which sought him in his sin, and of the hardened rebel a true apostle win! O Saviour, who didst call him, call us who wander now; to thy sweet yoke of mercy let every spirit bow.",
-      "All glory to the Father, all glory to the Son, all glory to the Spirit, while endless ages run; let every tongue confess thee, let every knee adore, our Saviour and our Master, both now and evermore."
-    ]
-  },
-  {
-    id: 837,
-    number: 837,
-    title: "We turn to you, O God of every nation",
-    category: "Missionary",
-    author: "Fred Kaan",
-    tune: "INTERCESSOR",
-    verses: [
-      "We turn to you, O God of every nation, in this our day of doubt and desperation; look on the waste of your divine creation: Lord, in your mercy, hear us.",
-      "We have been proud, we have been self-reliant, to your commandments we have been defiant; yet we are weak, and though our words are giant: Lord, in your mercy, hear us.",
-      "Guard us from weapons that ourselves have fashioned, from ideologies of hate, impassioned; let not our hearts by fear and greed be rationed: Lord, in your mercy, hear us.",
-      "Rule in our hearts, that we may love our neighbor, and for the peace of all the world may labor; till none shall fear the bullet or the saber: Lord, in your mercy, hear us.",
-      "As children of a common loving Father, let us in peace and understanding gather, and through our lives, in every kind of weather, glorify you who hear us."
-    ]
-  },
-  {
-    id: 838,
-    number: 838,
-    title: "What a friend we have in Jesus",
-    category: "Comfort",
-    author: "Joseph Scriven",
-    tune: "CONVERSE",
-    verses: [
-      "What a friend we have in Jesus, all our sins and griefs to bear! What a privilege to carry everything to God in prayer! O what peace we often forfeit, O what needless pain we bear, all because we do not carry everything to God in prayer!",
-      "Have we trials and temptations? Is there trouble anywhere? We should never be discouraged; take it to the Lord in prayer. Can we find a friend so faithful who will all our sorrows share? Jesus knows our every weakness; take it to the Lord in prayer.",
-      "Are we weak and heavy laden, cumbered with a load of care? Precious Savior, still our refuge, take it to the Lord in prayer. Do thy friends despise, forsake thee? Take it to the Lord in prayer! In his arms he'll take and shield thee; thou wilt find a solace there."
-    ]
-  },
-  {
     id: 839,
     number: 839,
     title: "What shall we offer our good Lord",
@@ -11351,81 +10040,6 @@ export const HYMNS: Hymn[] = [
       "Our souls and bodies we resign; with joy we render thee thine own; O take our hearts, and keep them thine, and make them thy eternal throne.",
       "O let us our whole office feel, our solemn ministry fulfill; as we are called, to do thy will, and suffering, to be faithful still.",
       "To thee, O Lord, our all we give; and if thy work our lives demand, for thee, and thee alone, we'll live, and die at thy divine command."
-    ]
-  },
-  {
-    id: 840,
-    number: 840,
-    title: "When a knight won his spurs",
-    category: "Children",
-    author: "Jan Struther",
-    tune: "STOWEY",
-    verses: [
-      "When a knight won his spurs, in the stories of old, he was gentle and brave, he was gallant and bold; with a shield on his arm and a lance in his hand, for God and for king he went over the land.",
-      "No charter he needed, no map on his way, but he rode through the wildwood and kept to the highway; he shattered the giants and dragons in play, with a heart full of courage, a sword by his side, wherever he went, he was servant and guide.",
-      "Let me fight for the right, let me conquer the wrong, and in your great service be valiant and strong; let me help the distressed, and the helpless from harm, by the strength of your spirit and power of your arm."
-    ]
-  },
-  {
-    id: 841,
-    number: 841,
-    title: "When all thy mercies, O my God",
-    category: "Praise",
-    author: "Joseph Addison",
-    tune: "BELGRAVE",
-    verses: [
-      "When all thy mercies, O my God, my rising soul surveys, transported with the view, I'm lost in wonder, love, and praise.",
-      "Unnumbered comforts to my soul thy tender care bestowed, before my infant heart conceived from whom those comforts flowed.",
-      "When in the slippery paths of youth with heedless steps I ran, thine arm unseen conveyed me safe, and led me up to man.",
-      "When worn with sickness, oft hast thou with health renewed my face; and, when in sins and sorrows sunk, refreshed my soul with grace.",
-      "Ten thousand thousand precious gifts my daily thanks employ; nor is the least a cheerful heart that tastes those gifts with joy.",
-      "Through all eternity to thee a joyful song I'll raise; but oh! eternity's too short to utter all thy praise."
-    ]
-  },
-  {
-    id: 842,
-    number: 842,
-    title: "When I survey the wondrous cross",
-    category: "Passion",
-    author: "Isaac Watts",
-    tune: "ROCKINGHAM",
-    verses: [
-      "When I survey the wondrous cross on which the Prince of glory died, my richest gain I count but loss, and pour contempt on all my pride.",
-      "Forbid it, Lord, that I should boast save in the death of Christ, my God; all the vain things that charm me most, I sacrifice them to his blood.",
-      "See, from his head, his hands, his feet, sorrow and love flow mingled down; did e'er such love and sorrow meet, or thorns compose so rich a crown?",
-      "Were the whole realm of nature mine, that were an offering far too small; love so amazing, so divine, demands my soul, my life, my all."
-    ]
-  },
-  {
-    id: 843,
-    number: 843,
-    title: "When morning gilds the skies",
-    category: "Morning",
-    author: "German, tr. Edward Caswall",
-    tune: "LAUDES DOMINI",
-    verses: [
-      "When morning gilds the skies, my heart awaking cries: may Jesus Christ be praised! Alike at work and prayer to Jesus I repair: may Jesus Christ be praised!",
-      "Does sadness fill my mind? A solace here I find: may Jesus Christ be praised! Or fades my earthly bliss? My comfort still is this: may Jesus Christ be praised!",
-      "The night becomes as day when from the heart we say: may Jesus Christ be praised! The powers of darkness fear when this sweet song they hear: may Jesus Christ be praised!",
-      "Let all the earth around ring back in joyful sound: may Jesus Christ be praised! Sing, sun and stars of space, sing, all ye human race: may Jesus Christ be praised!",
-      "To God, the Word on high, the hosts of angels cry: may Jesus Christ be praised! Let mortals, too, upraise their voice in songs of praise: may Jesus Christ be praised!",
-      "Be this, while life is mine, my canticle divine: may Jesus Christ be praised! Be this the eternal song through all the ages on: may Jesus Christ be praised!"
-    ]
-  },
-  {
-    id: 844,
-    number: 844,
-    title: "Where high the heavenly temple stands",
-    category: "Worship",
-    author: "Michael Bruce",
-    tune: "KILMARNOCK",
-    verses: [
-      "Where high the heavenly temple stands, the house of God not made with hands, a great High Priest our nature wears, the guardian of mankind appears.",
-      "He who for men their surety stood, and poured on earth his precious blood, pursues in heaven his mighty plan, the Savior and the Friend of man.",
-      "Though now ascended up on high, he bends on earth a brother's eye; partaker of the human name, he knows the frailty of our frame.",
-      "Our fellow-sufferer yet retains a fellow-feeling of our pains, and still remembers in the skies his tears, his agonies, and cries.",
-      "In every pang that rends the heart, the Man of Sorrows had a part; he sympathizes with our grief, and to the sufferer sends relief.",
-      "With boldness, therefore, at the throne let us make all our sorrows known, and ask the aid of heavenly power to help us in the evil hour."
     ]
   },
   {

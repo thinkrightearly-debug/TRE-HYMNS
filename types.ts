@@ -15,6 +15,7 @@ export interface Hymn {
   author?: string;
   tune?: string;
   melody?: Note[];
+  alternateNumbers?: number[];
 }
 
 export type ViewState = 'list' | 'detail' | 'favorites' | 'categories' | 'ai-reflection';

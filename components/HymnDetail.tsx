@@ -1,8 +1,8 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { Hymn, Note } from '../types';
-import { ArrowLeft, Heart, Sparkles, BookOpen, Music, Share2, Play, Square, Loader2, Volume2, Mic2 } from 'lucide-react';
-import { getHymnReflection, modernizeHymn, generateHymnMelody, getCachedData } from '../services/gemini';
+import { ArrowLeft, Heart, Sparkles, BookOpen, Music, Share2, Play, Square, Loader2, Volume2, Mic2, Globe, Languages } from 'lucide-react';
+import { getHymnReflection, modernizeHymn, generateHymnMelody, getCachedData, translateHymn } from '../services/gemini';
 import { ReactiveVisualizer } from './ReactiveVisualizer';
 
 interface HymnDetailProps {
@@ -27,7 +27,12 @@ export const HymnDetail: React.FC<HymnDetailProps> = ({ hymn, isFavorite, onTogg
   const [reflection, setReflection] = useState<string | null>(null);
   const [loadingReflection, setLoadingReflection] = useState(false);
   const [modernLyrics, setModernLyrics] = useState<string | null>(null);
-  const [viewMode, setViewMode] = useState<'traditional' | 'modern'>('traditional');
+  const [translatedLyrics, setTranslatedLyrics] = useState<string | null>(null);
+  const [loadingTranslation, setLoadingTranslation] = useState(false);
+  const [targetLanguage, setTargetLanguage] = useState('Yoruba');
+  const [customLanguage, setCustomLanguage] = useState('');
+  const [showCustomInput, setShowCustomInput] = useState(false);
+  const [viewMode, setViewMode] = useState<'traditional' | 'modern' | 'translated'>('traditional');
 
   useEffect(() => {
     const checkCache = async () => {
@@ -36,9 +41,13 @@ export const HymnDetail: React.FC<HymnDetailProps> = ({ hymn, isFavorite, onTogg
 
       const cachedModern = await getCachedData(`modern_${hymn.title}`);
       if (cachedModern) setModernLyrics(cachedModern);
+
+      const cachedTrans = await getCachedData(`translate_${hymn.title}_${targetLanguage.toLowerCase()}`);
+      if (cachedTrans) setTranslatedLyrics(cachedTrans);
+      else setTranslatedLyrics(null);
     };
     checkCache();
-  }, [hymn.title]);
+  }, [hymn.title, targetLanguage]);
   
   const handleGetReflection = async () => {
     if (reflection) return;
@@ -58,12 +67,34 @@ export const HymnDetail: React.FC<HymnDetailProps> = ({ hymn, isFavorite, onTogg
     setLoadingReflection(false);
   };
 
+  const handleTranslate = async (lang: string) => {
+    setTargetLanguage(lang);
+    setViewMode('translated');
+    
+    // Check cache first
+    const cached = await getCachedData(`translate_${hymn.title}_${lang.toLowerCase()}`);
+    if (cached) {
+      setTranslatedLyrics(cached);
+      return;
+    }
+
+    setLoadingTranslation(true);
+    const lyricsString = hymn.verses.join("\n\n") + (hymn.chorus ? `\n\nChorus:\n${hymn.chorus}` : "");
+    const res = await translateHymn(hymn.title, lyricsString, lang);
+    setTranslatedLyrics(res);
+    setLoadingTranslation(false);
+  };
+
   const handleShare = async (type: 'lyrics' | 'reflection') => {
     const title = `Sacred Hymnal - ${hymn.title}`;
     let text = '';
     
     if (type === 'lyrics') {
-      text = `Hymn ${hymn.number}: ${hymn.title}\n\n${hymn.verses.join('\n\n')}${hymn.chorus ? `\n\nChorus:\n${hymn.chorus}` : ''}`;
+      if (viewMode === 'translated' && translatedLyrics) {
+        text = `Hymn ${hymn.number}: ${hymn.title} (${targetLanguage} Translation)\n\n${translatedLyrics}\n\nShared from Sacred Hymnal`;
+      } else {
+        text = `Hymn ${hymn.number}: ${hymn.title}\n\n${hymn.verses.join('\n\n')}${hymn.chorus ? `\n\nChorus:\n${hymn.chorus}` : ''}`;
+      }
     } else {
       text = `Spiritual Reflection on "${hymn.title}":\n\n${reflection}\n\nShared from Sacred Hymnal`;
     }
@@ -191,6 +222,61 @@ export const HymnDetail: React.FC<HymnDetailProps> = ({ hymn, isFavorite, onTogg
           </button>
         </div>
 
+        {/* Global Language Translator Widget */}
+        <div className="bg-gradient-to-r from-teal-50 to-emerald-50 rounded-[2.5rem] border border-teal-100 p-6 flex flex-col gap-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <Globe className="text-teal-600 animate-pulse" size={20} />
+              <p className="text-[11px] font-black uppercase tracking-widest text-teal-800">Global Language Translator</p>
+            </div>
+            {viewMode === 'translated' && (
+              <button 
+                onClick={() => setViewMode('traditional')}
+                className="text-[10px] font-black uppercase text-teal-600 hover:text-teal-800 underline transition-all"
+              >
+                Reset to English
+              </button>
+            )}
+          </div>
+
+          <div className="flex flex-wrap gap-2">
+            {['Yoruba', 'Igbo', 'Hausa', 'Spanish', 'French', 'Latin'].map((lang) => (
+              <button
+                key={lang}
+                onClick={() => { setShowCustomInput(false); handleTranslate(lang); }}
+                className={`px-4 py-2.5 rounded-2xl text-[11px] font-black uppercase tracking-wider transition-all border ${viewMode === 'translated' && targetLanguage === lang ? 'bg-teal-600 text-white border-teal-600 shadow-md scale-105' : 'bg-white hover:bg-teal-100/35 text-teal-905 border-teal-100 active:scale-95'}`}
+              >
+                {lang}
+              </button>
+            ))}
+            <button
+              onClick={() => setShowCustomInput(!showCustomInput)}
+              className={`px-4 py-2.5 rounded-2xl text-[11px] font-black uppercase tracking-wider transition-all border ${showCustomInput ? 'bg-teal-900 text-white border-teal-900' : 'bg-white hover:bg-teal-100/35 text-teal-905 border-teal-100'}`}
+            >
+              Other...
+            </button>
+          </div>
+
+          {showCustomInput && (
+            <div className="flex gap-2 animate-in slide-in-from-top-3 duration-300">
+              <input
+                type="text"
+                placeholder="Enter any language (e.g. Swahili, German, Italian)..."
+                value={customLanguage}
+                onChange={(e) => setCustomLanguage(e.target.value)}
+                onKeyDown={(e) => { if (e.key === 'Enter' && customLanguage.trim()) handleTranslate(customLanguage.trim()); }}
+                className="flex-1 px-4 py-3 bg-white text-xs font-bold border-2 border-teal-100 focus:border-teal-400 rounded-2xl outline-none shadow-sm"
+              />
+              <button
+                onClick={() => { if (customLanguage.trim()) handleTranslate(customLanguage.trim()); }}
+                className="px-5 py-3 bg-teal-800 hover:bg-teal-700 text-white font-black text-xs uppercase tracking-widest rounded-2xl shadow-md transition-all active:scale-95"
+              >
+                Go
+              </button>
+            </div>
+          )}
+        </div>
+
         {/* Reflection */}
         {reflection && (
           <div className="bg-white p-8 rounded-[2.5rem] border border-indigo-50 shadow-xl animate-in zoom-in-95 duration-500 relative group/reflection">
@@ -210,7 +296,34 @@ export const HymnDetail: React.FC<HymnDetailProps> = ({ hymn, isFavorite, onTogg
 
         {/* Lyrics */}
         <div className="space-y-16">
-          {viewMode === 'traditional' ? (
+          {viewMode === 'translated' ? (
+            loadingTranslation ? (
+              <div className="flex flex-col items-center justify-center py-24 text-center space-y-4 bg-teal-50/20 rounded-[3rem] border border-teal-50/70">
+                <Loader2 className="animate-spin text-teal-600" size={40} />
+                <p className="text-xs font-black text-teal-800 uppercase tracking-widest">Translating to {targetLanguage}...</p>
+                <p className="text-[11px] text-gray-400 max-w-xs leading-relaxed">Gemini is rendering lyrics with poetic theology & tonality markings...</p>
+              </div>
+            ) : (
+              <div className="bg-teal-50/30 p-12 rounded-[3.5rem] border border-teal-100 shadow-sm relative group/translation">
+                <div className="flex justify-between items-start mb-8">
+                  <div className="flex items-center gap-3">
+                    <Languages size={24} className="text-teal-600" />
+                    <h3 className="font-serif text-2xl font-black text-teal-900 tracking-tight">{targetLanguage} Version</h3>
+                  </div>
+                  <button 
+                    onClick={() => handleShare('lyrics')}
+                    className="p-3 text-teal-700 hover:text-white hover:bg-teal-600 rounded-2xl transition-all border border-teal-100 bg-white"
+                    title="Share Translation"
+                  >
+                    <Share2 size={16} />
+                  </button>
+                </div>
+                <p className="hymn-font leading-[2] text-teal-950 font-serif font-medium text-2xl whitespace-pre-line text-left">
+                  {translatedLyrics || "Translation failed to match. Try checking your API connection or re-select."}
+                </p>
+              </div>
+            )
+          ) : viewMode === 'traditional' ? (
             hymn.verses.map((verse, index) => (
               <div key={index} className="space-y-6">
                 <div className="flex gap-10">

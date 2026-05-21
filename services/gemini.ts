@@ -1,5 +1,6 @@
 import { Hymn, Note } from "../types";
 import { get, set } from 'idb-keyval';
+import { getAccurateMelody } from "./hymnMelodies";
 
 // Get API Key safely in the browser context
 const getApiKey = (): string => {
@@ -17,7 +18,7 @@ const callGemini = async (prompt: string, responseMimeType?: string): Promise<st
   if (!apiKey) {
     throw new Error("GEMINI_API_KEY is not configured.");
   }
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=${apiKey}`;
   const response = await fetch(url, {
     method: 'POST',
     headers: {
@@ -98,6 +99,12 @@ export const modernizeHymn = async (hymnTitle: string, lyrics: string) => {
 };
 
 export const generateHymnMelody = async (hymnTitle: string, tune: string, firstVerse?: string): Promise<Note[]> => {
+  // Check for pre-programmed 100% accurate tunes first
+  const accurate = getAccurateMelody(tune, hymnTitle);
+  if (accurate) {
+    return accurate;
+  }
+
   const cacheKey = `melody_${hymnTitle}_${tune}`;
   try {
     const cached = await get(cacheKey);
@@ -166,3 +173,36 @@ export const fetchHymnFromArchive = async (query: string): Promise<Hymn | null> 
     return null;
   }
 };
+
+export const translateHymn = async (hymnTitle: string, lyrics: string, targetLanguage: string): Promise<string> => {
+  const cacheKey = `translate_${hymnTitle}_${targetLanguage.toLowerCase()}`;
+  try {
+    const cached = await get(cacheKey);
+    if (cached) return cached;
+
+    const apiKey = getApiKey();
+    if (!apiKey) {
+      return `Translations in ${targetLanguage} are resting. Please configure your GEMINI_API_KEY.`;
+    }
+
+    const prompt = `You are an expert theologian and bilingual translator specializing in sacred hymns.
+    Translate the following hymn lyrics into extremely beautiful, poetic, and rhythmically appropriate ${targetLanguage}.
+    Ensure the translation captures the absolute full depth, spiritual meaning, and emotional resonance of the original text.
+    If translating into African languages like Yoruba, Igbo, or Hausa, ensure proper tone markings (diacritics) where applicable to maintain extreme accuracy and respect standard pronunciation.
+    
+    Hymn Title: "${hymnTitle}"
+    
+    Original English Lyrics:
+    ${lyrics}
+    
+    Provide only the translated verses, separated by double newlines. Do not include any translation notes, introductory text, or titles. Just output the translation itself.`;
+
+    const text = await callGemini(prompt);
+    await set(cacheKey, text);
+    return text;
+  } catch (error) {
+    console.error("Gemini Translation Error:", error);
+    return `Could not translate into ${targetLanguage} at this time.`;
+  }
+};
+
