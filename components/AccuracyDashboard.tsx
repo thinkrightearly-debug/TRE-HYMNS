@@ -15,9 +15,11 @@ import {
   ArrowRight,
   ShieldCheck,
   Search,
-  BookOpen
+  BookOpen,
+  Key,
+  HelpCircle
 } from 'lucide-react';
-import { verifyAndCompleteLyrics } from '../services/gemini';
+import { verifyAndCompleteLyrics, getApiKey, setCustomApiKey } from '../services/gemini';
 
 interface AccuracyDashboardProps {
   hymns: Hymn[];
@@ -60,6 +62,11 @@ export const AccuracyDashboard: React.FC<AccuracyDashboardProps> = ({
   const [processedCount, setProcessedCount] = useState(0);
   const [successCount, setSuccessCount] = useState(0);
   const [correctionCount, setCorrectionCount] = useState(0);
+
+  // Gemini API Key control & help helper states
+  const [customKeyInput, setCustomKeyInput] = useState(getApiKey());
+  const [showKeySupportPanel, setShowKeySupportPanel] = useState(!getApiKey());
+  const [keySaveMessage, setKeySaveMessage] = useState<string | null>(null);
 
   const isScanningRef = useRef(isScanning);
   const activeQueueRef = useRef<Hymn[]>([]);
@@ -228,6 +235,13 @@ export const AccuracyDashboard: React.FC<AccuracyDashboardProps> = ({
 
   // Start the verification scanning run
   const handleStartScan = () => {
+    if (!getApiKey()) {
+      setShowKeySupportPanel(true);
+      addLog(`⚠️ Scanner execution aborted: GEMINI_API_KEY is not configured!`, 'error');
+      alert("The 100% Accuracy Verification Scanner requires an active Gemini API Key to compare traditional logs and verify melodies. Please paste your key in the 'Gemini API Key Configuration' panel below to run scanning on Vercel.");
+      return;
+    }
+
     if (activeScanList.length === 0) {
       alert("No hymns match the selected criteria to scan.");
       return;
@@ -363,6 +377,102 @@ export const AccuracyDashboard: React.FC<AccuracyDashboardProps> = ({
 
       {/* Control Panel Block */}
       <div className="px-6 space-y-6">
+        {/* Gemini API Key Configuration Console */}
+        <div className="bg-white border border-slate-200 rounded-[2rem] p-6 shadow-sm space-y-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Key size={18} className="text-indigo-600 animate-pulse" />
+              <h3 className="text-sm font-black text-slate-800 uppercase tracking-widest">Gemini API Key Configuration</h3>
+            </div>
+            <button 
+              onClick={() => setShowKeySupportPanel(!showKeySupportPanel)}
+              className="text-[10px] font-black text-slate-500 hover:text-indigo-600 underline uppercase tracking-wider"
+            >
+              {showKeySupportPanel ? "Hide Settings" : "Configure / View Help"}
+            </button>
+          </div>
+
+          {!getApiKey() ? (
+            <div className="bg-red-55 border border-red-200 rounded-2xl p-4 flex gap-3 text-red-950 text-xs font-bold leading-relaxed">
+              <AlertCircle size={20} className="text-red-500 shrink-0 mt-0.5" />
+              <div>
+                <p className="font-extrabold uppercase text-[10px] tracking-wider text-red-700 mb-1">Gemini Key Missing (Scanning Offline)</p>
+                The 100% Accuracy Verification Scanner is currently offline because no Gemini credentials are active. Input your API key below or set up deployment environment variables to activate full comparison scans.
+              </div>
+            </div>
+          ) : (
+            <div className="bg-emerald-50 border border-emerald-100 rounded-2xl p-4 flex gap-3 text-emerald-950 text-xs font-bold leading-relaxed">
+              <ShieldCheck size={20} className="text-emerald-500 shrink-0 mt-0.5" />
+              <div>
+                <p className="font-extrabold uppercase text-[10px] tracking-wider text-emerald-800 mb-1">Scanner Online & Verified</p>
+                An active Gemini key is configured ({getApiKey().substring(0, 6)}...{getApiKey().substring(getApiKey().length - 4)}). Verification scanning will contact traditional registries and retrieve complete melodies dynamically!
+              </div>
+            </div>
+          )}
+
+          {showKeySupportPanel && (
+            <div className="space-y-4 animate-in fade-in duration-200 border-t border-slate-100 pt-4">
+              <form onSubmit={(e) => {
+                e.preventDefault();
+                setCustomApiKey(customKeyInput.trim());
+                if (customKeyInput.trim()) {
+                  setKeySaveMessage("✨ Custom key applied and saved securely in local browser storage!");
+                  addLog("🔑 Custom User Gemini API Key saved in local storage.", "success");
+                } else {
+                  setKeySaveMessage("🗑️ Custom key cleared. System reverted to default.");
+                  addLog("🔑 Stored API Key removed. System reverted to default.", "warning");
+                }
+                setTimeout(() => setKeySaveMessage(null), 3000);
+              }} className="grid grid-cols-1 md:grid-cols-4 gap-3 items-end">
+                <div className="md:col-span-3 space-y-1">
+                  <label className="text-[10px] font-black uppercase tracking-wider text-slate-500">Provide / Paste your personal Gemini API Key</label>
+                  <input 
+                    type="password" 
+                    placeholder="AIzaSy..." 
+                    value={customKeyInput}
+                    onChange={(e) => setCustomKeyInput(e.target.value)}
+                    className="w-full bg-slate-50 border border-slate-250 rounded-xl px-4 py-3 text-xs font-mono outline-none focus:border-indigo-500 focus:bg-white transition-all shadow-inner"
+                  />
+                </div>
+                <div>
+                  <button 
+                    type="submit"
+                    className="w-full bg-indigo-950 text-white hover:bg-slate-900 rounded-xl py-3 text-[10px] font-black uppercase tracking-widest transition-all h-[42px] shrink-0"
+                  >
+                    Apply Key
+                  </button>
+                </div>
+              </form>
+
+              {keySaveMessage && (
+                <div className="text-[10px] font-black text-indigo-600 animate-pulse">{keySaveMessage}</div>
+              )}
+
+              {/* Vercel Environment Configuration Box */}
+              <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4.5 space-y-3 font-medium text-xs text-slate-600">
+                <p className="font-extrabold text-[#000000] text-[10.5px] uppercase tracking-widest flex items-center gap-1.5 leading-none">
+                  <span className="bg-[#000000] text-white text-[8px] font-black px-1.5 py-0.5 rounded leading-normal">Vercel</span>
+                  Permanent Environment Integration Set-Up
+                </p>
+                <p className="text-[11px] leading-relaxed text-slate-605">
+                  To avoid pasting your key every session, configure Vercel Project Environment variables so built versions run completely automated:
+                </p>
+                <ol className="list-decimal list-inside space-y-2 text-[10.5px] text-slate-700 bg-white border border-slate-200/50 p-3 rounded-lg">
+                  <li>Navigate to your <strong className="text-slate-900">Vercel Dashboard</strong> and open your project.</li>
+                  <li>Click on <strong className="text-slate-900">Settings</strong> &rarr; <strong className="text-slate-950">Environment Variables</strong>.</li>
+                  <li>Add a new variable:</li>
+                  <div className="font-mono bg-slate-50 border border-slate-200/80 p-2.5 rounded-md my-1.5 space-y-1 text-[10px]">
+                    <div><span className="text-slate-400 font-bold">KEY:</span> <span className="font-extrabold text-slate-900">VITE_GEMINI_API_KEY</span></div>
+                    <div><span className="text-slate-400 font-bold">VALUE:</span> <span className="font-extrabold text-indigo-900">[Your Gemini API Key]</span></div>
+                  </div>
+                  <li>Click <strong className="text-slate-950">Save</strong>.</li>
+                  <li><strong className="text-amber-800">Crucial Rebuild Step:</strong> Redeploy your project inside your project deployments list on Vercel so Vite compiles the production bundles with your key included!</li>
+                </ol>
+              </div>
+            </div>
+          )}
+        </div>
+
         <div className="bg-white border border-slate-200 rounded-[2rem] p-6 shadow-sm space-y-6">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
             <div>

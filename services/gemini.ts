@@ -2,8 +2,27 @@ import { Hymn, Note } from "../types";
 import { get, set } from 'idb-keyval';
 import { getAccurateMelody } from "./hymnMelodies";
 
+let customApiKey: string = "";
+
+export const setCustomApiKey = (key: string) => {
+  customApiKey = key;
+  if (typeof window !== "undefined" && window.localStorage) {
+    if (key) {
+      window.localStorage.setItem("USER_CUSTOM_GEMINI_API_KEY", key);
+    } else {
+      window.localStorage.removeItem("USER_CUSTOM_GEMINI_API_KEY");
+    }
+  }
+};
+
 // Get API Key safely in the browser context across Vercel, Vite, and AI Studio
-const getApiKey = (): string => {
+export const getApiKey = (): string => {
+  if (customApiKey) return customApiKey;
+  if (typeof window !== "undefined" && window.localStorage) {
+    const stored = window.localStorage.getItem("USER_CUSTOM_GEMINI_API_KEY");
+    if (stored) return stored;
+  }
+
   // Try Vite's modern client-facing environment config
   try {
     const metaAny = import.meta as any;
