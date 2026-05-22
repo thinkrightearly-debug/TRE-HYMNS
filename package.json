@@ -12,6 +12,7 @@
   "dependencies": {
     "@google/genai": "^1.38.0",
     "@tailwindcss/vite": "^4.2.2",
+    "firebase": "^12.13.0",
     "idb-keyval": "^6.2.2",
     "lucide-react": "^0.563.0",
     "react": "^19.2.4",

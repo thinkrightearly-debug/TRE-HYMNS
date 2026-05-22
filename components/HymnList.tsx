@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Hymn } from '../types';
-import { Heart, ChevronRight, Play, Square, Loader2 } from 'lucide-react';
+import { Heart, ChevronRight, Play, Square, Loader2, Sparkles } from 'lucide-react';
 
 interface HymnListProps {
   hymns: Hymn[];
@@ -41,9 +41,14 @@ export const HymnList: React.FC<HymnListProps> = ({ hymns, onSelect, favorites, 
               }`}>
                 {hymn.number}
               </div>
-              <div className="min-w-0">
-                <h3 className="font-semibold text-gray-800 group-hover:text-indigo-700 transition-colors truncate">
-                  {hymn.title}
+              <div className="min-w-0 flex-1">
+                <h3 className="font-semibold text-gray-800 group-hover:text-indigo-700 transition-colors truncate flex items-center flex-wrap gap-1.5 leading-tight">
+                  <span className="truncate">{hymn.title}</span>
+                  {hymn.isVerified && (
+                    <span className="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full bg-amber-500/15 border border-amber-500/20 text-[9px] font-black uppercase text-amber-700 tracking-wider scale-95 shrink-0 select-none animate-in fade-in zoom-in duration-300">
+                      <Sparkles size={8} className="fill-amber-600 text-amber-600 animate-pulse" /> Verified
+                    </span>
+                  )}
                 </h3>
                 <p className="text-xs text-gray-400 uppercase tracking-wider font-medium truncate">
                   {hymn.category}

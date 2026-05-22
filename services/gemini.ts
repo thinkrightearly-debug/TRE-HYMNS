@@ -2,8 +2,20 @@ import { Hymn, Note } from "../types";
 import { get, set } from 'idb-keyval';
 import { getAccurateMelody } from "./hymnMelodies";
 
-// Get API Key safely in the browser context
+// Get API Key safely in the browser context across Vercel, Vite, and AI Studio
 const getApiKey = (): string => {
+  // Try Vite's modern client-facing environment config
+  try {
+    const metaAny = import.meta as any;
+    if (typeof import.meta !== 'undefined' && metaAny.env) {
+      const viteKey = metaAny.env.VITE_GEMINI_API_KEY || metaAny.env.VITE_API_KEY;
+      if (viteKey) return viteKey;
+    }
+  } catch (e) {
+    // Avoid cracking in environments where import.meta is processed differently
+  }
+
+  // Fallback to traditional node process envelope inside window object or Node environments
   if (typeof window !== 'undefined' && 'process' in window) {
     const proc = (window as any).process;
     if (proc && proc.env) {
@@ -210,27 +222,36 @@ export const verifyAndCompleteLyrics = async (
   hymnNumber: number,
   title: string,
   currentLyrics: string
-): Promise<{ verses: string[]; chorus?: string | null; author?: string; tune?: string } | null> => {
+): Promise<{ verses: string[]; chorus?: string | null; author?: string; tune?: string; melody?: Note[] } | null> => {
   try {
     const apiKey = getApiKey();
     if (!apiKey) return null;
 
-    const prompt = `You are a world-class sacred hymnal expert and archivist. Verify and retrieve the absolute 100% complete and accurate traditional English lyrics for the following hymn:
+    const prompt = `You are a world-class sacred hymnal expert, musicologist, and organist. Verify and retrieve the absolute 100% complete and accurate traditional English lyrics AND musical tune melody for the following hymn:
     Number: ${hymnNumber}
     Title: "${title}"
     
     Current version text:
     ${currentLyrics}
     
-    Compare this against the official traditional hymnal registry. Correct any typos, recover any completely missing traditional verses, and critically, make sure any traditional chorus (if the hymn has a chorus) is completely restored in its accurate, full form. Also verify and re-identify the correct traditional Tune (e.g. NICAEA, BEECHER, EVENTIDE, etc.) and Author.
+    Compare this against the official traditional hymnal registry. 
+    1. Correct any typos, recover any completely missing traditional verses, and critically, make sure any traditional chorus is completely restored in its accurate, full form.
+    2. Verify and re-identify the correct traditional Tune (e.g. NICAEA, BEECHER, EVENTIDE, etc.) and Author.
+    3. Generate/Verify the absolute 100% accurate main melody notes for this verified traditional tune name. Provide a sequence of 16-32 Note structures representing the primary melody theme.
     
     Return the result strictly as a JSON object of this structure:
     {
       "verses": ["fully formatted verse 1 text", "fully formatted verse 2 text", ...],
       "chorus": "chorus text if any, or null",
       "author": "verified author name",
-      "tune": "verified tune name"
+      "tune": "verified tune name",
+      "melody": [
+        {"pitch": 261.63, "duration": 0.8, "name": "C4"},
+        ...
+      ]
     }
+    
+    Ensure the frequencies (pitch in Hz) and durations (in seconds) are musically precise (e.g., A4 = 440Hz, 0.8s for quarter notes, 1.6s for half notes) and correspond faithfully to the traditional meter/notes of the verified tune.
     
     Provide only the raw JSON. Do not write markdown wrapping.`;
 

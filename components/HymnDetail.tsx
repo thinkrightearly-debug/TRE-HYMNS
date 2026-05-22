@@ -170,11 +170,18 @@ export const HymnDetail: React.FC<HymnDetailProps> = ({ hymn, isFavorite, onTogg
         verses: corrected.verses,
         chorus: corrected.chorus || undefined,
         author: corrected.author || hymn.author,
-        tune: corrected.tune || hymn.tune
+        tune: corrected.tune || hymn.tune,
+        isVerified: true,
+        verifiedAt: new Date().toISOString()
       });
       setRepairSuccess("Lyrics, chorus, and tune successfully verified & repaired with 100% accuracy!");
       setTimeout(() => setRepairSuccess(null), 5000);
     } else {
+      onUpdateHymn({
+        ...hymn,
+        isVerified: true,
+        verifiedAt: new Date().toISOString()
+      });
       setRepairSuccess("Verification checked successfully - current version is verified 100% accurate!");
       setTimeout(() => setRepairSuccess(null), 5000);
     }

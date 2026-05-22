@@ -16,9 +16,11 @@ export interface Hymn {
   tune?: string;
   melody?: Note[];
   alternateNumbers?: number[];
+  isVerified?: boolean;
+  verifiedAt?: string;
 }
 
-export type ViewState = 'list' | 'detail' | 'favorites' | 'categories' | 'ai-reflection';
+export type ViewState = 'list' | 'detail' | 'favorites' | 'categories' | 'ai-reflection' | 'accuracy-verify';
 
 export interface AppState {
   currentView: ViewState;

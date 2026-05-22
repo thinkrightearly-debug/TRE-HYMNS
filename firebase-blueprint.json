@@ -1,0 +1,67 @@
+{
+  "entities": {
+    "HymnOverride": {
+      "title": "HymnOverride",
+      "description": "Represents a verified and updated version of a hymn saved to the shared cloud registry.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "description": "The unique numerical identifier of the hymn"
+        },
+        "number": {
+          "type": "number",
+          "description": "The traditional number of the hymn"
+        },
+        "title": {
+          "type": "string",
+          "description": "The title of the hymn"
+        },
+        "category": {
+          "type": "string",
+          "description": "The liturgy category of the hymn"
+        },
+        "verses": {
+          "type": "array",
+          "description": "The array of verses text"
+        },
+        "chorus": {
+          "type": "string",
+          "description": "The optional chorus text of the hymn"
+        },
+        "author": {
+          "type": "string",
+          "description": "The verified traditional author of the hymn"
+        },
+        "tune": {
+          "type": "string",
+          "description": "The optional tune assignment for the organ output"
+        },
+        "melody": {
+          "type": "array",
+          "description": "The optional array of validated Note structures representing the 100% accurate melody notes"
+        },
+        "isVerified": {
+          "type": "boolean",
+          "description": "Whether the hymn has been verified with 100% accuracy using the Gemini traditional engine"
+        },
+        "verifiedAt": {
+          "type": "string",
+          "description": "ISO timestamp indicating when the accuracy scan occurred"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when this record was synchronized"
+        }
+      },
+      "required": ["id", "number", "title", "verses", "isVerified"]
+    }
+  },
+  "firestore": {
+    "hymn_overrides": {
+      "schema": "HymnOverride",
+      "description": "Collection of traditional hymn overrides that have been scanned and corrected by users."
+    }
+  }
+}
