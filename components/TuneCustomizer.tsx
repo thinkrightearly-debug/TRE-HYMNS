@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Hymn, Note } from '../types';
-import { Music, Sliders, Play, RotateCcw, Save, Trash, Volume2, Sparkles, Check, HelpCircle } from 'lucide-react';
+import { Music, Sliders, Play, RotateCcw, Save, Trash, Volume2, Sparkles, Check, HelpCircle, GripVertical, Clock, Plus } from 'lucide-react';
 import { generateHymnMelody } from '../services/gemini';
 
 export const NOTE_PITCHES: Record<string, number> = {
@@ -14,18 +14,32 @@ export const NOTE_PITCHES: Record<string, number> = {
 
 export const PRESET_TUNES: Record<string, Note[]> = {
   "NICAEA": [
-    { pitch: 261.63, duration: 0.6, name: "C4" },
-    { pitch: 261.63, duration: 0.6, name: "C4" },
-    { pitch: 329.63, duration: 0.6, name: "E4" },
-    { pitch: 329.63, duration: 0.6, name: "E4" },
-    { pitch: 392.00, duration: 0.6, name: "G4" },
-    { pitch: 392.00, duration: 1.2, name: "G4" },
-    { pitch: 440.00, duration: 0.6, name: "A4" },
-    { pitch: 493.88, duration: 0.6, name: "B4" },
-    { pitch: 523.25, duration: 0.6, name: "C5" },
-    { pitch: 523.25, duration: 0.6, name: "C5" },
-    { pitch: 493.88, duration: 0.6, name: "B4" },
-    { pitch: 392.00, duration: 1.2, name: "G4" }
+    { pitch: 293.66, duration: 0.8, name: "D4" },
+    { pitch: 349.23, duration: 0.8, name: "F4" },
+    { pitch: 349.23, duration: 0.8, name: "F4" },
+    { pitch: 349.23, duration: 0.8, name: "F4" },
+    { pitch: 311.13, duration: 0.8, name: "D#4" },
+    { pitch: 293.66, duration: 1.6, name: "D4" },
+    { pitch: 261.63, duration: 0.8, name: "C4" },
+    { pitch: 311.13, duration: 0.8, name: "D#4" },
+    { pitch: 311.13, duration: 0.8, name: "D#4" },
+    { pitch: 293.66, duration: 1.6, name: "D4" },
+    { pitch: 293.66, duration: 0.8, name: "D4" },
+    { pitch: 293.66, duration: 0.8, name: "D4" },
+    { pitch: 293.66, duration: 1.6, name: "D4" },
+    { pitch: 311.13, duration: 0.8, name: "D#4" },
+    { pitch: 392.00, duration: 0.8, name: "G4" },
+    { pitch: 392.00, duration: 0.8, name: "G4" },
+    { pitch: 392.00, duration: 0.8, name: "G4" },
+    { pitch: 349.23, duration: 0.8, name: "F4" },
+    { pitch: 311.13, duration: 1.6, name: "D#4" },
+    { pitch: 293.66, duration: 0.8, name: "D4" },
+    { pitch: 349.23, duration: 0.8, name: "F4" },
+    { pitch: 349.23, duration: 0.8, name: "F4" },
+    { pitch: 311.13, duration: 1.6, name: "D#4" },
+    { pitch: 293.66, duration: 0.8, name: "D4" },
+    { pitch: 261.63, duration: 0.8, name: "C4" },
+    { pitch: 261.63, duration: 1.6, name: "C4" }
   ],
   "NEW BRITAIN": [
     { pitch: 261.63, duration: 0.6, name: "C4" },
@@ -75,6 +89,16 @@ export const PRESET_TUNES: Record<string, Note[]> = {
   ]
 };
 
+export const LENGTH_PRESETS = [
+  { label: '𝅘𝅥𝅯 Eighth', val: 0.2, key: 'eighth', desc: 'Fast step' },
+  { label: '𝅘𝅥 Quarter', val: 0.4, key: 'quarter', desc: 'Standard beat' },
+  { label: '𝅘𝅥. Dotted Quarter', val: 0.6, key: 'dotted-quarter', desc: 'Extended beat' },
+  { label: '𝅗𝅥 Half', val: 0.8, key: 'half', desc: 'Long step' },
+  { label: '𝅗𝅥. Dotted Half', val: 1.2, key: 'dotted-half', desc: 'Sustained step' },
+  { label: '𝅝 Whole', val: 1.6, key: 'whole', desc: 'Full measure' },
+  { label: '𝅜 Double Whole', val: 2.4, key: 'double-whole', desc: 'Extended measure' }
+];
+
 interface TuneCustomizerProps {
   hymn: Hymn;
   organPlayer: {
@@ -90,6 +114,104 @@ export const TuneCustomizer: React.FC<TuneCustomizerProps> = ({ hymn, organPlaye
   const [isSaved, setIsSaved] = useState(false);
   const [loadingAI, setLoadingAI] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
+  const [isOverResizeHandle, setIsOverResizeHandle] = useState<number | null>(null);
+  const [dragOverIndex, setDragOverIndex] = useState<number | null>(null);
+
+  const startResize = (e: React.MouseEvent, index: number) => {
+    e.stopPropagation();
+    e.preventDefault();
+    
+    const startX = e.clientX;
+    const startDuration = activeNotes[index].duration;
+    
+    const handleMouseMove = (moveEvent: MouseEvent) => {
+      const deltaX = moveEvent.clientX - startX;
+      const deltaDuration = deltaX / 120; // 120 pixels represents 1s
+      
+      let newDuration = Math.round((startDuration + deltaDuration) * 10) / 10;
+      newDuration = Math.max(0.2, Math.min(3.2, newDuration));
+      
+      setActiveNotes((prev) => {
+        const updated = [...prev];
+        updated[index] = {
+          ...updated[index],
+          duration: newDuration
+        };
+        return updated;
+      });
+      setIsSaved(false);
+    };
+    
+    const handleMouseUp = () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseup', handleMouseUp);
+      
+      setActiveNotes((prev) => {
+        playSinglePitch(prev[index].pitch, prev[index].duration);
+        return prev;
+      });
+    };
+    
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseup', handleMouseUp);
+  };
+
+  const handleTimelineDragStart = (e: React.DragEvent, index: number) => {
+    e.dataTransfer.setData("application/hymn-reorder-index", String(index));
+    e.dataTransfer.effectAllowed = "move";
+  };
+
+  const handlePaletteDragStart = (e: React.DragEvent, val: number) => {
+    e.dataTransfer.setData("application/hymn-duration", String(val));
+    e.dataTransfer.effectAllowed = "copy";
+  };
+
+  const handleTimelineDragOver = (e: React.DragEvent, index: number) => {
+    e.preventDefault();
+    if (dragOverIndex !== index) {
+      setDragOverIndex(index);
+    }
+  };
+
+  const handleTimelineDragLeave = () => {
+    setDragOverIndex(null);
+  };
+
+  const handleTimelineDrop = (e: React.DragEvent, targetIndex: number) => {
+    e.preventDefault();
+    setDragOverIndex(null);
+    
+    const durationStr = e.dataTransfer.getData("application/hymn-duration");
+    if (durationStr) {
+      const newDuration = parseFloat(durationStr);
+      if (!isNaN(newDuration)) {
+        const updated = [...activeNotes];
+        updated[targetIndex] = {
+          ...updated[targetIndex],
+          duration: newDuration
+        };
+        setActiveNotes(updated);
+        setSelectedNoteIndex(targetIndex);
+        setIsSaved(false);
+        playSinglePitch(updated[targetIndex].pitch, newDuration);
+        return;
+      }
+    }
+    
+    const sourceIndexStr = e.dataTransfer.getData("application/hymn-reorder-index");
+    if (sourceIndexStr) {
+      const sourceIndex = parseInt(sourceIndexStr, 10);
+      if (!isNaN(sourceIndex) && sourceIndex !== targetIndex) {
+        const updated = [...activeNotes];
+        const [removed] = updated.splice(sourceIndex, 1);
+        updated.splice(targetIndex, 0, removed);
+        setActiveNotes(updated);
+        setSelectedNoteIndex(targetIndex);
+        setIsSaved(false);
+        playSinglePitch(removed.pitch, removed.duration);
+      }
+    }
+  };
 
   useEffect(() => {
     const loadMelody = async () => {
@@ -293,26 +415,157 @@ export const TuneCustomizer: React.FC<TuneCustomizerProps> = ({ hymn, organPlaye
         </div>
       </div>
 
-      {/* Sequencer Board */}
+      {/* Visual Rhythm Timeline */}
       <div className="space-y-2">
-        <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest block px-1">Lyrical Notes (Piano Roll)</span>
-        <div className="bg-gray-50 border border-gray-100 rounded-3xl p-4 max-h-[160px] overflow-y-auto flex flex-wrap gap-2 shadow-inner">
-          {activeNotes.map((note, index) => (
-            <button
-              key={index}
-              onClick={() => handleSelectNote(index)}
-              className={`px-3 py-2 rounded-xl text-xs font-black transition-all flex flex-col items-center border ${selectedNoteIndex === index ? 'bg-indigo-900 text-white border-indigo-900 scale-105 shadow-md shadow-indigo-200' : 'bg-white text-gray-700 border-gray-200 hover:border-indigo-300'}`}
+        <div className="flex items-center justify-between px-1">
+          <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest block">Visual Rhythm Timeline</span>
+          <span className="text-[9px] font-black text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full uppercase tracking-wider">
+            Total Time: {activeNotes.reduce((sum, n) => Math.round((sum + n.duration) * 10) / 10, 0)}s
+          </span>
+        </div>
+        
+        <div className="bg-gray-50 border border-gray-100 rounded-[2rem] p-5 shadow-inner space-y-4">
+          {/* Instructions Tip */}
+          <div className="flex justify-between items-center text-[10px] text-gray-400 font-medium px-1">
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 bg-indigo-500 rounded-full animate-ping" />
+              Tip: Drag note borders to resize, drag blocks to reorder, or drop note lengths below.
+            </span>
+          </div>
+
+          <div className="relative overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-indigo-100">
+            {/* Timeline ruler */}
+            <div 
+              className="relative h-6 border-b border-gray-200/50 mb-3 flex" 
+              style={{ width: `${Math.max(activeNotes.reduce((sum, n) => sum + n.duration, 0) * 120 + 120, 400)}px` }}
             >
-              <span>{note.name}</span>
-              <span className="text-[8px] opacity-60 font-bold">{note.duration}s</span>
-            </button>
+              {Array.from({ length: Math.ceil(activeNotes.reduce((sum, n) => sum + n.duration, 0)) + 1 }).map((_, sec) => (
+                <div 
+                  key={sec} 
+                  className="absolute text-[9px] font-mono text-gray-400 border-l border-gray-200 h-2.5 pt-1.5 pl-1.5 flex items-center gap-1 select-none"
+                  style={{ left: `${sec * 120}px` }}
+                >
+                  <Clock size={8} className="text-gray-300" />
+                  {sec}s
+                </div>
+              ))}
+            </div>
+
+            {/* Note blocks horizontal lane */}
+            <div className="flex items-center gap-1.5 min-h-[96px] relative px-0.5">
+              {(() => {
+                let currentAccumulated = 0;
+                return activeNotes.map((note, index) => {
+                  const start = currentAccumulated;
+                  currentAccumulated = Math.round((currentAccumulated + note.duration) * 10) / 10;
+                  const range = { start, end: currentAccumulated };
+                  const isDragOver = dragOverIndex === index;
+                  
+                  return (
+                    <div
+                      key={index}
+                      draggable={isOverResizeHandle !== index}
+                      onDragStart={(e) => handleTimelineDragStart(e, index)}
+                      onDragOver={(e) => handleTimelineDragOver(e, index)}
+                      onDragLeave={handleTimelineDragLeave}
+                      onDrop={(e) => handleTimelineDrop(e, index)}
+                      onClick={() => handleSelectNote(index)}
+                      style={{ width: `${note.duration * 120}px`, minWidth: '50px' }}
+                      className={`relative h-20 rounded-2xl border flex flex-col justify-between p-2.5 select-none cursor-pointer transition-all flex-shrink-0 ${
+                        selectedNoteIndex === index
+                          ? 'bg-indigo-900 border-indigo-950 text-white shadow-lg shadow-indigo-100 scale-[1.02]'
+                          : 'bg-white border-gray-200/80 hover:border-indigo-400 text-gray-800 hover:shadow-sm'
+                      } ${
+                        isDragOver ? 'border-dashed border-2 border-indigo-500 bg-amber-50/50 scale-[1.03] rotate-1' : ''
+                      }`}
+                    >
+                      {/* Drag cover overlay */}
+                      {isDragOver && (
+                        <div className="absolute inset-0 bg-indigo-500/10 pointer-events-none rounded-xl border border-indigo-500/30 flex items-center justify-center">
+                          <span className="text-[8px] bg-indigo-600 text-white px-1.5 py-0.5 rounded-full font-black uppercase tracking-wider">Apply</span>
+                        </div>
+                      )}
+
+                      <div className="flex justify-between items-start">
+                        <div className="flex items-center gap-1">
+                          <GripVertical size={10} className={`${selectedNoteIndex === index ? 'text-indigo-300/60' : 'text-gray-300'} cursor-grab active:cursor-grabbing`} />
+                          <span className="text-xs font-black tracking-tight">{note.name}</span>
+                        </div>
+                        <span className={`text-[8px] font-mono leading-none px-1.5 py-0.5 rounded ${selectedNoteIndex === index ? 'bg-indigo-800 text-indigo-100' : 'bg-gray-100 text-gray-500'}`}>
+                          #{index + 1}
+                        </span>
+                      </div>
+
+                      <div className="flex justify-between items-end">
+                        <span className={`text-[8px] font-mono ${selectedNoteIndex === index ? 'text-indigo-200' : 'text-gray-400'}`}>
+                          {range.start}s – {range.end}s
+                        </span>
+                        <span className={`text-[9px] font-black ${selectedNoteIndex === index ? 'text-yellow-300' : 'text-indigo-600'}`}>
+                          {note.duration}s
+                        </span>
+                      </div>
+
+                      {/* Right Edge Resize Handle */}
+                      <div
+                        onMouseDown={(e) => startResize(e, index)}
+                        onMouseEnter={() => setIsOverResizeHandle(index)}
+                        onMouseLeave={() => setIsOverResizeHandle(null)}
+                        className="absolute right-0 top-1 bottom-1 w-2.5 cursor-col-resize hover:bg-indigo-500/20 active:bg-indigo-500/40 rounded-r-2xl flex items-center justify-center group/handle transition-colors z-10"
+                        title="Drag to adjust beat length"
+                      >
+                        <div className="w-0.5 h-4 bg-gray-300 group-hover/handle:bg-indigo-500 rounded-full transition-colors" />
+                      </div>
+                    </div>
+                  );
+                });
+              })()}
+
+              {/* DASHED ADD NOTE BLOCK */}
+              <button 
+                onClick={handleAddNote}
+                className="h-20 w-24 flex-shrink-0 border-2 border-dashed border-gray-200 hover:border-indigo-300 hover:text-indigo-600 hover:bg-indigo-50/30 rounded-2xl text-xs font-black text-gray-400 transition-all flex flex-col items-center justify-center gap-1"
+              >
+                <Plus size={16} />
+                <span>+ Add Note</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Note Length Palette */}
+      <div className="bg-gray-50/50 border border-gray-200/50 rounded-3xl p-5 space-y-3">
+        <div className="flex items-center gap-2">
+          <Clock size={14} className="text-indigo-600" />
+          <h5 className="text-[10px] font-bold text-gray-700 uppercase tracking-widest block">Note Length Palette</h5>
+        </div>
+        <p className="text-[11px] text-gray-500 leading-normal">
+          Drag any length card below and <strong className="text-indigo-900">drop it onto any note block above</strong> to change its beat length instantly.
+        </p>
+        <div className="flex flex-wrap gap-2 pt-1">
+          {LENGTH_PRESETS.map((p) => (
+            <div
+              key={p.key}
+              draggable
+              onDragStart={(e) => handlePaletteDragStart(e, p.val)}
+              className="group relative cursor-grab active:cursor-grabbing bg-white border border-gray-200 hover:border-indigo-400 hover:shadow-sm px-3 py-2.5 rounded-2xl transition-all flex items-center gap-2 text-xs select-none shadow-[0_2px_4px_rgba(0,0,0,0.02)]"
+            >
+              <span className="text-base font-bold text-indigo-950 group-hover:scale-110 transition-transform duration-200 leading-none">
+                {p.label.split(' ')[0]}
+              </span>
+              <div className="flex flex-col">
+                <span className="font-bold text-[10px] text-gray-700 leading-none mb-0.5">
+                  {p.label.split(' ').slice(1).join(' ')}
+                </span>
+                <span className="text-[8px] text-gray-400 font-medium">
+                  {p.desc}
+                </span>
+              </div>
+              <span className="text-[9px] font-mono font-black text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full">
+                {p.val}s
+              </span>
+            </div>
           ))}
-          <button 
-            onClick={handleAddNote}
-            className="px-4 py-2 border-2 border-dashed border-gray-200 hover:border-indigo-300 hover:text-indigo-600 rounded-xl text-xs font-black text-gray-400 transition-colors flex items-center justify-center"
-          >
-            + Add Note
-          </button>
         </div>
       </div>
 

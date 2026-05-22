@@ -18,14 +18,12 @@ const makeMelody = (notes: [string, number][]): Note[] => {
 // Accurate well-known traditional tunes
 export const ACCURATE_TUNES: Record<string, Note[]> = {
   'NICAEA': makeMelody([
-    ['D4', 0.6], ['D4', 0.6], ['F#4', 0.6], ['F#4', 0.6],
-    ['A4', 1.2], ['A4', 1.2],
-    ['B4', 0.6], ['B4', 0.6], ['A4', 1.2],
-    ['F#4', 0.6], ['A4', 0.6], ['G4', 1.2], ['F#4', 1.2], ['E4', 2.4],
-    ['D4', 0.6], ['D4', 0.6], ['F#4', 0.6], ['F#4', 0.6],
-    ['A4', 1.2], ['A4', 1.2],
-    ['B4', 0.6], ['B4', 0.6], ['A4', 1.2],
-    ['D4', 0.6], ['D4', 0.6], ['E4', 0.6], ['C#4', 0.6], ['D4', 2.4]
+    ['D4', 0.8], ['F4', 0.8], ['F4', 0.8], ['F4', 0.8], ['D#4', 0.8], ['D4', 1.6],
+    ['C4', 0.8], ['D#4', 0.8], ['D#4', 0.8], ['D4', 1.6],
+    ['D4', 0.8], ['D4', 0.8], ['D4', 1.6],
+    ['D#4', 0.8], ['G4', 0.8], ['G4', 0.8], ['G4', 0.8], ['F4', 0.8], ['D#4', 1.6],
+    ['D4', 0.8], ['F4', 0.8], ['F4', 0.8], ['D#4', 1.6],
+    ['D4', 0.8], ['C4', 0.8], ['C4', 1.6]
   ]),
   'BEECHER': makeMelody([
     ['G4', 0.6], ['F#4', 0.6], ['G4', 0.6], ['A4', 0.6],
@@ -183,6 +181,33 @@ export const ACCURATE_TUNES: Record<string, Note[]> = {
     ['G4', 1.0], ['G4', 2.0], ['D4', 1.0], ['G4', 2.0], ['A4', 2.0], ['D4', 2.0],
     ['B4', 1.5], ['A4', 0.5], ['B4', 1.0], ['C5', 1.0], ['B4', 2.0], ['A4', 2.0]
   ]),
+  'LITTLE DONKEY': makeMelody([
+    ['C4', 0.8], ['E4', 0.8], ['G4', 0.8], ['G4', 1.6],
+    ['A4', 0.4], ['A4', 0.4], ['G4', 0.8], ['E4', 0.8], ['D4', 1.6],
+    ['D4', 0.8], ['F4', 0.8], ['A4', 0.8], ['A4', 1.6],
+    ['B4', 0.4], ['B4', 0.4], ['A4', 0.8], ['F4', 0.8], ['E4', 1.6]
+  ]),
+  'ROCKING': makeMelody([
+    ['E4', 0.8], ['G4', 0.8], ['E4', 0.8], ['D4', 0.8],
+    ['C4', 1.6], ['E4', 0.8], ['G4', 0.8],
+    ['E4', 0.8], ['B4', 0.8], ['A4', 0.8], ['G4', 1.6]
+  ]),
+  'MY GOD IS SO BIG': makeMelody([
+    ['G4', 0.4], ['G4', 0.4], ['G4', 0.8], ['A4', 0.8], ['B4', 1.6],
+    ['A4', 0.4], ['A4', 0.4], ['A4', 0.8], ['B4', 0.8], ['C5', 1.6],
+    ['B4', 0.8], ['B4', 0.8], ['A4', 0.8], ['G4', 0.8], ['A4', 0.8], ['B4', 0.8], ['G4', 1.6]
+  ]),
+  'O COME AND JOIN THE DANCE': makeMelody([
+    ['D4', 0.6], ['G4', 0.6], ['G4', 0.6], ['A4', 0.6], ['B4', 1.2],
+    ['B4', 0.6], ['A4', 0.6], ['G4', 0.6], ['A4', 0.6], ['D4', 1.2],
+    ['D4', 0.6], ['B4', 0.6], ['B4', 0.6], ['C5', 0.6], ['D5', 1.2],
+    ['C5', 0.6], ['B4', 0.6], ['A4', 0.6], ['G4', 1.2]
+  ]),
+  'RISE AND SHINE': makeMelody([
+    ['D4', 0.6], ['G4', 0.6], ['G4', 0.6], ['G4', 0.6], ['A4', 0.6], ['B4', 1.2],
+    ['B4', 0.6], ['G4', 0.6], ['B4', 0.6], ['A4', 1.2],
+    ['A4', 0.6], ['F#4', 0.6], ['A4', 0.6], ['G4', 1.2]
+  ]),
   'VICTORY AHEAD': makeMelody([
     ['D4', 0.5], ['G4', 1.0], ['G4', 1.0], ['G4', 1.0], ['B4', 1.5], ['A4', 0.5], ['G4', 1.0], ['E4', 1.0], ['D4', 2.0],
     ['G4', 1.0], ['B4', 1.0], ['B4', 1.0], ['B4', 1.0], ['D5', 1.5], ['C5', 0.5], ['B4', 1.0], ['A4', 3.0],
@@ -240,6 +265,12 @@ export function getAccurateMelody(tuneName: string, title?: string): Note[] | nu
     if (normTitle.includes('hark! the herald angels sing')) return ACCURATE_TUNES['MENDELSSOHN'];
     if (normTitle.includes('o come, all ye faithful')) return ACCURATE_TUNES['ADESTE FIDELES'];
     if (normTitle.includes('victory ahead')) return ACCURATE_TUNES['VICTORY AHEAD'];
+    if (normTitle.includes('little donkey')) return ACCURATE_TUNES['LITTLE DONKEY'];
+    if (normTitle.includes('sweetly sleep')) return ACCURATE_TUNES['ROCKING'];
+    if (normTitle.includes('my god is so big')) return ACCURATE_TUNES['MY GOD IS SO BIG'];
+    if (normTitle.includes('our god is so great')) return ACCURATE_TUNES['MY GOD IS SO BIG'];
+    if (normTitle.includes('join the dance')) return ACCURATE_TUNES['O COME AND JOIN THE DANCE'];
+    if (normTitle.includes('rise and shine')) return ACCURATE_TUNES['RISE AND SHINE'];
   }
 
   return null;

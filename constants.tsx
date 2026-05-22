@@ -10204,30 +10204,401 @@ export const HYMNS: Hymn[] = [
   {
     id: 858,
     number: 858,
-    title: "Nicene Creed (Merbecke)",
-    category: "Communion",
-    author: "John Merbecke",
-    tune: "Merbecke",
+    title: "Life for the poor was hard and tough",
+    category: "Praise",
+    author: "Michael Forster",
+    tune: "CANA",
     verses: [
-      "I believe in one God the Father Almighty, Maker of heaven and earth, And of all things visible and invisible:",
-      "And in one Lord Jesus Christ, the only-begotten Son of God, Begotten of his Father before all worlds, God of God, Light of Light, Very God of very God, Begotten, not made, Being of one substance with the Father, By whom all things were made: Who for us men, and for our salvation came down from heaven, And was incarnate by the Holy Ghost of the Virgin Mary, And was made man, And was crucified also for us under Pontius Pilate. He suffered and was buried, And the third day he rose again according to the Scriptures, And ascended into heaven, And sittest on the right hand of the Father. And he shall come again with glory to judge both the quick and the dead: Whose kingdom shall have no end.",
-      "And I believe in the Holy Ghost, The Lord and giver of life, Who proceedeth from the Father and the Son, Who with the Father and the Son together is worshipped and glorified, Who spake by the Prophets. And I believe one Catholick and Apostolick Church. I acknowledge one Baptism for the remission of sins. And I look for the Resurrection of the dead, And the life of the world to come. Amen."
+      "Life for the poor was hard and tough,\nthe daily bread was scarce enough;\nbut Jesus came to bring them cheer,\nand make his Father's presence near.",
+      "At Cana's wedding, so they say,\nthe joyful wine had run away;\nbut Jesus turned the water clear\nto finest wine of all the year.",
+      "And we who know his saving grace\ncan see the smile upon his face;\nfor he has turned our water, too,\nto wine of life both sweet and new."
     ]
   },
   {
     id: 859,
     number: 859,
-    title: "Victory Ahead",
-    category: "Praise",
-    author: "William Grum",
-    tune: "VICTORY AHEAD",
-    chorus: "Victory ahead, victory ahead,\nThrough the blood of Jesus, victory ahead.\nTrusting in the Lord, I hear the conqueror’s tread,\nBy faith I see the victory ahead.",
+    title: "Little donkey, little donkey, on the dusty road",
+    category: "Worship",
+    author: "Eric Boswell",
+    tune: "LITTLE DONKEY",
     verses: [
-      "When the hosts of Israel led by God,\nRound the walls of Jericho softly trod,\nTrusting in the Lord, they felt the conqueror’s tread,\nBy faith they saw the victory ahead.",
-      "David with a shepherd’s sling and five stones,\nMet the giant on the field all alone,\nTrusting in the Lord, he knew what God had said,\nBy faith he saw the victory ahead.",
-      "Daniel prayed unto the Lord thrice each day,\nThen unto the lion’s den led the way,\nTrusting in the Lord, he did not fear or dread,\nBy faith he saw the victory ahead.",
-      "Often with the carnal mind I was tried,\nAsking for deliverance oft I cried,\nTrusting in the Lord, I reckoned I was dead,\nBy faith I see the victory ahead.",
-      "When like those who’ve gone before to that land,\nBy death’s river cold and dark I shall stand,\nTrusting in the Lord, I will not fear or dread,\nBy faith I see the victory ahead."
+      "Little donkey, little donkey, on the dusty road,\ngot to keep on plodding onwards with your precious load.\nBeen a long time, little donkey, through the winter's wind,\ndon't give up now, little donkey, Bethlehem's ahead.",
+      "Ring out those bells tonight, Bethlehem, Bethlehem,\nfollow that star tonight, Bethlehem, Bethlehem.\nLittle donkey, little donkey, had a heavy day,\nlittle donkey, carry Mary safely on her way.",
+      "Little donkey, little donkey, journey's almost done,\nyou will see him, little donkey, God's beloved Son.\nRest your head now, little donkey, in the warm sweet hay,\nyou have helped the Savior, donkey, on this Christmas Day."
+    ]
+  },
+  {
+    id: 860,
+    number: 860,
+    title: "Little Jesus, sleep away, in the hay",
+    category: "Worship",
+    author: "Christopher Massey",
+    tune: "LITTLE JESUS SLEEP AWAY",
+    verses: [
+      "Little Jesus, sleep away, in the hay,\nresting from your journey long, while we sing our quiet song.\nSleep away, little Jesus, in the hay.",
+      "Angels watch above your head, in your bed,\nfilling all the night with light, making everything so bright;\nAngels watch, little Jesus, near your head.",
+      "Shepherds come to worship you, pure and true,\nbringing you their love and praise, on this greatest day of days;\nShepherds come, little Jesus, to love you."
+    ]
+  },
+  {
+    id: 861,
+    number: 861,
+    title: "Little Jesus, Sweetly Sleep",
+    category: "Worship",
+    author: "Percy Dearmer",
+    tune: "ROCKING",
+    verses: [
+      "Little Jesus, sweetly sleep, do not stir;\nWe will lend a coat of fur,\nWe will rock you, rock you, rock you,\nWe will rock you, rock you, rock you;\nSee the fur to keep you warm,\nSnug and safe from every harm.",
+      "Mary's little baby boy, full of joy,\nIn the manger cold and low,\nWhile the soft winds gently blow;\nWe will rock you, rock you, rock you,\nWe will rock you, rock you, rock you;\nMary's little baby boy,\nFill our hearts with holy joy."
+    ]
+  },
+  {
+    id: 862,
+    number: 862,
+    title: "Lord of the future, Lord of the past",
+    category: "Dedication",
+    author: "Ian D. Craig",
+    tune: "LORD OF THE FUTURE",
+    verses: [
+      "Lord of the future, Lord of the past,\nHolding our lives in a love that will last,\nGuide us today as we travel your way,\nTeach us to trust you in work and in play.",
+      "Lord of our laughter, Lord of our tears,\nConstant companion who quiets our fears,\nSpeak to us now in the silence of prayer,\nGive us the assurance we live in your care.",
+      "Lord of the harvest, Lord of the field,\nRich is the bounty your goodness will yield;\nSend us to serve as we follow your call,\nLiving in love as the brothers of all."
+    ]
+  },
+  {
+    id: 863,
+    number: 863,
+    title: "Lord, we've come to worship you",
+    category: "Worship",
+    author: "Ishmael",
+    tune: "ISHMAEL",
+    verses: [
+      "Lord, we've come to worship you,\nLord, we've come to praise;\nSinging songs of love and joy,\nThrough our growing days.",
+      "You are special, you are great,\nMaker of indeed,\nEvery little bird and tree,\nEvery flowering seed.",
+      "Take our hands and lead us on,\nKeep us safe from harm;\nHeld forever in your love,\nSafe within your arm."
+    ]
+  },
+  {
+    id: 864,
+    number: 864,
+    title: "Lord, you've promised through your Son (Things we've done)",
+    category: "Comfort",
+    author: "Susan Sayers",
+    tune: "LORD FORGIVE US",
+    verses: [
+      "Lord, you've promised through your Son,\nWe are pardoned, every one,\nWhen we turn to you in prayer,\nAnxious, placing all our care.",
+      "Things we've done and things we've said,\nWords that caused a tear to shed;\nLord, forgive us, clean our heart,\nGrant us now a brand new start.",
+      "In your mercy and your light,\nGuide our footsteps through the night;\nKeep us faithful, keep us true,\nLoving others, loving you."
+    ]
+  },
+  {
+    id: 865,
+    number: 865,
+    title: "My God is so big",
+    category: "Praise",
+    author: "John Hardwick",
+    tune: "MY GOD IS SO BIG",
+    verses: [
+      "My God is so big, so strong and so mighty,\nthere's nothing my God cannot do!\nMy God is so big, so strong and so mighty,\nthere's nothing my God cannot do!",
+      "The mountains are his, the valleys are his,\nthe stars are his handiwork too.\nMy God is so big, so strong and so mighty,\nthere's nothing my God cannot do!",
+      "He's called you to follow, he's saved you from fear,\nhis love will be with you right through.\nMy God is so big, so strong and so mighty,\nthere's nothing my God cannot do!"
+    ]
+  },
+  {
+    id: 866,
+    number: 866,
+    title: "My mouth was made for worship",
+    category: "Worship",
+    author: "Dave Bilbrough",
+    tune: "BILBROUGH",
+    verses: [
+      "My mouth was made for worship,\nMy voice was made to sing,\nMy heart was made to praise you,\nMy everlasting King.",
+      "For you are great and glorious,\nAnd worthy of my praise;\nYour love is all-victorious\nThrough all my night and days.",
+      "So I will lift my voice now,\nAnd glorify your name;\nAnd in your love rejoice now,\nYour goodness to proclaim."
+    ]
+  },
+  {
+    id: 867,
+    number: 867,
+    title: "Never let Jesus into your heart",
+    category: "Missionary",
+    author: "Susan Sayers",
+    tune: "NEVER LET JESUS",
+    verses: [
+      "Never let Jesus into your heart,\nunless you are ready to change;\nfor once he begins his miraculous part,\nhe'll start to repaint and arrange!",
+      "He'll sweep out the dust of your anger and pride,\nhe'll open the windows to light;\nand all of the secrets you wanted to hide\nwill vanish away from your sight.",
+      "But oh, what a beautiful home it will be\nwhen Jesus has finished his care;\na place full of laughter, so happy and free,\nwith love flowing out everywhere."
+    ]
+  },
+  {
+    id: 868,
+    number: 868,
+    title: "Nobody's a nobody, believe me 'cause it's true",
+    category: "Comfort",
+    author: "John Hardwick",
+    tune: "NOBODY'S A NOBODY",
+    verses: [
+      "Nobody's a nobody, believe me 'cause it's true,\nfor God created everyone, including me and you.\nHe knows our names and where we live, our laughter and our tears,\nand he will keep us in his love through all the changing years.",
+      "We all are special in his sight, though different we may be,\nand every person has a place in God's great family.\nHe gives us gifts to share with all, to help and to restore,\nto show his kindness, peace and grace, today and evermore."
+    ]
+  },
+  {
+    id: 869,
+    number: 869,
+    title: "O Come and Join the Dance",
+    category: "Praise",
+    author: "Graham Kendrick",
+    tune: "O COME AND JOIN THE DANCE",
+    verses: [
+      "O come and join the dance that all began so long ago,\nwhen stars were born and music started on its joyful flow.\nThe Father, Son and Spirit dance in perfect unity,\nand invite us now to join them in their holy jubilee!",
+      "The rhythm of his grace will heal the broken and the sore,\nthe music of his kingdom is a song of peace and more.\nNo heavy feet or tired hearts can hold us back today,\nso let the dance of freedom sweep our worries all away!",
+      "Through valleys deep or mountain highs, the dance goes on and on,\na song of resurrection life that triumphs in the Son.\nSo skip for joy and clap your hands and lift your voices high,\nuntil the dance of glory fills the earth and sea and sky!"
+    ]
+  },
+  {
+    id: 870,
+    number: 870,
+    title: "O give thanks to the Lord, all you his people",
+    category: "Praise",
+    author: "Michael Forster",
+    tune: "O GIVE THANKS",
+    verses: [
+      "O give thanks to the Lord, all you his people,\nPraise his name with a song of joy and glee;\nTell the world of his works and of his wonders,\nFor his love lasts to all eternity!",
+      "He has led us through waters deep and dangerous,\nHe has fed us with bread from heaven's store;\nHe has guided our steps through wild and wilderness,\nAnd he blesses our lives for evermore.",
+      "So with trumpet and lute and joyful voices,\nLet us enter his gates with songs of praise;\nFor the Lord is so good, his word is faithful,\nHe is crown and the glory of our days!"
+    ]
+  },
+  {
+    id: 871,
+    number: 871,
+    title: "One hundred and fifty-three! (We'd fished all night for nothing)",
+    category: "Praise",
+    author: "Michael Forster",
+    tune: "ONE HUNDRED AND FIFTY-THREE",
+    verses: [
+      "One hundred and fifty-three!\nWe'd fished all night for nothing on the rolling sea;\nTill Jesus stood upon the shore and said with glee:\n'Cast out your nets again and see what there will be!'",
+      "One hundred and ninety-three?\nNo, count them out, and one by one they all agree;\nA miracle of shining fish before our knee,\nHeld safely in a net that didn't tear or flee!",
+      "And Jesus called us to the shore to eat and see;\nHe broke the bread and gave us fish so tenderly.\nO risen Lord, you call us now to follow free,\nAnd fish for men across the world's wide-open sea!"
+    ]
+  },
+  {
+    id: 872,
+    number: 872,
+    title: "Our God is so great",
+    category: "Praise",
+    author: "Traditional",
+    tune: "OUR GOD IS SO GREAT",
+    verses: [
+      "Our God is so great, so high and so glorious,\nHe reigns in the heavens all-wise and victorious!\nHe gathers the winds in the palm of his hand,\nAnd scatters his blessings all over the land.",
+      "The rivers are his, the mountains are his,\nThe stars in the sky and the deep of the abyss.\nOur God is so great, so strong and so mighty,\nLet praise rise to him from the morning to nighty!"
+    ]
+  },
+  {
+    id: 873,
+    number: 873,
+    title: "Out To the Great Wide World We go",
+    category: "Missionary",
+    author: "Michael Forster",
+    tune: "GO AND TELL OUR NEIGHBOURS",
+    verses: [
+      "Out to the great wide world we go,\nto share the love of Christ we know;\nto tell the story, clear and true,\nthat God has made the world anew!",
+      "Go and tell our neighbours, far and near,\nthat Jesus came to banish fear;\nthat everyone is loved and blessed,\nand in his arms can find their rest.",
+      "So lift the banner, raise the song,\nto God all praise and thanks belong;\nwith hearts on fire and feet so swift,\nwe go to share his perfect gift!"
+    ]
+  },
+  {
+    id: 874,
+    number: 874,
+    title: "Over the earth is a mat of green",
+    category: "Other",
+    author: "Guthrie Foote",
+    tune: "OVER THE EARTH",
+    verses: [
+      "Over the earth is a mat of green,\nthe loveliest carpet that ever was seen;\nwith flowers of yellow and blue and red,\nand branches of blossom that wave overhead.",
+      "The birds in the branches are singing a song,\nof praise to the Maker the whole summer long;\nand insects that buzz in the warm sunny air\nare joining the chorus of thanks everywhere.",
+      "So we who can talk and can laugh and can sing\nwill bring our thanksgiving to Jesus our King;\nfor making a world that is splendid and sweet,\nand placing such beauty right under our feet!"
+    ]
+  },
+  {
+    id: 875,
+    number: 875,
+    title: "Over the mountains and the sea (I could sing of your love forever)",
+    category: "Praise",
+    author: "Martin Smith",
+    tune: "I COULD SING OF YOUR LOVE FOREVER",
+    verses: [
+      "Over the mountains and the sea,\nYour river runs with love for me,\nAnd I will open up my heart,\nAnd let the Healer set me free.\nI'm happy to be in the truth,\nAnd I will daily lift my hands:\nFor I will always sing of when\nYour love came down, yeah.",
+      "I could sing of your love forever,\nI could sing of your love forever,\nI could sing of your love forever,\nI could sing of your love forever.",
+      "Oh, I feel like dancing\nIt's foolishness I know;\nBut when the world has seen the light,\nThey will dance with joy,\nLike we're dancing now."
+    ]
+  },
+  {
+    id: 876,
+    number: 876,
+    title: "O when the saints go marching in",
+    category: "Praise",
+    author: "Traditional",
+    tune: "WHEN THE SAINTS",
+    verses: [
+      "O when the saints go marching in,\nO when the saints go marching in,\nLord, I want to be in that number,\nWhen the saints go marching in!",
+      "O when the sun begins to shine,\nO when the sun begins to shine,\nLord, I want to be in that number,\nWhen the sun begins to shine!",
+      "O when the trumpets sound their call,\nO when the trumpets sound their call,\nLord, I want to be in that number,\nWhen the trumpets sound their call!"
+    ]
+  },
+  {
+    id: 877,
+    number: 877,
+    title: "Peter and John went to pray (Silver and gold)",
+    category: "Comfort",
+    author: "Traditional",
+    tune: "PETER AND JOHN",
+    verses: [
+      "Peter and John went to pray, they met a lame man on the way.\nHe asked for some money and held out his palm,\nAnd Peter said, looking so steady and calm:",
+      "'Silver and gold have I none, but such as I have give I thee;\nIn the name of Jesus Christ of Nazareth, rise up and walk!'",
+      "He went walking and leaping and praising God,\nwalking and leaping and praising God.\n'In the name of Jesus Christ of Nazareth, rise up and walk!'"
+    ]
+  },
+  {
+    id: 878,
+    number: 878,
+    title: "Praise and thanksgiving let ev'ryone bring",
+    category: "Praise",
+    author: "Michael Forster",
+    tune: "PRAISE AND THANKSGIVING",
+    verses: [
+      "Praise and thanksgiving let ev'ryone bring,\nto honor our Savior, Creator and King;\nfor harvest of field and for fruit of the tree,\nfor beauty of earth and the wealth of the sea.",
+      "He gives us the sun and the rain from above,\nto nurture the soil with the warmth of his love;\nhe cares for the small and he feeds the oppressed,\nand holds the whole world in his custody blessed.",
+      "So let our thanksgiving be active and true,\nin everything lovely we say and we do;\nby sharing our bread with the hungry and poor,\nto show that his goodness is rich and secure."
+    ]
+  },
+  {
+    id: 879,
+    number: 879,
+    title: "Praise God in His Holy Place",
+    category: "Praise",
+    author: "Michael Forster",
+    tune: "PRAISE GOD IN HIS HOLY PLACE",
+    verses: [
+      "Praise God in his holy place!\nHe's the God of time and space!\nPraise him with the trumpet sound,\neverywhere his grace is found!",
+      "Praise him with the clapping hand,\npraise him all across the land;\npraise him with the harp and lute,\nlet no joyful voice be mute!",
+      "Everything with life and breath,\npraise the Lord who conquered death;\npraise him for his power and love,\nholy God who reigns above!"
+    ]
+  },
+  {
+    id: 880,
+    number: 880,
+    title: "Prayer is like a telephone (Prayer phone)",
+    category: "Comfort",
+    author: "Susan Sayers",
+    tune: "PRAYER PHONE",
+    verses: [
+      "Prayer is like a telephone, a direct and open line,\nyou can call up God himself, any place and any time.\nNo busy tone, no waiting lists, to keep you in a queue,\nthe Creator of the universe is listening to you!",
+      "You can tell him when you're happy, you can tell him when you're sad,\nyou can whisper of your worries, or the secrets that you had.\nHe will always hear your calling, and he knows just what to say,\nfor he loves you very dearly, every hour of the day."
+    ]
+  },
+  {
+    id: 881,
+    number: 881,
+    title: "Push, little seed, push, push, little seed",
+    category: "Other",
+    author: "Susan Sayers",
+    tune: "PUSH LITTLE SEED",
+    verses: [
+      "Push, little seed, push, push, little seed,\ndeep in the dark soil is everything you need.\nPush through the dirt till you reach to the light,\ngrowing so beautiful, strong and so bright!",
+      "Rain falling down, soft rain falling down,\nwatering the gardens of countryside and town.\nSun shining warm from the heavens above,\nguiding the little seed upwards in love.",
+      "So like the seed we will also expand,\nheld in the palm of our Father's great hand.\nGrowing in kindness and goodness and grace,\nmaking the world such a beautiful place!"
+    ]
+  },
+  {
+    id: 882,
+    number: 882,
+    title: "Put your trust in the man who tamed the sea",
+    category: "Comfort",
+    author: "Estelle White",
+    tune: "THE MAN WHO TAMED THE SEA",
+    verses: [
+      "Put your trust in the man who tamed the sea,\nwho can quiet the winds of Galilee.\nHe is stronger than any storm or gale,\nand his promise of safety will not fail.",
+      "When the waves of your worry rise so high,\nand you feel like your hope is about to die,\nlook to Jesus who stands beside your boat,\nand his power will keep your soul afloat.",
+      "He will speak to the chaos: 'Peace, be still!'\nand the winds will obey his holy will.\nSo be patient and trust his saving arm,\nfor he'll carry you safely through all harm."
+    ]
+  },
+  {
+    id: 883,
+    number: 883,
+    title: "Rise and shine (Arky, Arky)",
+    category: "Praise",
+    author: "Traditional",
+    tune: "RISE AND SHINE",
+    verses: [
+      "The Lord said to Noah: 'There's gonna be a floody, floody,'\nLord said to Noah: 'There's gonna be a floody, floody,'\nGet those children out of the muddy, muddy,\nRise and shine and give God the glory, glory!",
+      "So Noah, he built him, he built him an arky, arky,\nNoah, he built him, he built him an arky, arky,\nBuilt it out of gopher barky, barky,\nRise and shine and give God the glory, glory!",
+      "The animals, they came in, they came in by twosies, twosies,\nAnimals, they came in, they came in by twosies, twosies,\nElephants and kangaroosies, kangaroosies,\nRise and shine and give God the glory, glory!",
+      "It rained and poured for forty daysies, daysies,\nRained and poured for forty daysies, daysies,\nAlmost drove those animals crazies, crazies,\nRise and shine and give God the glory, glory!",
+      "The sun came out and dried up the landy, landy,\nSun came out and dried up the landy, landy,\nEverything was fine and dandy, dandy,\nRise and shine and give God the glory, glory!"
+    ]
+  },
+  {
+    id: 884,
+    number: 884,
+    title: "Sing praise to God, sing praise to God for life",
+    category: "Praise",
+    author: "W. L. Wallace",
+    tune: "SING PRAISE TO GOD",
+    verses: [
+      "Sing praise to God, sing praise to God for life,\nFor all its joy, its challenge and its strife;\nFor every hour of sunshine and of rain,\nFor every healing after grief and pain.",
+      "Sing praise to God for people of all lands,\nWho work for peace with open, willing hands;\nFor all who strive to make the world so fair,\nAnd show his love and kindness everywhere.",
+      "So let our song of adoration rise,\nLike incense reaching up into the skies;\nTo God the source of life and truth and grace,\nWho holds all nations in his warm embrace."
+    ]
+  },
+  {
+    id: 885,
+    number: 885,
+    title: "Step by step, on and on",
+    category: "Missionary",
+    author: "Gill Hutchinson",
+    tune: "STEP BY STEP",
+    verses: [
+      "Step by step, on and on,\nFollowing where Jesus has gone;\nHe's the one we love and obey,\nHe's the guide who leads us each day.",
+      "Through the dark, through the light,\nWe will keep him always in sight;\nTravelling on, happy and free,\nLiving in his love, you and me.",
+      "So we'll walk, hand in hand,\nSharing joy across all the land;\nStep by step, day after day,\nJesus is the true living way!"
+    ]
+  },
+  {
+    id: 886,
+    number: 886,
+    title: "Thank you for the summer morning",
+    category: "Morning",
+    author: "Susan Sayers",
+    tune: "SUMMER MORNING",
+    verses: [
+      "Thank you for the summer morning,\nthank you for the warm sunshine;\nthank you for the roses blooming,\nmaking everything so fine.",
+      "Thank you for the birds a-singing,\nthank you for the clear blue sky;\nthank you for the laughter ringing,\njoy that never will run dry.",
+      "Thank you, Lord, for all your wonders,\nglorious in the earth and sea;\nwe will sing your praises daily,\nfull of love and jubilee!"
+    ]
+  },
+  {
+    id: 887,
+    number: 887,
+    title: "Thank you, Lord (Right where we are)",
+    category: "Praise",
+    author: "Diane D. Andrew",
+    tune: "THANK YOU LORD",
+    verses: [
+      "Thank you, Lord, for this new day, thank you, Lord, for work and play;\nthank you for the friends we meet, in the playground and the street.\nRight where we are, we offer praise, for all your goodness through our days!",
+      "Thank you for the food we eat, thank you for the birds so sweet;\nthank you for the home we share, held forever in your care.\nRight where we are, we sing your name, and all your loving deeds proclaim!"
+    ]
+  },
+  {
+    id: 888,
+    number: 888,
+    title: "The clock tells the story of time",
+    category: "Other",
+    author: "Susan Sayers",
+    tune: "THE CLOCK TELLS THE STORY",
+    verses: [
+      "The clock tells the story of time going by:\nof clouds that are swimming across the blue sky,\nof people in offices, shops and on rails,\nof ships that are braving the sea and the gales.",
+      "Driving the lorries and licking the lollies,\nand pushing the babies in beautiful trollies:\nso busy is everyone, day after day,\nin working and studying, resting and play.",
+      "But God is the Lord of each second and hour,\nwho holds the whole world in his absolute power;\nhe loves us so dearly and knows who we are,\nfrom closest of neighbours to furthest of star!"
     ]
   }
 ];
