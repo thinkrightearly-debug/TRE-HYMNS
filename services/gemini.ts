@@ -24,10 +24,13 @@ export const getApiKey = (): string => {
   }
 
   // Try Vite's modern client-facing environment config
+  // Vite replaces literal 'import.meta.env.VITE_*' strings at build time.
+  // Using direct literal references with @ts-ignore allows Vercel's bundler to insert env variables.
   try {
-    const metaAny = import.meta as any;
-    if (typeof import.meta !== 'undefined' && metaAny.env) {
-      const viteKey = metaAny.env.VITE_GEMINI_API_KEY || metaAny.env.VITE_API_KEY;
+    // @ts-ignore
+    if (typeof import.meta !== 'undefined' && import.meta.env) {
+      // @ts-ignore
+      const viteKey = import.meta.env.VITE_GEMINI_API_KEY || import.meta.env.VITE_API_KEY;
       if (viteKey) return viteKey;
     }
   } catch (e) {
