@@ -25,7 +25,6 @@ export const getApiKey = (): string => {
 
   // Try Vite's modern client-facing environment config
   // Vite replaces literal 'import.meta.env.VITE_*' strings at build time.
-  // Using direct literal references with @ts-ignore allows Vercel's bundler to insert env variables.
   try {
     // @ts-ignore
     if (typeof import.meta !== 'undefined' && import.meta.env) {
@@ -34,16 +33,34 @@ export const getApiKey = (): string => {
       if (viteKey) return viteKey;
     }
   } catch (e) {
-    // Avoid cracking in environments where import.meta is processed differently
+    // Avoid parsing errors in some older legacy environments
   }
 
-  // Fallback to traditional node process envelope inside window object or Node environments
-  if (typeof window !== 'undefined' && 'process' in window) {
-    const proc = (window as any).process;
-    if (proc && proc.env) {
-      return proc.env.GEMINI_API_KEY || proc.env.API_KEY || '';
+  // Fallback to literal node process lookups. 
+  // Vite replaces literal 'process.env.*' expressions at build-time using 'define' config in vite.config.ts!
+  try {
+    // @ts-ignore
+    const processGeminiKey = process.env.GEMINI_API_KEY;
+    if (processGeminiKey) return processGeminiKey;
+  } catch (e) {}
+
+  try {
+    // @ts-ignore
+    const processApiKey = process.env.API_KEY;
+    if (processApiKey) return processApiKey;
+  } catch (e) {}
+
+  // Dynamic process lookups for local development node runtimes (non-static)
+  try {
+    if (typeof window !== 'undefined' && 'process' in window) {
+      const proc = (window as any).process;
+      if (proc && proc.env) {
+        const dynamicGeminiKey = proc.env.GEMINI_API_KEY || proc.env.API_KEY;
+        if (dynamicGeminiKey) return dynamicGeminiKey;
+      }
     }
-  }
+  } catch (e) {}
+
   return '';
 };
 
