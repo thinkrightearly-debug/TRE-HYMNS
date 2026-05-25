@@ -334,45 +334,43 @@ export const verifyAndCompleteLyrics = async (
   title: string,
   currentLyrics: string
 ): Promise<{ verses: string[]; chorus?: string | null; author?: string; tune?: string; melody?: Note[] } | null> => {
-  const apiKey = getApiKey();
-  if (!apiKey) {
-    throw new Error("Gemini API key is not configured.");
-  }
-
-  const prompt = `You are a world-class sacred hymnal expert, musicologist, and organist. Verify and retrieve the absolute 100% complete and accurate traditional English lyrics AND musical tune melody for the following hymn:
-  Number: ${hymnNumber}
-  Title: "${title}"
-  
-  Current version text:
-  ${currentLyrics}
-  
-  Compare this against the official traditional hymnal registry. 
-  1. Correct any typos, recover any completely missing traditional verses, and critically, make sure any traditional chorus is completely restored in its accurate, full form.
-  2. Verify and re-identify the correct traditional Tune (e.g. NICAEA, BEECHER, EVENTIDE, etc.) and Author.
-  3. Generate/Verify the absolute 100% accurate main melody notes for this verified traditional tune name. Provide a sequence of 16-32 Note structures representing the primary melody theme.
-  
-  Return the result strictly as a JSON object of this structure:
-  {
-    "verses": ["fully formatted verse 1 text", "fully formatted verse 2 text", ...],
-    "chorus": "chorus text if any, or null",
-    "author": "verified author name",
-    "tune": "verified tune name",
-    "melody": [
-      {"pitch": 261.63, "duration": 0.8, "name": "C4"},
-      ...
-    ]
-  }
-  
-  Ensure the frequencies (pitch in Hz) and durations (in seconds) are musically precise (e.g., A4 = 440Hz, 0.8s for quarter notes, 1.6s for half notes) and correspond faithfully to the traditional meter/notes of the verified tune.
-  
-  Provide only the raw JSON. Do not write markdown wrapping.`;
-
   try {
+    const apiKey = getApiKey();
+    if (!apiKey) return null;
+
+    const prompt = `You are a world-class sacred hymnal expert, musicologist, and organist. Verify and retrieve the absolute 100% complete and accurate traditional English lyrics AND musical tune melody for the following hymn:
+    Number: ${hymnNumber}
+    Title: "${title}"
+    
+    Current version text:
+    ${currentLyrics}
+    
+    Compare this against the official traditional hymnal registry. 
+    1. Correct any typos, recover any completely missing traditional verses, and critically, make sure any traditional chorus is completely restored in its accurate, full form.
+    2. Verify and re-identify the correct traditional Tune (e.g. NICAEA, BEECHER, EVENTIDE, etc.) and Author.
+    3. Generate/Verify the absolute 100% accurate main melody notes for this verified traditional tune name. Provide a sequence of 16-32 Note structures representing the primary melody theme.
+    
+    Return the result strictly as a JSON object of this structure:
+    {
+      "verses": ["fully formatted verse 1 text", "fully formatted verse 2 text", ...],
+      "chorus": "chorus text if any, or null",
+      "author": "verified author name",
+      "tune": "verified tune name",
+      "melody": [
+        {"pitch": 261.63, "duration": 0.8, "name": "C4"},
+        ...
+      ]
+    }
+    
+    Ensure the frequencies (pitch in Hz) and durations (in seconds) are musically precise (e.g., A4 = 440Hz, 0.8s for quarter notes, 1.6s for half notes) and correspond faithfully to the traditional meter/notes of the verified tune.
+    
+    Provide only the raw JSON. Do not write markdown wrapping.`;
+
     const text = await callGemini(prompt, "application/json");
     return parseRobustJson(text);
-  } catch (error: any) {
+  } catch (error) {
     console.error("verifyAndCompleteLyrics Error:", error);
-    throw new Error(error?.message || String(error));
+    return null;
   }
 };
 
