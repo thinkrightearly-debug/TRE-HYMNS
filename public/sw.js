@@ -32,7 +32,7 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Stale-While-Revalidate for app assets and font caching
+// Stale-While-Revalidate for app assets and font caching, but Network-First for main app shell/navigation requests to guarantee instant Vercel updates sync
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
   
@@ -42,8 +42,33 @@ self.addEventListener('fetch', (event) => {
   // Skip browser extensions or hot reload sockets
   if (!url.protocol.startsWith('http')) return;
 
+  // Network-First for navigation or main index pages
+  if (event.request.mode === 'navigate' || url.pathname === '/' || url.pathname === '/index.html') {
+    event.respondWith(
+      fetch(event.request)
+        .then((networkResponse) => {
+          if (networkResponse && networkResponse.status === 200) {
+            const responseToCache = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(event.request, responseToCache);
+            });
+          }
+          return networkResponse;
+        })
+        .catch(() => {
+          // Fallback to cache if completely offline
+          return caches.match(event.request).then((cachedResponse) => {
+            if (cachedResponse) return cachedResponse;
+            return caches.match('/');
+          });
+        })
+    );
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
+
       if (cachedResponse) {
         // Return cached asset immediately, but perform a fetch in background to refresh cache silently
         fetch(event.request)
