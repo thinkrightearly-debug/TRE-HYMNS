@@ -82,31 +82,20 @@ const App: React.FC = () => {
 
     try {
       const docRef = doc(db, "hymn_overrides", String(updated.id));
-      const payLoad: any = {
+      await setDoc(docRef, {
         id: updated.id,
         number: updated.number,
         title: updated.title,
         category: updated.category,
         verses: updated.verses,
+        chorus: updated.chorus || null,
+        author: updated.author || null,
+        tune: updated.tune || null,
+        melody: updated.melody || null,
         isVerified: updated.isVerified || false,
         verifiedAt: updated.verifiedAt || new Date().toISOString(),
         updatedAt: new Date().toISOString(),
-      };
-
-      if (updated.chorus) {
-        payLoad.chorus = updated.chorus;
-      }
-      if (updated.author) {
-        payLoad.author = updated.author;
-      }
-      if (updated.tune) {
-        payLoad.tune = updated.tune;
-      }
-      if (updated.melody && updated.melody.length > 0) {
-        payLoad.melody = updated.melody;
-      }
-
-      await setDoc(docRef, payLoad);
+      });
     } catch (error) {
       handleFirestoreError(error, OperationType.WRITE, `hymn_overrides/${updated.id}`);
     }
@@ -136,13 +125,6 @@ const App: React.FC = () => {
           }
         });
 
-        // Backup Firestore overrides to localStorage dynamically to guarantee offline persistence
-        try {
-          localStorage.setItem("hymn_overrides", JSON.stringify(overridesMap));
-        } catch (e) {
-          console.error("Failed to sync cloud overrides to local browser cache", e);
-        }
-
         // Stably merge global accuracy overrides on top of the default offline traditional dataset
         setAllHymns(() => {
           return HYMNS.map((h) => {
@@ -163,7 +145,7 @@ const App: React.FC = () => {
         });
       },
       (error) => {
-        console.error("Firestore onSnapshot subscription failed: ", error);
+        handleFirestoreError(error, OperationType.GET, "hymn_overrides");
       }
     );
 
@@ -404,17 +386,17 @@ const App: React.FC = () => {
         ) : (
           <>
             {/* Header */}
-            <header className="bg-white border-b border-gray-100 px-4 sm:px-6 py-4 sm:py-5 flex flex-col gap-4 sm:gap-5 sticky top-0 z-30 shadow-sm">
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <div className="flex items-center gap-3 sm:gap-4">
+            <header className="bg-white border-b border-gray-100 px-6 py-5 flex flex-col gap-5 sticky top-0 z-30 shadow-sm">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-4">
                   <button
                     onClick={() => setIsSidebarOpen(true)}
-                    className="p-2 lg:hidden text-gray-600 hover:bg-gray-100 rounded-xl shrink-0"
+                    className="p-2 lg:hidden text-gray-600 hover:bg-gray-100 rounded-xl"
                   >
                     <Menu size={24} />
                   </button>
-                  <div className="min-w-0">
-                    <h2 className="text-xl sm:text-2xl font-black text-gray-900 tracking-tight leading-none truncate">
+                  <div>
+                    <h2 className="text-2xl font-black text-gray-900 tracking-tight leading-none">
                       {currentView === "favorites" || showFavoritesOnly
                         ? selectedCategory === "All"
                           ? "Saved Verses"
@@ -423,54 +405,54 @@ const App: React.FC = () => {
                           ? "Sacred Hymnal"
                           : selectedCategory}
                     </h2>
-                    <p className="text-[9px] sm:text-[10px] font-bold text-gray-400 uppercase tracking-[0.15em] sm:tracking-[0.2em] mt-1 sm:mt-1.5">
+                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em] mt-1.5">
                       Full English 858+ Edition
                     </p>
                   </div>
                 </div>
-                <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+                <div className="flex items-center gap-3">
                   <button
                     onClick={() => setShowFavoritesOnly(!showFavoritesOnly)}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl sm:rounded-2xl border transition-all ${showFavoritesOnly ? "bg-red-50 border-red-100 text-red-600 shadow-sm" : "bg-gray-50 border-gray-100 text-gray-400 hover:text-gray-600"}`}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-2xl border transition-all ${showFavoritesOnly ? "bg-red-50 border-red-100 text-red-600 shadow-sm" : "bg-gray-50 border-gray-100 text-gray-400 hover:text-gray-600"}`}
                   >
                     <Heart
-                      size={12}
+                      size={14}
                       fill={showFavoritesOnly ? "currentColor" : "none"}
                     />
-                    <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-wider sm:tracking-widest">
+                    <span className="text-[10px] font-black uppercase tracking-widest">
                       {showFavoritesOnly ? "Favorites On" : "All Hymns"}
                     </span>
                   </button>
-                  <div className="bg-indigo-50 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl sm:rounded-2xl border border-indigo-100 flex items-center gap-1.5">
-                    <Library size={12} className="text-indigo-600" />
-                    <span className="text-[9px] sm:text-[10px] font-black text-indigo-700 uppercase tracking-wider sm:tracking-widest">
+                  <div className="bg-indigo-50 px-4 py-2 rounded-2xl border border-indigo-100 flex items-center gap-2">
+                    <Library size={14} className="text-indigo-600" />
+                    <span className="text-[10px] font-black text-indigo-700 uppercase tracking-widest">
                       {filteredHymns.length} Local
                     </span>
                   </div>
                   {isOffline && (
-                    <div className="bg-amber-50 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl sm:rounded-2xl border border-amber-100 flex items-center gap-1.5">
+                    <div className="bg-amber-50 px-4 py-2 rounded-2xl border border-amber-100 flex items-center gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-amber-500"></div>
-                      <span className="text-[9px] sm:text-[10px] font-black text-amber-700 uppercase tracking-wider sm:tracking-widest">
+                      <span className="text-[10px] font-black text-amber-700 uppercase tracking-widest">
                         Offline Mode
                       </span>
                     </div>
                   )}
                 </div>
               </div>
- 
+
               {/* Search Bar */}
               <div className="relative group flex gap-2">
                 <div className="relative flex-1">
                   <Search
-                    className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-indigo-600 transition-colors"
-                    size={18}
+                    className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-indigo-600 transition-colors"
+                    size={20}
                   />
                   <input
                     type="text"
                     placeholder="Enter hymn number (e.g. 450) or title..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full bg-gray-100 border-2 border-transparent focus:bg-white focus:border-indigo-100 rounded-xl sm:rounded-2xl py-3 px-4 pl-11 sm:py-4.5 sm:pl-14 text-xs sm:text-sm font-bold transition-all outline-none text-gray-800 placeholder:text-gray-400 shadow-sm"
+                    className="w-full bg-gray-100 border-2 border-transparent focus:bg-white focus:border-indigo-100 rounded-2xl py-4.5 pl-14 pr-4 text-sm font-bold transition-all outline-none text-gray-800 placeholder:text-gray-400 shadow-sm"
                   />
                 </div>
                 {searchQuery && filteredHymns.length === 0 && (

@@ -219,29 +219,29 @@ export const HymnDetail: React.FC<HymnDetailProps> = ({ hymn, isFavorite, onTogg
       </header>
 
       {/* Content */}
-      <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-6 sm:space-y-8 pb-48">
+      <div className="flex-1 overflow-y-auto p-6 space-y-8 pb-48">
         {/* ORGAN TUNE CARD */}
-        <div className="bg-gradient-to-br from-indigo-950 to-indigo-900 rounded-[1.75rem] sm:rounded-[2.5rem] p-5 sm:p-8 text-white shadow-2xl relative overflow-hidden group">
+        <div className="bg-gradient-to-br from-indigo-950 to-indigo-900 rounded-[2.5rem] p-8 text-white shadow-2xl relative overflow-hidden group">
            <div className="absolute -right-16 -bottom-16 opacity-10 pointer-events-none">
              <Music size={300} />
            </div>
            
-           <div className="relative z-10 space-y-6 sm:space-y-8">
+           <div className="relative z-10 space-y-8">
              <div className="flex justify-between items-start">
                <div>
                  <p className="text-[10px] font-black uppercase tracking-widest text-indigo-300 mb-1 flex items-center gap-2">
                    <Music size={12} /> Sacred Organ Tune (Accurate)
                  </p>
-                 <h4 className="text-2xl sm:text-3xl font-black italic tracking-tighter">{hymn.tune || 'Traditional'}</h4>
+                 <h4 className="text-3xl font-black italic tracking-tighter">{hymn.tune || 'Traditional'}</h4>
                </div>
                {isCurrentHymnPlaying && organPlayer.isPlaying && (
-                 <div className="bg-white/10 backdrop-blur-xl px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl sm:rounded-2xl border border-white/20 animate-pulse">
+                 <div className="bg-white/10 backdrop-blur-xl px-4 py-2 rounded-2xl border border-white/20 animate-pulse">
                     <span className="text-xs font-black tracking-widest">{organPlayer.currentNoteName || '--'}</span>
                  </div>
                )}
              </div>
 
-             <div className="flex flex-col gap-4 sm:gap-6">
+             <div className="flex flex-col gap-6">
                 {/* Reactive Visualizer */}
                 <div className="h-16 flex items-end justify-center">
                   {isCurrentHymnPlaying && organPlayer.isPlaying ? (
@@ -276,9 +276,9 @@ export const HymnDetail: React.FC<HymnDetailProps> = ({ hymn, isFavorite, onTogg
                <button 
                  onClick={() => organPlayer.playHymn(hymn)}
                  disabled={organPlayer.isLoadingAudio && isCurrentHymnPlaying}
-                 className={`w-full flex items-center justify-center gap-3 py-4 sm:py-5 rounded-2xl sm:rounded-3xl text-xs sm:text-sm font-black transition-all shadow-xl active:scale-95 border ${isCurrentHymnPlaying && organPlayer.isPlaying ? 'bg-white text-indigo-950 border-white' : 'bg-indigo-600 hover:bg-indigo-500 text-white border-indigo-500'}`}
+                 className={`w-full flex items-center justify-center gap-3 py-5 rounded-3xl text-sm font-black transition-all shadow-xl active:scale-95 border ${isCurrentHymnPlaying && organPlayer.isPlaying ? 'bg-white text-indigo-950 border-white' : 'bg-indigo-600 hover:bg-indigo-500 text-white border-indigo-500'}`}
                >
-                 {isCurrentHymnPlaying && organPlayer.isPlaying ? <Square size={16} fill="currentColor" /> : <Play size={16} fill="currentColor" />}
+                 {organPlayer.isLoadingAudio && isCurrentHymnPlaying ? <Loader2 className="animate-spin" size={20} /> : isCurrentHymnPlaying && organPlayer.isPlaying ? <Square size={20} fill="currentColor" /> : <Play size={20} fill="currentColor" />}
                  {organPlayer.isLoadingAudio && isCurrentHymnPlaying ? 'PREPARING ORGAN...' : isCurrentHymnPlaying && organPlayer.isPlaying ? 'STOP ORGAN' : 'PLAY ORGAN TUNE'}
                </button>
              </div>
@@ -286,20 +286,20 @@ export const HymnDetail: React.FC<HymnDetailProps> = ({ hymn, isFavorite, onTogg
         </div>
 
         {/* Action Bar */}
-        <div className="grid grid-cols-2 gap-3 sm:gap-4">
-          <button onClick={handleGetReflection} className="flex items-center justify-center gap-2 py-4 sm:py-5 bg-gray-50 border border-gray-100 rounded-2xl sm:rounded-[2rem] text-xs sm:text-sm font-black text-gray-700 hover:bg-white transition-all">
-            <Sparkles size={16} className="text-indigo-500" /> Reflection
+        <div className="grid grid-cols-2 gap-4">
+          <button onClick={handleGetReflection} className="flex items-center justify-center gap-2 py-5 bg-gray-50 border border-gray-100 rounded-[2rem] text-sm font-black text-gray-700 hover:bg-white transition-all">
+            <Sparkles size={18} className="text-indigo-500" /> Reflection
           </button>
-          <button onClick={handleModernize} className={`flex items-center justify-center gap-2 py-4 sm:py-5 border rounded-2xl sm:rounded-[2rem] text-xs sm:text-sm font-black transition-all ${viewMode === 'modern' ? 'bg-amber-50 border-amber-200 text-amber-700' : 'bg-gray-50 border-gray-100 text-gray-700'}`}>
-            <BookOpen size={16} className="text-amber-500" /> {viewMode === 'modern' ? 'Traditional' : 'Modern'}
+          <button onClick={handleModernize} className={`flex items-center justify-center gap-2 py-5 border rounded-[2rem] text-sm font-black transition-all ${viewMode === 'modern' ? 'bg-amber-50 border-amber-200 text-amber-700' : 'bg-gray-50 border-gray-100 text-gray-700'}`}>
+            <BookOpen size={18} className="text-amber-500" /> {viewMode === 'modern' ? 'Traditional' : 'Modern'}
           </button>
         </div>
 
         {/* 100% Accuracy Verification and Repair Ribbon */}
-        <div className="bg-gradient-to-r from-amber-500/10 via-amber-600/5 to-transparent rounded-2xl sm:rounded-[2.5rem] border border-amber-500/20 p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6 shadow-sm">
+        <div className="bg-gradient-to-r from-amber-500/10 via-amber-600/5 to-transparent rounded-[2.5rem] border border-amber-500/20 p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-sm">
           <div className="flex-1">
-            <div className="flex items-center gap-2 mb-1.5">
-              <Sparkles className="text-amber-600 animate-pulse" size={16} />
+            <div className="flex items-center gap-2 mb-2">
+              <Sparkles className="text-amber-600 animate-pulse" size={18} />
               <p className="text-[10px] font-black uppercase tracking-widest text-amber-800 leading-none">100% Accuracy Verification Engine</p>
             </div>
             <p className="subtitle-font text-xs text-amber-900/80 leading-relaxed font-bold">
@@ -309,21 +309,21 @@ export const HymnDetail: React.FC<HymnDetailProps> = ({ hymn, isFavorite, onTogg
           <button 
             onClick={handleVerifyAndRepair}
             disabled={verifyingLyrics}
-            className="w-full sm:w-auto px-5 py-3.5 bg-amber-600 hover:bg-amber-700 disabled:bg-amber-200 text-white font-black text-xs uppercase tracking-widest rounded-xl sm:rounded-2xl transition-all shadow-md active:scale-95 flex items-center justify-center gap-2 whitespace-nowrap self-stretch sm:self-auto shrink-0 animate-in fade-in"
+            className="w-full sm:w-auto px-6 py-4 bg-amber-600 hover:bg-amber-700 disabled:bg-amber-200 text-white font-black text-xs uppercase tracking-widest rounded-2xl transition-all shadow-md active:scale-95 flex items-center justify-center gap-2 whitespace-nowrap self-stretch sm:self-auto shrink-0"
           >
-            {verifyingLyrics ? <Loader2 className="animate-spin" size={12} /> : <Sparkles size={12} />}
+            {verifyingLyrics ? <Loader2 className="animate-spin" size={14} /> : <Sparkles size={14} />}
             {verifyingLyrics ? "Scanned & Correcting..." : "Verify & Complete"}
           </button>
         </div>
 
         {repairSuccess && (
-          <div className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white p-4 sm:p-5 rounded-2xl sm:rounded-3xl font-black text-xs uppercase tracking-widest text-center shadow-lg animate-in fade-in slide-in-from-top-4 duration-300">
+          <div className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white p-5 rounded-3xl font-black text-xs uppercase tracking-widest text-center shadow-lg animate-in fade-in slide-in-from-top-4 duration-300">
             {repairSuccess}
           </div>
         )}
 
         {/* Global Language Translator Widget */}
-        <div className="bg-gradient-to-r from-teal-50 to-emerald-50 rounded-[1.75rem] sm:rounded-[2.5rem] border border-teal-100 p-5 sm:p-6 flex flex-col gap-4">
+        <div className="bg-gradient-to-r from-teal-50 to-emerald-50 rounded-[2.5rem] border border-teal-100 p-6 flex flex-col gap-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <Globe className="text-teal-600 animate-pulse" size={20} />
@@ -339,19 +339,19 @@ export const HymnDetail: React.FC<HymnDetailProps> = ({ hymn, isFavorite, onTogg
             )}
           </div>
 
-          <div className="flex flex-wrap gap-1.5 sm:gap-2">
+          <div className="flex flex-wrap gap-2">
             {['Yoruba', 'Igbo', 'Hausa', 'Spanish', 'French', 'Latin'].map((lang) => (
               <button
                 key={lang}
                 onClick={() => { setShowCustomInput(false); handleTranslate(lang); }}
-                className={`px-3.5 py-2 rounded-xl sm:rounded-2xl text-[10px] sm:text-[11px] font-black uppercase tracking-wider transition-all border ${viewMode === 'translated' && targetLanguage === lang ? 'bg-teal-600 text-white border-teal-600 shadow-md scale-105' : 'bg-white hover:bg-teal-100/35 text-teal-905 border-teal-100 active:scale-95'}`}
+                className={`px-4 py-2.5 rounded-2xl text-[11px] font-black uppercase tracking-wider transition-all border ${viewMode === 'translated' && targetLanguage === lang ? 'bg-teal-600 text-white border-teal-600 shadow-md scale-105' : 'bg-white hover:bg-teal-100/35 text-teal-905 border-teal-100 active:scale-95'}`}
               >
                 {lang}
               </button>
             ))}
             <button
               onClick={() => setShowCustomInput(!showCustomInput)}
-              className={`px-3.5 py-2 rounded-xl sm:rounded-2xl text-[10px] sm:text-[11px] font-black uppercase tracking-wider transition-all border ${showCustomInput ? 'bg-teal-900 text-white border-teal-900' : 'bg-white hover:bg-teal-100/35 text-teal-905 border-teal-100'}`}
+              className={`px-4 py-2.5 rounded-2xl text-[11px] font-black uppercase tracking-wider transition-all border ${showCustomInput ? 'bg-teal-900 text-white border-teal-900' : 'bg-white hover:bg-teal-100/35 text-teal-905 border-teal-100'}`}
             >
               Other...
             </button>
@@ -379,7 +379,7 @@ export const HymnDetail: React.FC<HymnDetailProps> = ({ hymn, isFavorite, onTogg
 
         {/* Reflection */}
         {reflection && (
-          <div className="bg-white p-6 sm:p-8 rounded-[1.75rem] sm:rounded-[2.5rem] border border-indigo-50 shadow-xl animate-in zoom-in-95 duration-500 relative group/reflection">
+          <div className="bg-white p-8 rounded-[2.5rem] border border-indigo-50 shadow-xl animate-in zoom-in-95 duration-500 relative group/reflection">
             <div className="flex justify-between items-start mb-4">
               <h4 className="text-indigo-600 font-black flex items-center gap-2 text-[10px] uppercase tracking-widest"><Sparkles size={14} /> Divine Insight</h4>
               <button 
@@ -390,60 +390,60 @@ export const HymnDetail: React.FC<HymnDetailProps> = ({ hymn, isFavorite, onTogg
                 <Share2 size={16} />
               </button>
             </div>
-            <p className="text-gray-900 leading-[1.8] italic text-lg sm:text-xl font-medium hymn-font">"{reflection}"</p>
+            <p className="text-gray-900 leading-[1.8] italic text-xl font-medium hymn-font">"{reflection}"</p>
           </div>
         )}
 
         {/* Lyrics */}
-        <div className="space-y-12 sm:space-y-16">
+        <div className="space-y-16">
           {viewMode === 'translated' ? (
             loadingTranslation ? (
-              <div className="flex flex-col items-center justify-center py-16 sm:py-24 text-center space-y-4 bg-teal-50/20 rounded-2xl sm:rounded-[3rem] border border-teal-50/70 p-6">
-                <Loader2 className="animate-spin text-teal-600" size={32} />
+              <div className="flex flex-col items-center justify-center py-24 text-center space-y-4 bg-teal-50/20 rounded-[3rem] border border-teal-50/70">
+                <Loader2 className="animate-spin text-teal-600" size={40} />
                 <p className="text-xs font-black text-teal-800 uppercase tracking-widest">Translating to {targetLanguage}...</p>
                 <p className="text-[11px] text-gray-400 max-w-xs leading-relaxed">Gemini is rendering lyrics with poetic theology & tonality markings...</p>
               </div>
             ) : (
-              <div className="bg-teal-50/30 p-6 sm:p-12 rounded-2xl sm:rounded-[3.5rem] border border-teal-100 shadow-sm relative group/translation">
-                <div className="flex justify-between items-start mb-6 sm:mb-8">
+              <div className="bg-teal-50/30 p-12 rounded-[3.5rem] border border-teal-100 shadow-sm relative group/translation">
+                <div className="flex justify-between items-start mb-8">
                   <div className="flex items-center gap-3">
-                    <Languages size={20} className="text-teal-600" />
-                    <h3 className="font-serif text-xl sm:text-2xl font-black text-teal-900 tracking-tight">{targetLanguage} Version</h3>
+                    <Languages size={24} className="text-teal-600" />
+                    <h3 className="font-serif text-2xl font-black text-teal-900 tracking-tight">{targetLanguage} Version</h3>
                   </div>
                   <button 
                     onClick={() => handleShare('lyrics')}
-                    className="p-2.5 text-teal-700 hover:text-white hover:bg-teal-600 rounded-xl transition-all border border-teal-100 bg-white"
+                    className="p-3 text-teal-700 hover:text-white hover:bg-teal-600 rounded-2xl transition-all border border-teal-100 bg-white"
                     title="Share Translation"
                   >
                     <Share2 size={16} />
                   </button>
                 </div>
-                <p className="hymn-font leading-[1.8] sm:leading-[2] text-teal-950 font-serif font-medium text-lg sm:text-2xl whitespace-pre-line text-left">
+                <p className="hymn-font leading-[2] text-teal-950 font-serif font-medium text-2xl whitespace-pre-line text-left">
                   {translatedLyrics || "Translation failed to match. Try checking your API connection or re-select."}
                 </p>
               </div>
             )
           ) : viewMode === 'traditional' ? (
             hymn.verses.map((verse, index) => (
-              <div key={index} className="space-y-4 sm:space-y-6">
-                <div className="flex flex-col sm:flex-row gap-2 sm:gap-10">
-                  <span className="text-indigo-150 font-black text-5xl sm:text-7xl leading-none">{index + 1}</span>
-                  <div className="flex-1 pt-1 sm:pt-3">
-                    <p className="hymn-font text-lg sm:text-2xl leading-[1.8] text-gray-950 whitespace-pre-line font-medium">{verse}</p>
+              <div key={index} className="space-y-6">
+                <div className="flex gap-10">
+                  <span className="text-indigo-100 font-black text-7xl leading-none">{index + 1}</span>
+                  <div className="flex-1 pt-3">
+                    <p className="hymn-font text-2xl leading-[1.8] text-gray-950 whitespace-pre-line font-medium">{verse}</p>
                   </div>
                 </div>
                 {index === 0 && hymn.chorus && (
-                  <div className="ml-0 sm:ml-20 bg-gray-50 p-6 sm:p-10 rounded-2xl sm:rounded-[3rem] border-l-4 sm:border-l-8 border-indigo-900 shadow-inner">
-                    <span className="text-[10px] font-black text-indigo-900/40 uppercase tracking-widest block mb-3 sm:mb-4">Chorus</span>
-                    <p className="hymn-font text-lg sm:text-2xl font-bold leading-relaxed text-indigo-950 whitespace-pre-line">{hymn.chorus}</p>
+                  <div className="ml-20 bg-gray-50 p-10 rounded-[3rem] border-l-8 border-indigo-900 shadow-inner">
+                    <span className="text-[10px] font-black text-indigo-900/40 uppercase tracking-widest block mb-4">Chorus</span>
+                    <p className="hymn-font text-2xl font-bold leading-relaxed text-indigo-950 whitespace-pre-line">{hymn.chorus}</p>
                   </div>
                 )}
               </div>
             ))
           ) : (
-            <div className="bg-amber-50/40 p-6 sm:p-12 rounded-2xl sm:rounded-[3.5rem] border-2 border-amber-100 shadow-inner">
-              <h3 className="font-black text-amber-900 mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3 text-xl sm:text-2xl"><BookOpen size={24} className="text-amber-600" /> Contemporary Version</h3>
-              <p className="hymn-font text-lg sm:text-2xl leading-[1.8] sm:leading-[1.9] text-amber-950 whitespace-pre-line font-medium italic">{modernLyrics}</p>
+            <div className="bg-amber-50/40 p-12 rounded-[3.5rem] border-2 border-amber-100 shadow-inner">
+              <h3 className="font-black text-amber-900 mb-8 flex items-center gap-3 text-2xl"><BookOpen size={32} className="text-amber-600" /> Contemporary Version</h3>
+              <p className="hymn-font text-2xl leading-[1.9] text-amber-950 whitespace-pre-line font-medium italic">{modernLyrics}</p>
             </div>
           )}
         </div>
