@@ -221,9 +221,9 @@ export const AccuracyDashboard: React.FC<AccuracyDashboardProps> = ({
         setSuccessCount(prev => prev + 1);
         addLog(`✔️ Hymn #${targetHymn.number} already matches 100% accurate structural registries.`, 'success', targetHymn.number);
       }
-    } catch (err) {
+    } catch (err: any) {
       console.error(err);
-      addLog(`❌ Scan error on Hymn #${targetHymn.number}: Using local backup.`, 'error', targetHymn.number);
+      addLog(`❌ Scan error on Hymn #${targetHymn.number}: ${err?.message || "Using local backup."}`, 'error', targetHymn.number);
     }
 
     // Advance queue and delay briefly to maintain beautiful visual cadence

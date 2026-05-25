@@ -162,30 +162,37 @@ export const HymnDetail: React.FC<HymnDetailProps> = ({ hymn, isFavorite, onTogg
     if (!onUpdateHymn) return;
     setVerifyingLyrics(true);
     setRepairSuccess(null);
-    const lyricsString = hymn.verses.map((v, i) => `Verse ${i+1}:\n${v}`).join("\n\n") + (hymn.chorus ? `\n\nChorus:\n${hymn.chorus}` : "");
-    const corrected = await verifyAndCompleteLyrics(hymn.number, hymn.title, lyricsString);
-    if (corrected && corrected.verses && corrected.verses.length > 0) {
-      onUpdateHymn({
-        ...hymn,
-        verses: corrected.verses,
-        chorus: corrected.chorus || undefined,
-        author: corrected.author || hymn.author,
-        tune: corrected.tune || hymn.tune,
-        isVerified: true,
-        verifiedAt: new Date().toISOString()
-      });
-      setRepairSuccess("Lyrics, chorus, and tune successfully verified & repaired with 100% accuracy!");
+    try {
+      const lyricsString = hymn.verses.map((v, i) => `Verse ${i+1}:\n${v}`).join("\n\n") + (hymn.chorus ? `\n\nChorus:\n${hymn.chorus}` : "");
+      const corrected = await verifyAndCompleteLyrics(hymn.number, hymn.title, lyricsString);
+      if (corrected && corrected.verses && corrected.verses.length > 0) {
+        onUpdateHymn({
+          ...hymn,
+          verses: corrected.verses,
+          chorus: corrected.chorus || undefined,
+          author: corrected.author || hymn.author,
+          tune: corrected.tune || hymn.tune,
+          isVerified: true,
+          verifiedAt: new Date().toISOString()
+        });
+        setRepairSuccess("Lyrics, chorus, and tune successfully verified & repaired with 100% accuracy!");
+        setTimeout(() => setRepairSuccess(null), 5000);
+      } else {
+        onUpdateHymn({
+          ...hymn,
+          isVerified: true,
+          verifiedAt: new Date().toISOString()
+        });
+        setRepairSuccess("Verification checked successfully - current version is verified 100% accurate!");
+        setTimeout(() => setRepairSuccess(null), 5000);
+      }
+    } catch (err: any) {
+      console.error(err);
+      setRepairSuccess(`Verification failed: ${err?.message || "Please check your API key configuration."}`);
       setTimeout(() => setRepairSuccess(null), 5000);
-    } else {
-      onUpdateHymn({
-        ...hymn,
-        isVerified: true,
-        verifiedAt: new Date().toISOString()
-      });
-      setRepairSuccess("Verification checked successfully - current version is verified 100% accurate!");
-      setTimeout(() => setRepairSuccess(null), 5000);
+    } finally {
+      setVerifyingLyrics(false);
     }
-    setVerifyingLyrics(false);
   };
 
   const isCurrentHymnPlaying = organPlayer.playingHymnId === hymn.id;
