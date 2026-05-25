@@ -55,7 +55,7 @@ export const getApiKey = (): string => {
     if (typeof window !== 'undefined' && 'process' in window) {
       const proc = (window as any).process;
       if (proc && proc.env) {
-        const dynamicGeminiKey = proc.env.GEMINI_API_KEY || proc.env.API_KEY;
+        const dynamicGeminiKey = proc.env.GEMINI_API_KEY || proc.env.API_KEY || proc.env.VITE_GEMINI_API_KEY || proc.env.VITE_API_KEY;
         if (dynamicGeminiKey) return dynamicGeminiKey;
       }
     }
@@ -144,7 +144,7 @@ const callGeminiWithModel = async (model: string, prompt: string, responseMimeTy
 };
 
 const callGemini = async (prompt: string, responseMimeType?: string): Promise<string> => {
-  const modelsToTry = ["gemini-3.5-flash", "gemini-2.5-flash", "gemini-1.5-flash-8b", "gemini-1.5-flash"];
+  const modelsToTry = ["gemini-3.5-flash", "gemini-2.0-flash", "gemini-1.5-flash", "gemini-1.5-flash-8b"];
   let lastError: Error | null = null;
 
   for (const model of modelsToTry) {
