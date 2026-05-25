@@ -136,6 +136,13 @@ const App: React.FC = () => {
           }
         });
 
+        // Backup Firestore overrides to localStorage dynamically to guarantee offline persistence
+        try {
+          localStorage.setItem("hymn_overrides", JSON.stringify(overridesMap));
+        } catch (e) {
+          console.error("Failed to sync cloud overrides to local browser cache", e);
+        }
+
         // Stably merge global accuracy overrides on top of the default offline traditional dataset
         setAllHymns(() => {
           return HYMNS.map((h) => {
@@ -156,7 +163,7 @@ const App: React.FC = () => {
         });
       },
       (error) => {
-        handleFirestoreError(error, OperationType.GET, "hymn_overrides");
+        console.error("Firestore onSnapshot subscription failed: ", error);
       }
     );
 

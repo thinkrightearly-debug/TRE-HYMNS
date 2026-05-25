@@ -22,8 +22,8 @@ service cloud.firestore {
     function isValidHymnOverride(data) {
       return data.keys().hasAll(['id', 'number', 'title', 'verses', 'category', 'isVerified', 'verifiedAt', 'updatedAt'])
         && data.keys().size() <= 12
-        && data.id is int
-        && data.number is int
+        && (data.id is int || data.id is float)
+        && (data.number is int || data.number is float)
         && data.title is string && data.title.size() <= 200
         && data.category is string && data.category.size() <= 100
         && data.verses is list && data.verses.size() > 0 && data.verses.size() <= 50 && data.verses[0] is string
@@ -33,7 +33,7 @@ service cloud.firestore {
         && (!data.keys().hasAny(['chorus']) || (data.chorus is string && data.chorus.size() <= 1000))
         && (!data.keys().hasAny(['author']) || (data.author is string && data.author.size() <= 200))
         && (!data.keys().hasAny(['tune']) || (data.tune is string && data.tune.size() <= 200))
-        && (!data.keys().hasAny(['melody']) || (data.melody is list && data.melody.size() <= 60));
+        && (!data.keys().hasAny(['melody']) || (data.melody is list && data.melody.size() <= 200));
     }
 
     match /hymn_overrides/{hymnId} {
