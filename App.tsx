@@ -82,20 +82,31 @@ const App: React.FC = () => {
 
     try {
       const docRef = doc(db, "hymn_overrides", String(updated.id));
-      await setDoc(docRef, {
+      const payLoad: any = {
         id: updated.id,
         number: updated.number,
         title: updated.title,
         category: updated.category,
         verses: updated.verses,
-        chorus: updated.chorus || null,
-        author: updated.author || null,
-        tune: updated.tune || null,
-        melody: updated.melody || null,
         isVerified: updated.isVerified || false,
         verifiedAt: updated.verifiedAt || new Date().toISOString(),
         updatedAt: new Date().toISOString(),
-      });
+      };
+
+      if (updated.chorus) {
+        payLoad.chorus = updated.chorus;
+      }
+      if (updated.author) {
+        payLoad.author = updated.author;
+      }
+      if (updated.tune) {
+        payLoad.tune = updated.tune;
+      }
+      if (updated.melody && updated.melody.length > 0) {
+        payLoad.melody = updated.melody;
+      }
+
+      await setDoc(docRef, payLoad);
     } catch (error) {
       handleFirestoreError(error, OperationType.WRITE, `hymn_overrides/${updated.id}`);
     }
