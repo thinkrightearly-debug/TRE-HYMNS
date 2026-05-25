@@ -44,12 +44,57 @@ export const getApiKey = (): string => {
   return '';
 };
 
-const callGemini = async (prompt: string, responseMimeType?: string): Promise<string> => {
+export const parseRobustJson = (rawText: string) => {
+  let cleaned = rawText.trim();
+  
+  // Try direct parse first
+  try {
+    return JSON.parse(cleaned);
+  } catch (e) {
+    // Continue cleanup
+  }
+
+  // Remove markdown code blocks if any (e.g., ```json or ```)
+  cleaned = cleaned.replace(/^```(?:json)?\s*/i, "");
+  cleaned = cleaned.replace(/\s*```$/, "");
+  cleaned = cleaned.trim();
+
+  try {
+    return JSON.parse(cleaned);
+  } catch (e) {
+    // Attempt to extract the JSON object/array from surrounding conversational text
+    const firstObject = cleaned.indexOf('{');
+    const firstArray = cleaned.indexOf('[');
+    
+    let startIndex = -1;
+    let endIndex = -1;
+    
+    if (firstObject !== -1 && (firstArray === -1 || firstObject < firstArray)) {
+      startIndex = firstObject;
+      endIndex = cleaned.lastIndexOf('}');
+    } else if (firstArray !== -1) {
+      startIndex = firstArray;
+      endIndex = cleaned.lastIndexOf(']');
+    }
+    
+    if (startIndex !== -1 && endIndex !== -1 && endIndex > startIndex) {
+      const extracted = cleaned.substring(startIndex, endIndex + 1);
+      try {
+        return JSON.parse(extracted);
+      } catch (innerError) {
+        throw new Error(`Robust JSON parsing failed. Cleaned: ${cleaned}. Extract: ${extracted}. Error: ${innerError}`);
+      }
+    }
+    throw new Error(`No JSON structural markers ({} or []) found in response: ${rawText}`);
+  }
+};
+
+const callGeminiWithModel = async (model: string, prompt: string, responseMimeType?: string): Promise<string> => {
   const apiKey = getApiKey();
   if (!apiKey) {
     throw new Error("GEMINI_API_KEY is not configured.");
   }
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=${apiKey}`;
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
   const response = await fetch(url, {
     method: 'POST',
     headers: {
@@ -67,7 +112,7 @@ const callGemini = async (prompt: string, responseMimeType?: string): Promise<st
 
   if (!response.ok) {
     const errorText = await response.text();
-    throw new Error(`Gemini API error: ${response.status} - ${errorText}`);
+    throw new Error(`Gemini API error ${response.status}: ${errorText}`);
   }
 
   const data = await response.json();
@@ -76,6 +121,27 @@ const callGemini = async (prompt: string, responseMimeType?: string): Promise<st
     throw new Error("Empty response from Gemini API");
   }
   return text;
+};
+
+const callGemini = async (prompt: string, responseMimeType?: string): Promise<string> => {
+  const modelsToTry = ["gemini-3.5-flash", "gemini-2.5-flash", "gemini-1.5-flash-8b", "gemini-1.5-flash"];
+  let lastError: Error | null = null;
+
+  for (const model of modelsToTry) {
+    try {
+      return await callGeminiWithModel(model, prompt, responseMimeType);
+    } catch (err: any) {
+      console.warn(`Model ${model} failed. Trying next fallback. Error:`, err);
+      lastError = err;
+      
+      const errorStr = String(err.message || "").toLowerCase();
+      if (errorStr.includes("api key") || errorStr.includes("key is not valid") || errorStr.includes("403") || errorStr.includes("unauthorized")) {
+        throw err;
+      }
+    }
+  }
+
+  throw lastError || new Error("All fallback Gemini models failed.");
 };
 
 export const getCachedData = async (key: string) => {
@@ -156,7 +222,7 @@ export const generateHymnMelody = async (hymnTitle: string, tune: string, firstV
     Example: [{"pitch": 261.63, "duration": 0.8, "name": "C4"}]`;
 
     const text = await callGemini(prompt, "application/json");
-    const notes = JSON.parse(text.trim());
+    const notes = parseRobustJson(text);
     await set(cacheKey, notes);
     return notes;
   } catch (error) {
@@ -194,7 +260,7 @@ export const fetchHymnFromArchive = async (query: string): Promise<Hymn | null> 
     }`;
 
     const text = await callGemini(prompt, "application/json");
-    const data = JSON.parse(text.trim());
+    const data = parseRobustJson(text);
     return {
       id: Date.now(), // Dynamic ID for archive hymns
       ...data
@@ -275,7 +341,7 @@ export const verifyAndCompleteLyrics = async (
     Provide only the raw JSON. Do not write markdown wrapping.`;
 
     const text = await callGemini(prompt, "application/json");
-    return JSON.parse(text.trim());
+    return parseRobustJson(text);
   } catch (error) {
     console.error("verifyAndCompleteLyrics Error:", error);
     return null;
