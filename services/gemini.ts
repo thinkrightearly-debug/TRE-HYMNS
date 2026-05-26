@@ -109,65 +109,38 @@ export const parseRobustJson = (rawText: string) => {
   }
 };
 
-const callGeminiWithModel = async (model: string, prompt: string, responseMimeType?: string): Promise<string> => {
-  const apiKey = getApiKey();
-  if (!apiKey) {
-    throw new Error("GEMINI_API_KEY is not configured.");
-  }
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
-  const response = await fetch(url, {
-    method: 'POST',
+const callGemini = async (prompt: string, responseMimeType?: string): Promise<string> => {
+  const customApiKey = getApiKey();
+  const response = await fetch("/api/gemini/generate", {
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      contents: [{
-        parts: [{ text: prompt }]
-      }],
-      generationConfig: responseMimeType ? {
-        responseMimeType
-      } : undefined
-    })
+      prompt,
+      responseMimeType,
+      customApiKey,
+    }),
   });
 
   if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(`Gemini API error ${response.status}: ${errorText}`);
+    let message = `HTTP error ${response.status}`;
+    try {
+      const errData = await response.json();
+      if (errData && errData.error) {
+        message = errData.error;
+      }
+    } catch (e) {
+      // Ignore JSON parse errors
+    }
+    throw new Error(message);
   }
 
   const data = await response.json();
-  const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-  if (!text) {
-    throw new Error("Empty response from Gemini API");
+  if (!data || !data.text) {
+    throw new Error("Empty response from Gemini API proxy service.");
   }
-  return text;
-};
-
-const callGemini = async (prompt: string, responseMimeType?: string): Promise<string> => {
-  const modelsToTry = [
-    "gemini-2.5-flash",
-    "gemini-2.0-flash",
-    "gemini-1.5-flash",
-    "gemini-1.5-flash-8b",
-    "gemini-3.5-flash"
-  ];
-  let lastError: Error | null = null;
-
-  for (const model of modelsToTry) {
-    try {
-      return await callGeminiWithModel(model, prompt, responseMimeType);
-    } catch (err: any) {
-      console.warn(`Model ${model} failed. Trying next fallback. Error:`, err);
-      lastError = err;
-      
-      const errorStr = String(err.message || "").toLowerCase();
-      if (errorStr.includes("api key") || errorStr.includes("key is not valid") || errorStr.includes("403") || errorStr.includes("unauthorized")) {
-        throw err;
-      }
-    }
-  }
-
-  throw lastError || new Error("All fallback Gemini models failed.");
+  return data.text;
 };
 
 export const getCachedData = async (key: string) => {
