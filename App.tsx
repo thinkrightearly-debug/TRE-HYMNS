@@ -386,8 +386,8 @@ const App: React.FC = () => {
         ) : (
           <>
             {/* Header */}
-            <header className="bg-white border-b border-gray-100 px-6 py-5 flex flex-col gap-5 sticky top-0 z-30 shadow-sm">
-              <div className="flex items-center justify-between">
+            <header className="bg-white border-b border-gray-100 px-4 py-4 sm:px-6 sm:py-5 flex flex-col gap-4 sm:gap-5 sticky top-0 z-30 shadow-sm">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div className="flex items-center gap-4">
                   <button
                     onClick={() => setIsSidebarOpen(true)}
@@ -396,7 +396,7 @@ const App: React.FC = () => {
                     <Menu size={24} />
                   </button>
                   <div>
-                    <h2 className="text-2xl font-black text-gray-900 tracking-tight leading-none">
+                    <h2 className="text-xl sm:text-2xl font-black text-gray-900 tracking-tight leading-none">
                       {currentView === "favorites" || showFavoritesOnly
                         ? selectedCategory === "All"
                           ? "Saved Verses"
@@ -410,7 +410,7 @@ const App: React.FC = () => {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                   <button
                     onClick={() => setShowFavoritesOnly(!showFavoritesOnly)}
                     className={`flex items-center gap-2 px-4 py-2 rounded-2xl border transition-all ${showFavoritesOnly ? "bg-red-50 border-red-100 text-red-600 shadow-sm" : "bg-gray-50 border-gray-100 text-gray-400 hover:text-gray-600"}`}

@@ -213,6 +213,62 @@ export const ACCURATE_TUNES: Record<string, Note[]> = {
     ['G4', 1.0], ['B4', 1.0], ['B4', 1.0], ['B4', 1.0], ['D5', 1.5], ['C5', 0.5], ['B4', 1.0], ['A4', 3.0],
     ['D5', 1.0], ['D5', 1.0], ['B4', 1.0], ['G4', 1.0], ['C5', 1.5], ['C5', 0.5], ['A4', 1.0], ['F#4', 1.0],
     ['G4', 1.0], ['A4', 1.0], ['B4', 1.0], ['C5', 1.0], ['B4', 1.5], ['A4', 0.5], ['G4', 3.0]
+  ]),
+  'VICTORY': makeMelody([
+    ['D4', 0.5], ['G4', 1.5], ['G4', 0.5], ['G4', 1.0], ['A4', 1.0], ['B4', 1.5], ['A4', 0.5], ['G4', 1.0], ['E4', 1.0], ['D4', 2.0],
+    ['D4', 0.5], ['G4', 1.5], ['G4', 0.5], ['B4', 1.0], ['D5', 1.0], ['D5', 1.5], ['B4', 0.5], ['A4', 3.0],
+    ['D5', 1.0], ['D5', 1.0], ['B4', 1.0], ['G4', 1.0], ['C5', 1.5], ['C5', 0.5], ['B4', 1.0], ['G4', 1.0],
+    ['D4', 0.5], ['G4', 1.5], ['A4', 0.5], ['B4', 1.0], ['C5', 1.0], ['B4', 1.5], ['A4', 0.5], ['G4', 3.0],
+    // Chorus
+    ['D5', 1.0], ['B4', 1.0], ['G4', 1.0], ['C5', 1.5], ['C5', 0.5], ['B4', 1.0], ['G4', 1.0], ['A4', 2.0],
+    ['B4', 1.0], ['B4', 1.0], ['G4', 1.0], ['E4', 1.0], ['D4', 1.5], ['E4', 0.5], ['G4', 1.0], ['A4', 2.0],
+    ['D5', 1.0], ['D5', 1.0], ['B4', 1.0], ['G4', 1.0], ['C5', 1.5], ['C5', 0.5], ['B4', 1.0], ['G4', 1.0],
+    ['D4', 0.5], ['G4', 1.5], ['A4', 0.5], ['B4', 1.0], ['C5', 1.0], ['B4', 1.5], ['A4', 0.5], ['G4', 3.0]
+  ]),
+  'BETHANY': makeMelody([
+    ['B4', 1.2], ['A4', 0.6], ['G4', 1.2], ['E4', 1.2], ['D4', 2.4],
+    ['B4', 1.2], ['G4', 0.6], ['B4', 1.2], ['A4', 2.4],
+    ['B4', 1.2], ['A4', 0.6], ['G4', 1.2], ['E4', 1.2], ['D4', 2.4],
+    ['B4', 1.2], ['A4', 0.6], ['G4', 1.2], ['F#4', 1.2], ['G4', 2.4]
+  ]),
+  'SOLID ROCK': makeMelody([
+    ['G4', 1.0], ['G4', 1.0], ['B4', 1.0], ['D5', 2.0], ['B4', 1.0], ['A4', 1.0], ['G4', 1.0], ['A4', 2.0],
+    ['G4', 1.0], ['G4', 1.0], ['B4', 1.0], ['D5', 2.0], ['B4', 1.0], ['A4', 1.0], ['G4', 1.0], ['G4', 2.0],
+    // Chorus
+    ['D5', 2.0], ['B4', 1.0], ['G4', 1.0], ['A4', 2.0], ['F#4', 1.0], ['D4', 1.0],
+    ['G4', 1.0], ['G4', 1.0], ['B4', 1.0], ['D5', 2.0], ['B4', 1.0], ['A4', 1.0], ['G4', 1.0], ['G4', 2.0]
+  ]),
+  'TRUST': makeMelody([
+    ['B4', 1.0], ['A4', 1.0], ['G4', 1.0], ['B4', 1.0], ['D5', 1.0], ['D5', 1.0], ['C5', 1.0], ['B4', 2.0],
+    ['B4', 1.0], ['A4', 1.0], ['G4', 1.0], ['B4', 1.0], ['A4', 2.0],
+    // Chorus
+    ['D5', 2.0], ['B4', 1.0], ['G4', 1.0], ['A4', 2.0], ['F#4', 1.0], ['D4', 1.0],
+    ['B4', 1.0], ['A4', 1.0], ['G4', 1.0], ['B4', 1.0], ['A4', 1.0], ['G4', 2.0]
+  ]),
+  'PASS ME NOT': makeMelody([
+    ['B4', 1.5], ['A4', 0.5], ['G4', 1.0], ['E4', 1.0], ['D4', 2.0],
+    ['G4', 1.0], ['G4', 1.0], ['B4', 1.0], ['D5', 1.0], ['A4', 3.0],
+    ['B4', 1.5], ['A4', 0.5], ['G4', 1.0], ['E4', 1.0], ['D4', 2.0],
+    ['G4', 1.0], ['G4', 1.0], ['A4', 1.0], ['F#4', 1.0], ['G4', 3.0],
+    // Chorus
+    ['D5', 1.5], ['B4', 0.5], ['G4', 1.0], ['B4', 1.0], ['C5', 3.0],
+    ['B4', 1.5], ['A4', 0.5], ['G4', 1.0], ['E4', 1.0], ['D4', 2.0],
+    ['G4', 1.0], ['G4', 1.0], ['A4', 1.0], ['F#4', 1.0], ['G4', 3.0]
+  ]),
+  'GARDEN': makeMelody([
+    ['D4', 0.5], ['G4', 1.0], ['B4', 1.0], ['G4', 1.0], ['B4', 1.0], ['D5', 1.5], ['C5', 0.5], ['B4', 1.0], ['B4', 1.0], ['A4', 3.0],
+    ['D4', 0.5], ['G4', 1.0], ['A4', 1.0], ['F#4', 1.0], ['A4', 1.0], ['C5', 1.5], ['B4', 0.5], ['A4', 1.0], ['A4', 1.0], ['G4', 3.0],
+    // Chorus
+    ['B4', 1.5], ['B4', 0.5], ['B4', 1.0], ['B4', 1.0], ['B4', 1.5], ['A4', 0.5], ['G4', 1.0], ['G4', 1.0], ['G4', 1.5], ['F#4', 0.5], ['E4', 1.0], ['E4', 1.0], ['D4', 3.0],
+    ['D4', 0.5], ['G4', 1.0], ['B4', 1.0], ['G4', 1.0], ['B4', 1.0], ['D5', 1.5], ['C5', 0.5], ['B4', 1.0], ['A4', 1.0], ['G4', 3.0]
+  ]),
+  'SWEET HOUR': makeMelody([
+    ['D4', 0.5], ['G4', 1.5], ['G4', 0.5], ['B4', 1.0], ['B4', 1.5], ['B4', 0.5], ['D5', 1.0], ['B4', 1.5], ['A4', 0.5], ['G4', 1.0], ['E4', 1.5], ['D4', 0.5], ['G4', 1.0],
+    ['B4', 1.5], ['A4', 0.5], ['G4', 1.0], ['B4', 1.5], ['A4', 0.5], ['G4', 1.0], ['A4', 3.0]
+  ]),
+  'HE LEADETH ME': makeMelody([
+    ['D4', 0.5], ['G4', 1.0], ['A4', 1.0], ['B4', 1.0], ['C5', 1.0], ['B4', 1.0], ['A4', 1.0], ['B4', 1.0], ['G4', 1.0],
+    ['B4', 1.0], ['D5', 1.0], ['D5', 1.0], ['C5', 1.0], ['B4', 1.0], ['A4', 3.0]
   ])
 };
 
@@ -229,6 +285,11 @@ export function getAccurateMelody(tuneName: string, title?: string): Note[] | nu
     'OLD100TH': 'OLD HUNDREDTH',
     'OLDHUNDREDTH': 'OLD HUNDREDTH',
     'VICTORYAHEAD': 'VICTORY AHEAD',
+    'TRUSTINJESUS': 'TRUST',
+    'SOLIDROCK': 'SOLID ROCK',
+    'HELEADETHME': 'HE LEADETH ME',
+    'SWEETHOUR': 'SWEET HOUR',
+    'PASSMENOT': 'PASS ME NOT',
   };
 
   const resolved = synonyms[normTune];
@@ -265,6 +326,14 @@ export function getAccurateMelody(tuneName: string, title?: string): Note[] | nu
     if (normTitle.includes('hark! the herald angels sing')) return ACCURATE_TUNES['MENDELSSOHN'];
     if (normTitle.includes('o come, all ye faithful')) return ACCURATE_TUNES['ADESTE FIDELES'];
     if (normTitle.includes('victory ahead')) return ACCURATE_TUNES['VICTORY AHEAD'];
+    if (normTitle.includes('victory in jesus')) return ACCURATE_TUNES['VICTORY'];
+    if (normTitle.includes('nearer, my god, to thee') || normTitle.includes('nearer my god to thee')) return ACCURATE_TUNES['BETHANY'];
+    if (normTitle.includes('the solid rock') || normTitle.includes('my hope is built')) return ACCURATE_TUNES['SOLID ROCK'];
+    if (normTitle.includes('tis so sweet to trust')) return ACCURATE_TUNES['TRUST'];
+    if (normTitle.includes('pass me not')) return ACCURATE_TUNES['PASS ME NOT'];
+    if (normTitle.includes('in the garden')) return ACCURATE_TUNES['GARDEN'];
+    if (normTitle.includes('sweet hour of prayer')) return ACCURATE_TUNES['SWEET HOUR'];
+    if (normTitle.includes('he leadeth me')) return ACCURATE_TUNES['HE LEADETH ME'];
     if (normTitle.includes('little donkey')) return ACCURATE_TUNES['LITTLE DONKEY'];
     if (normTitle.includes('sweetly sleep')) return ACCURATE_TUNES['ROCKING'];
     if (normTitle.includes('my god is so big')) return ACCURATE_TUNES['MY GOD IS SO BIG'];

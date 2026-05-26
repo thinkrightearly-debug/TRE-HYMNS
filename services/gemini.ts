@@ -281,17 +281,21 @@ export const translateHymn = async (hymnTitle: string, lyrics: string, targetLan
       return `Translations in ${targetLanguage} are resting. Please configure your GEMINI_API_KEY.`;
     }
 
-    const prompt = `You are an expert theologian and bilingual translator specializing in sacred hymns.
-    Translate the following hymn lyrics into extremely beautiful, poetic, and rhythmically appropriate ${targetLanguage}.
-    Ensure the translation captures the absolute full depth, spiritual meaning, and emotional resonance of the original text.
-    If translating into African languages like Yoruba, Igbo, or Hausa, ensure proper tone markings (diacritics) where applicable to maintain extreme accuracy and respect standard pronunciation.
-    
+    const prompt = `You are a world-class expert theologian, linguist, and bilingual translator specializing in sacred Christian hymns.
+    Your task is to translate the following hymn lyrics into extremely high-fidelity, poetic, and rhythmically appropriate ${targetLanguage} text of 100% absolute accuracy.
+
+    Follow these rules strictly to achieve 100% accuracy:
+    1. STRICT SEMANTIC FIDELITY: Maintain the precise theological doctrines and spiritual meanings. Do not embellish or omit any message contained in the original verse lines.
+    2. METRICAL & RHYTHMIC MATCHING: Adapt the syllables and rhythm so the translated lines can be seamlessly sung to the same original organ melody. Match original line and stanza boundaries (no summaries, no consolidations).
+    3. EXTREME DIACRITICAL PRECISION: If translating into tone languages or languages that utilize diacritics (including African languages like Yorùbá, Igbo, Hausa, or European languages like Spanish, French, German), enforce perfect, precise, dictionary-accurate tone marking, underdots, accents, and pronunciation diacritics to ensure respectful, 100% correct pronunciation.
+    4. ZERO CONVERSATIONAL NOISE: Output only the translated verses/chorus. Do not include introductory phrases (like "Sure, here is the translation..."), translator's notes, explanations, titles, or headers. Output ONLY the raw translated stanzas, separated by double newlines.
+
     Hymn Title: "${hymnTitle}"
     
     Original English Lyrics:
     ${lyrics}
     
-    Provide only the translated verses, separated by double newlines. Do not include any translation notes, introductory text, or titles. Just output the translation itself.`;
+    Raw ${targetLanguage} Poetic Translation:`;
 
     const text = await callGemini(prompt);
     await set(cacheKey, text);

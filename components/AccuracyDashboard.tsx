@@ -178,6 +178,7 @@ export const AccuracyDashboard: React.FC<AccuracyDashboardProps> = ({
         if (corrected.melody && corrected.melody.length > 0) {
           isModified = true;
           changesList.push(`Scanned and verified 100% accurate tune melody (${corrected.melody.length} notes)`);
+          addLog(`🎵 Composed & synthesized accurate organ tune notes for "${corrected.tune || targetHymn.tune || 'Traditional'}": ${corrected.melody.length} notes generated!`, 'success', targetHymn.number);
         }
 
         // Apply changes
@@ -309,7 +310,7 @@ export const AccuracyDashboard: React.FC<AccuracyDashboardProps> = ({
               <Sparkles size={10} className="fill-amber-500 text-amber-500" />
               Accuracy Suite
             </span>
-            <h2 className="font-extrabold text-slate-900 text-base leading-none mt-1">100% Accuracy Verification Scanner</h2>
+            <h2 className="font-extrabold text-slate-900 text-base leading-none mt-1">100% Accuracy Verification Scanner & Organ Tune Composer</h2>
           </div>
         </div>
         <div className="flex items-center gap-2">
@@ -371,7 +372,7 @@ export const AccuracyDashboard: React.FC<AccuracyDashboardProps> = ({
             <p className="text-[10px] font-black uppercase tracking-wider text-amber-800 mb-1">Traditional Repairs Made</p>
             <p className="text-3xl font-black text-amber-600 tracking-tight">{correctionCount}</p>
           </div>
-          <p className="text-[10px] text-amber-700 font-bold mt-4">Missing verses or text lines restored</p>
+          <p className="text-[10px] text-amber-700 font-bold mt-4">Missing verses, chorus lines, or organ notes composed</p>
         </div>
       </div>
 

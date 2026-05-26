@@ -10600,5 +10600,35 @@ export const HYMNS: Hymn[] = [
       "Driving the lorries and licking the lollies,\nand pushing the babies in beautiful trollies:\nso busy is everyone, day after day,\nin working and studying, resting and play.",
       "But God is the Lord of each second and hour,\nwho holds the whole world in his absolute power;\nhe loves us so dearly and knows who we are,\nfrom closest of neighbours to furthest of star!"
     ]
+  },
+  {
+    id: 889,
+    number: 889,
+    title: "Victory Ahead",
+    category: "Praise",
+    author: "William Grum",
+    tune: "VICTORY AHEAD",
+    chorus: "Victory ahead! Victory ahead!\nThrough the precious blood of Jesus, victory ahead!\nTrusting in the Lord, I fear no foe,\nFor the victory is mine, I know!",
+    verses: [
+      "When the hosts of Israel, led by God,\nRound the walls of Jericho softly trod,\nTrusting in the Lord, they felt no fear,\nFor the victory was surely near.",
+      "David with a shepherd’s sling and stone,\nGiant Goliath o’erthrew alone,\nTrusting in the Lord, he felt no fear,\nFor the victory was surely near.",
+      "Daniel in the den of lions bold,\nKept by power of God, as we are told,\nTrusting in the Lord, he felt no fear,\nFor the victory was surely near.",
+      "Often with a burden’s heavy load,\nTraveling along life’s rugged road,\nTrusting in the Lord, we feel no fear,\nFor the victory is surely near."
+    ]
+  },
+  {
+    id: 890,
+    number: 890,
+    title: "Victory in Jesus",
+    category: "Praise",
+    author: "Eugene M. Bartlett",
+    tune: "VICTORY",
+    chorus: "O victory in Jesus,\nMy Savior, forever!\nHe sought me and bought me\nWith His redeeming blood;\nHe loved me ere I knew Him,\nAnd all my love is due Him;\nHe plunged me to victory\nBeneath the cleansing flood.",
+    verses: [
+      "I heard an old, old story,\nHow a Savior came from glory,\nHow He gave His life on Calvary\nTo save a wretch like me;\nI heard about His groaning,\nOf His precious blood’s atoning,\nThen I repented of my sins\nAnd won the victory.",
+      "I heard about His healing,\nOf His cleansing pow’r revealing,\nHow He made the lame to walk again\nAnd caused the blind to see;\nAnd then I cried, “Dear Jesus,\nCome and heal my broken spirit,”\nAnd somehow Jesus came and bro’t\nTo me the victory.",
+      "I heard about a mansion\nHe has built for me in glory,\nAnd I heard about the streets of gold\nBeyond the crystal sea;\nAbout the angels singing,\nAnd the redemption story,\nAnd some sweet day I’ll sing up there\nThe song of victory."
+    ]
   }
 ];
+
