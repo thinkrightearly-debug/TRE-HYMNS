@@ -56,12 +56,25 @@ export const AccuracyDashboard: React.FC<AccuracyDashboardProps> = ({
   // Local state for scan control
   const [isScanning, setIsScanning] = useState(false);
   const [currentHymnIndex, setCurrentHymnIndex] = useState<number>(-1);
-  const [scanMode, setScanMode] = useState<'filtered' | 'favorites' | 'all'>('filtered');
+  const [scanMode, setScanMode] = useState<'filtered' | 'favorites' | 'all' | 'range'>('filtered');
+  const [fromHymn, setFromHymn] = useState<number>(1);
+  const [toHymn, setToHymn] = useState<number>(858);
   const [logs, setLogs] = useState<LogEntry[]>([]);
   const [repairs, setRepairs] = useState<RepairRecord[]>([]);
   const [processedCount, setProcessedCount] = useState(0);
   const [successCount, setSuccessCount] = useState(0);
   const [correctionCount, setCorrectionCount] = useState(0);
+
+  // Set initial default ranges dynamically when hymns load
+  useEffect(() => {
+    if (hymns && hymns.length > 0) {
+      const numbers = hymns.map(h => h.number).filter(n => !isNaN(n));
+      if (numbers.length > 0) {
+        setFromHymn(Math.min(...numbers));
+        setToHymn(Math.max(...numbers));
+      }
+    }
+  }, [hymns]);
 
   // Gemini API Key control & help helper states
   const [customKeyInput, setCustomKeyInput] = useState(getApiKey());
@@ -86,6 +99,9 @@ export const AccuracyDashboard: React.FC<AccuracyDashboardProps> = ({
     if (scanMode === 'all') {
       return hymns;
     }
+    if (scanMode === 'range') {
+      return hymns.filter(h => h.number >= fromHymn && h.number <= toHymn);
+    }
     // 'filtered' represents current view matching search/cat
     let filtered = hymns;
     if (selectedCategory !== 'All') {
@@ -99,7 +115,7 @@ export const AccuracyDashboard: React.FC<AccuracyDashboardProps> = ({
       );
     }
     return filtered;
-  }, [hymns, favorites, scanMode, selectedCategory, searchQuery]);
+  }, [hymns, favorites, scanMode, selectedCategory, searchQuery, fromHymn, toHymn]);
 
   // Total metrics
   const totalVerified = hymns.filter(h => h.isVerified).length;
@@ -482,7 +498,7 @@ export const AccuracyDashboard: React.FC<AccuracyDashboardProps> = ({
             </div>
 
             {/* Mode selector tab pills */}
-            <div className="bg-slate-100 p-1.5 rounded-2xl flex gap-1 border border-slate-250 self-stretch sm:self-auto">
+            <div className="bg-slate-100 p-1.5 rounded-2xl flex flex-wrap gap-1 border border-slate-250 self-stretch sm:self-auto">
               <button
                 disabled={isScanning}
                 onClick={() => setScanMode('filtered')}
@@ -499,13 +515,102 @@ export const AccuracyDashboard: React.FC<AccuracyDashboardProps> = ({
               </button>
               <button
                 disabled={isScanning}
+                onClick={() => setScanMode('range')}
+                className={`flex-1 sm:flex-none text-[10px] font-black uppercase tracking-widest px-4 py-3 rounded-xl transition-all ${scanMode === 'range' ? 'bg-white text-indigo-950 shadow-md' : 'text-slate-500 hover:text-slate-800'}`}
+              >
+                Custom Range ({hymns.filter(h => h.number >= fromHymn && h.number <= toHymn).length})
+              </button>
+              <button
+                disabled={isScanning}
                 onClick={() => setScanMode('all')}
                 className={`flex-1 sm:flex-none text-[10px] font-black uppercase tracking-widest px-4 py-3 rounded-xl transition-all ${scanMode === 'all' ? 'bg-white text-indigo-950 shadow-md' : 'text-slate-500 hover:text-slate-800'}`}
               >
-                All 858 ({hymns.length})
+                All 858+ ({hymns.length})
               </button>
             </div>
           </div>
+
+          {/* Interactive Custom Range Selections */}
+          {scanMode === 'range' && (
+            <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-5 space-y-4 animate-in fade-in duration-300">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-2">
+                <span className="text-[10px] font-black text-slate-500 uppercase tracking-wider">Define Custom Hymn Scan Range</span>
+                <span className="text-[10px] font-bold text-indigo-600 bg-indigo-50 border border-indigo-100 px-2 py-0.5 rounded-full">
+                  Targeting {hymns.filter(h => h.number >= fromHymn && h.number <= toHymn).length} Hymns ({fromHymn} to {toHymn})
+                </span>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="space-y-1.5">
+                  <div className="flex justify-between items-center">
+                    <label className="text-[10px] font-black uppercase tracking-wider text-slate-500">From Hymn Number</label>
+                    <span className="text-[9px] font-mono text-slate-400">Min: {hymns.length > 0 ? Math.min(...hymns.map(h => h.number).filter(n => !isNaN(n))) : 1}</span>
+                  </div>
+                  <input
+                    type="number"
+                    disabled={isScanning}
+                    min={hymns.length > 0 ? Math.min(...hymns.map(h => h.number).filter(n => !isNaN(n))) : 1}
+                    max={toHymn}
+                    value={fromHymn}
+                    onChange={(e) => {
+                      const val = parseInt(e.target.value);
+                      if (!isNaN(val)) {
+                        setFromHymn(val);
+                      }
+                    }}
+                    className="w-full bg-white border border-slate-250 rounded-xl px-4 py-2.5 text-xs font-bold outline-none focus:border-indigo-500 transition-all shadow-sm"
+                  />
+                </div>
+
+                <div className="space-y-1.5">
+                  <div className="flex justify-between items-center">
+                    <label className="text-[10px] font-black uppercase tracking-wider text-slate-500">To Hymn Number</label>
+                    <span className="text-[9px] font-mono text-slate-400">Max: {hymns.length > 0 ? Math.max(...hymns.map(h => h.number).filter(n => !isNaN(n))) : 890}</span>
+                  </div>
+                  <input
+                    type="number"
+                    disabled={isScanning}
+                    min={fromHymn}
+                    max={hymns.length > 0 ? Math.max(...hymns.map(h => h.number).filter(n => !isNaN(n))) : 890}
+                    value={toHymn}
+                    onChange={(e) => {
+                      const val = parseInt(e.target.value);
+                      if (!isNaN(val)) {
+                        setToHymn(val);
+                      }
+                    }}
+                    className="w-full bg-white border border-slate-250 rounded-xl px-4 py-2.5 text-xs font-bold outline-none focus:border-indigo-500 transition-all shadow-sm"
+                  />
+                </div>
+              </div>
+
+              {/* Quick range presets */}
+              <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-100">
+                <span className="text-[9px] font-black uppercase tracking-wider text-slate-400 mr-1">Quick Presets:</span>
+                {[
+                  { label: "1 - 100", from: 1, to: 100 },
+                  { label: "101 - 300", from: 101, to: 300 },
+                  { label: "301 - 500", from: 301, to: 500 },
+                  { label: "513 - 858+", from: 513, to: 890 },
+                  { label: "Full Range", from: 1, to: hymns.length > 0 ? Math.max(...hymns.map(h => h.number).filter(n => !isNaN(n))) : 890 }
+                ].map((preset, pIdx) => (
+                  <button
+                    key={pIdx}
+                    disabled={isScanning}
+                    type="button"
+                    onClick={() => {
+                      setFromHymn(preset.from);
+                      const maxLimit = hymns.length > 0 ? Math.max(...hymns.map(h => h.number).filter(n => !isNaN(n))) : 890;
+                      setToHymn(Math.min(preset.to, maxLimit));
+                    }}
+                    className="px-2.5 py-1 text-[9px] font-extrabold uppercase tracking-widest bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 rounded-lg shadow-xs transition-all active:scale-95 disabled:opacity-50"
+                  >
+                    {preset.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Action Trigger Buttons */}
           <div className="flex flex-wrap items-center gap-3">

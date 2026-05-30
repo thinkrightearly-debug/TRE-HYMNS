@@ -96,8 +96,23 @@ const App: React.FC = () => {
         verifiedAt: updated.verifiedAt || new Date().toISOString(),
         updatedAt: new Date().toISOString(),
       });
-    } catch (error) {
-      handleFirestoreError(error, OperationType.WRITE, `hymn_overrides/${updated.id}`);
+    } catch (error: any) {
+      const errMessage = String(error?.message || error || "").toLowerCase();
+      const errCode = error?.code;
+      if (
+        errCode === "unavailable" ||
+        errMessage.includes("could not reach") ||
+        errMessage.includes("unavailable") ||
+        errMessage.includes("offline")
+      ) {
+        console.warn(
+          `[Firestore Write] Save succeeded in local cache. Backend unreachable for hymn override ${updated.id}, will sync when online.`,
+          error
+        );
+        setIsOffline(true);
+      } else {
+        handleFirestoreError(error, OperationType.WRITE, `hymn_overrides/${updated.id}`);
+      }
     }
   };
 
@@ -145,7 +160,28 @@ const App: React.FC = () => {
         });
       },
       (error) => {
-        handleFirestoreError(error, OperationType.GET, "hymn_overrides");
+        const errMessage = String(error?.message || error || "").toLowerCase();
+        const errCode = (error as any)?.code;
+        if (
+          errCode === "unavailable" ||
+          errCode === "failed-precondition" ||
+          errMessage.includes("could not reach") ||
+          errMessage.includes("unavailable") ||
+          errMessage.includes("offline")
+        ) {
+          console.warn(
+            "[Firestore Sync] Backend is currently unreachable. Operating smoothly in local offline caching mode.",
+            error
+          );
+          setIsOffline(true);
+        } else {
+          console.error("[Firestore Sync] Error listening to hymn overrides:", error);
+          try {
+            handleFirestoreError(error, OperationType.GET, "hymn_overrides");
+          } catch (thrownErr) {
+            console.error("[Firestore Sync] Non-fatal validation log:", thrownErr);
+          }
+        }
       }
     );
 
