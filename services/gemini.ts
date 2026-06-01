@@ -203,9 +203,16 @@ const callGemini = async (prompt: string, responseMimeType?: string): Promise<st
       }),
     });
 
-    if (response.status === 404 || response.status === 502 || response.status === 504) {
+    if (response.status === 404 || response.status === 502 || response.status === 504 || response.status === 405) {
       console.log(`[Proxy] Endpoint returned status ${response.status}. Triggering direct client-side fallback...`);
       fallbackNeeded = true;
+    } else {
+      // Check Content-Type to make sure we didn't receive HTML (e.g. index.html rewrite on static host)
+      const contentType = response.headers.get("content-type") || "";
+      if (contentType.toLowerCase().includes("text/html")) {
+        console.log(`[Proxy] HTML fallback detected (Vercel routing). Triggering direct client-side fallback...`);
+        fallbackNeeded = true;
+      }
     }
   } catch (netErr) {
     console.log("[Proxy] Net/Connection error when connecting to backend. Falling back to direct client-side call...", netErr);
@@ -217,6 +224,17 @@ const callGemini = async (prompt: string, responseMimeType?: string): Promise<st
   }
 
   if (!response || !response.ok) {
+    // If the call failed but we have an API key, try direct client fallback as a final effort!
+    const apiKey = getApiKey();
+    if (apiKey) {
+      console.log(`[Proxy] Response failed with status ${response ? response.status : 'unknown'}. Client API key is present; attempting direct client fallback...`);
+      try {
+        return await callGeminiDirect(prompt, responseMimeType);
+      } catch (fallbackErr) {
+        console.error("[Proxy] Both proxy and client-side fallback failed:", fallbackErr);
+      }
+    }
+
     let message = response ? `HTTP error ${response.status}` : "Failed to contact proxy server";
     try {
       if (response) {
@@ -231,11 +249,26 @@ const callGemini = async (prompt: string, responseMimeType?: string): Promise<st
     throw new Error(message);
   }
 
-  const data = await response.json();
-  if (!data || !data.text) {
-    throw new Error("Empty response from Gemini API proxy service.");
+  try {
+    const data = await response.json();
+    if (!data || !data.text) {
+      // If we got invalid JSON but have client-side key, try direct fallback
+      const apiKey = getApiKey();
+      if (apiKey) {
+        console.log("[Proxy] Invalid JSON or missing text from proxy. Retrying via client-side fallback...");
+        return await callGeminiDirect(prompt, responseMimeType);
+      }
+      throw new Error("Empty response from Gemini API proxy service.");
+    }
+    return data.text;
+  } catch (parseOrEmptyErr) {
+    const apiKey = getApiKey();
+    if (apiKey) {
+      console.log("[Proxy] JSON parse failed on response. Retrying via client-side fallback...", parseOrEmptyErr);
+      return await callGeminiDirect(prompt, responseMimeType);
+    }
+    throw parseOrEmptyErr;
   }
-  return data.text;
 };
 
 export const getCachedData = async (key: string) => {
