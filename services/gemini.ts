@@ -128,9 +128,9 @@ const callGeminiDirect = async (prompt: string, responseMimeType?: string): Prom
   }
 
   const modelsToTry = [
-    "gemini-2.5-flash",
-    "gemini-1.5-flash",
-    "gemini-1.5-pro"
+    "gemini-3.5-flash",
+    "gemini-3.1-flash-lite",
+    "gemini-flash-latest"
   ];
 
   let lastError: any = null;
