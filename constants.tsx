@@ -10629,6 +10629,22 @@ export const HYMNS: Hymn[] = [
       "I heard about His healing,\nOf His cleansing pow’r revealing,\nHow He made the lame to walk again\nAnd caused the blind to see;\nAnd then I cried, “Dear Jesus,\nCome and heal my broken spirit,”\nAnd somehow Jesus came and bro’t\nTo me the victory.",
       "I heard about a mansion\nHe has built for me in glory,\nAnd I heard about the streets of gold\nBeyond the crystal sea;\nAbout the angels singing,\nAnd the redemption story,\nAnd some sweet day I’ll sing up there\nThe song of victory."
     ]
+  },
+  {
+    id: 891,
+    number: 891,
+    title: "Standing on the Promises",
+    category: "Praise",
+    author: "Russell Kelso Carter",
+    tune: "PROMISES",
+    chorus: "Standing, standing,\nstanding on the promises of God, my Savior;\nstanding, standing,\nI’m standing on the promises of God.",
+    verses: [
+      "Standing on the promises of Christ, my King!\nThrough eternal ages let His praises ring.\n\"Glory in the highest!\" I will shout and sing,\nstanding on the promises of God.",
+      "Standing on the promises that cannot fail!\nWhen the howling storms of doubt and fear assail,\nby the living Word of God I shall prevail,\nstanding on the promises of God.",
+      "Standing on the promises, I now can see\nperfect, present cleansing in the blood for me;\nstanding in the liberty where Christ makes free,\nstanding on the promises of God.",
+      "Standing on the promises of Christ, the Lord,\nbound to Him eternally by love’s strong cord,\novercoming daily with the Spirit’s Sword,\nstanding on the promises of God.",
+      "Standing on the promises I cannot fall,\nlist'ning ev'ry moment to the Spirit’s call,\nresting in my Savior as my all in all,\nstanding on the promises of God."
+    ]
   }
 ];
 

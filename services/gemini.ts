@@ -109,26 +109,121 @@ export const parseRobustJson = (rawText: string) => {
   }
 };
 
-const callGemini = async (prompt: string, responseMimeType?: string): Promise<string> => {
-  const customApiKey = getApiKey();
-  const response = await fetch("/api/gemini/generate", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      prompt,
-      responseMimeType,
-      customApiKey,
-    }),
-  });
+const callGeminiDirect = async (prompt: string, responseMimeType?: string): Promise<string> => {
+  const apiKey = getApiKey();
+  if (!apiKey) {
+    throw new Error("No Gemini API key supplied. Please make sure GEMINI_API_KEY is configured.");
+  }
 
-  if (!response.ok) {
-    let message = `HTTP error ${response.status}`;
+  const modelsToTry = [
+    "gemini-2.5-flash",
+    "gemini-1.5-flash",
+    "gemini-1.5-pro"
+  ];
+
+  let lastError: any = null;
+
+  for (const model of modelsToTry) {
     try {
-      const errData = await response.json();
-      if (errData && errData.error) {
-        message = errData.error;
+      console.log(`[Client Fallback] Attempting direct browser call using model: ${model}`);
+      const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+      
+      const payload = {
+        contents: [
+          {
+            parts: [{ text: prompt }]
+          }
+        ],
+        generationConfig: responseMimeType ? { responseMimeType } : undefined
+      };
+
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (!res.ok) {
+        let errMsg = `HTTP error ${res.status}`;
+        try {
+          const jsonErr = await res.json();
+          if (jsonErr?.error?.message) {
+            errMsg = jsonErr.error.message;
+          }
+        } catch (e) {}
+        throw new Error(errMsg);
+      }
+
+      const resData = await res.json();
+      const text = resData?.candidates?.[0]?.content?.parts?.[0]?.text;
+      if (text) {
+        return text;
+      } else {
+        throw new Error("Invalid response format or empty text content.");
+      }
+    } catch (err: any) {
+      console.warn(`[Client Fallback] Model ${model} direct call failed:`, err);
+      lastError = err;
+      
+      const errStr = String(err?.message || err || "").toLowerCase();
+      if (
+        errStr.includes("api key") ||
+        errStr.includes("key is not valid") ||
+        errStr.includes("403") ||
+        errStr.includes("401") ||
+        errStr.includes("unauthorized") ||
+        errStr.includes("permission denied") ||
+        errStr.includes("invalid key")
+      ) {
+        break;
+      }
+    }
+  }
+
+  throw lastError || new Error("Direct client-side fallback failed for all models.");
+};
+
+const callGemini = async (prompt: string, responseMimeType?: string): Promise<string> => {
+  let fallbackNeeded = false;
+  let response: Response | null = null;
+
+  try {
+    const customApiKey = getApiKey();
+    response = await fetch("/api/gemini/generate", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        prompt,
+        responseMimeType,
+        customApiKey,
+      }),
+    });
+
+    if (response.status === 404 || response.status === 502 || response.status === 504) {
+      console.log(`[Proxy] Endpoint returned status ${response.status}. Triggering direct client-side fallback...`);
+      fallbackNeeded = true;
+    }
+  } catch (netErr) {
+    console.log("[Proxy] Net/Connection error when connecting to backend. Falling back to direct client-side call...", netErr);
+    fallbackNeeded = true;
+  }
+
+  if (fallbackNeeded) {
+    return await callGeminiDirect(prompt, responseMimeType);
+  }
+
+  if (!response || !response.ok) {
+    let message = response ? `HTTP error ${response.status}` : "Failed to contact proxy server";
+    try {
+      if (response) {
+        const errData = await response.json();
+        if (errData && errData.error) {
+          message = errData.error;
+        }
       }
     } catch (e) {
       // Ignore JSON parse errors

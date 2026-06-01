@@ -269,6 +269,17 @@ export const ACCURATE_TUNES: Record<string, Note[]> = {
   'HE LEADETH ME': makeMelody([
     ['D4', 0.5], ['G4', 1.0], ['A4', 1.0], ['B4', 1.0], ['C5', 1.0], ['B4', 1.0], ['A4', 1.0], ['B4', 1.0], ['G4', 1.0],
     ['B4', 1.0], ['D5', 1.0], ['D5', 1.0], ['C5', 1.0], ['B4', 1.0], ['A4', 3.0]
+  ]),
+  'PROMISES': makeMelody([
+    ['B4', 0.5], ['B4', 1.0], ['B4', 0.5], ['B4', 1.0], ['B4', 0.5], ['G4', 0.5], ['B4', 1.0], ['F#4', 1.5], ['D4', 0.5],
+    ['A4', 1.0], ['A4', 0.5], ['A4', 1.0], ['A4', 0.5], ['F#4', 0.5], ['A4', 1.0], ['G4', 2.0],
+    ['B4', 1.0], ['B4', 0.5], ['B4', 1.0], ['B4', 0.5], ['B4', 0.5], ['C5', 0.5], ['D5', 1.0], ['C5', 1.5], ['B4', 0.5],
+    ['A4', 1.0], ['G4', 0.5], ['A4', 1.0], ['B4', 0.5], ['A4', 1.0], ['G4', 2.0],
+    // Chorus
+    ['B4', 2.0], ['B4', 0.5], ['B4', 0.5], ['C5', 1.0], ['C5', 2.0],
+    ['C5', 0.5], ['B4', 0.5], ['A4', 0.5], ['G4', 0.5], ['A4', 1.0], ['B4', 1.0], ['A4', 3.0],
+    ['B4', 2.0], ['B4', 0.5], ['B4', 0.5], ['C5', 1.0], ['C5', 2.0],
+    ['A4', 1.0], ['G4', 0.5], ['F#4', 1.0], ['A4', 0.5], ['G4', 3.0]
   ])
 };
 
@@ -340,6 +351,7 @@ export function getAccurateMelody(tuneName: string, title?: string): Note[] | nu
     if (normTitle.includes('our god is so great')) return ACCURATE_TUNES['MY GOD IS SO BIG'];
     if (normTitle.includes('join the dance')) return ACCURATE_TUNES['O COME AND JOIN THE DANCE'];
     if (normTitle.includes('rise and shine')) return ACCURATE_TUNES['RISE AND SHINE'];
+    if (normTitle.includes('standing on the promises')) return ACCURATE_TUNES['PROMISES'];
   }
 
   return null;
