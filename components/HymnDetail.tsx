@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Hymn, Note } from '../types';
 import { ArrowLeft, Heart, Sparkles, BookOpen, Music, Share2, Play, Square, Loader2, Volume2, Mic2, Globe, Languages, Copy, Check } from 'lucide-react';
-import { getHymnReflection, modernizeHymn, generateHymnMelody, getCachedData, translateHymn, verifyAndCompleteLyrics } from '../services/gemini';
+import { getHymnReflection, modernizeHymn, generateHymnMelody, getCachedData, translateHymn, verifyAndCompleteLyrics, getApiKey, setCustomApiKey } from '../services/gemini';
 import { ReactiveVisualizer } from './ReactiveVisualizer';
 
 interface HymnDetailProps {
@@ -26,6 +26,9 @@ interface HymnDetailProps {
 
 export const HymnDetail: React.FC<HymnDetailProps> = ({ hymn, isFavorite, onToggleFavorite, onBack, organPlayer, onUpdateHymn }) => {
   const [reflection, setReflection] = useState<string | null>(null);
+  const [apiKeyValue, setApiKeyValue] = useState(getApiKey());
+  const [customKeyInput, setCustomKeyInput] = useState('');
+  const [showKeyConfigSuccess, setShowKeyConfigSuccess] = useState(false);
   const [loadingReflection, setLoadingReflection] = useState(false);
   const [modernLyrics, setModernLyrics] = useState<string | null>(null);
   const [translatedLyrics, setTranslatedLyrics] = useState<string | null>(null);
@@ -410,7 +413,71 @@ export const HymnDetail: React.FC<HymnDetailProps> = ({ hymn, isFavorite, onTogg
         {/* Lyrics */}
         <div className="space-y-16">
           {viewMode === 'translated' ? (
-            loadingTranslation ? (
+            !apiKeyValue ? (
+              <div className="bg-gradient-to-br from-teal-50/30 to-emerald-50/20 rounded-[2rem] sm:rounded-[2.5rem] border-2 border-teal-100/55 p-6 sm:p-12 text-center max-w-2xl mx-auto space-y-5 shadow-sm animate-in fade-in zoom-in-95 duration-300">
+                <div className="mx-auto w-14 h-14 bg-teal-100/50 rounded-full flex items-center justify-center text-teal-600 mb-2">
+                  <Languages size={26} />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="font-serif text-lg sm:text-xl font-black text-teal-950 tracking-tight">Gemini API Key Required</h3>
+                  <p className="subtitle-font text-[11px] sm:text-xs text-teal-900/80 leading-relaxed max-w-md mx-auto">
+                    To enable high-fidelity automated translations on external hosts like Vercel, please enter your free Gemini API key. Your credentials will remain stored secure and local to your web browser.
+                  </p>
+                </div>
+                
+                <form 
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    if (customKeyInput.trim()) {
+                      setCustomApiKey(customKeyInput.trim());
+                      setApiKeyValue(customKeyInput.trim());
+                      setShowKeyConfigSuccess(true);
+                      setTimeout(() => {
+                        setShowKeyConfigSuccess(false);
+                        handleTranslate(targetLanguage);
+                      }, 1200);
+                    }
+                  }}
+                  className="space-y-3 max-w-sm mx-auto"
+                >
+                  <div className="relative">
+                    <input
+                      type="password"
+                      placeholder="Paste Gemini API key (e.g. AIzaSy...)"
+                      value={customKeyInput}
+                      onChange={(e) => setCustomKeyInput(e.target.value)}
+                      className="w-full px-4 py-3 sm:py-3.5 bg-white text-xs font-bold border border-teal-200 focus:border-teal-400 rounded-xl sm:rounded-2xl outline-none shadow-inner text-center tracking-wide"
+                      required
+                    />
+                  </div>
+                  
+                  <button
+                    type="submit"
+                    className="w-full py-3.5 bg-teal-800 hover:bg-teal-700 text-white font-black text-[10px] sm:text-xs uppercase tracking-widest rounded-xl sm:rounded-2xl shadow-md transition-all active:scale-[0.98] flex items-center justify-center gap-2"
+                  >
+                    {showKeyConfigSuccess ? (
+                      <>
+                        <Check size={14} /> Saved & Syncing!
+                      </>
+                    ) : (
+                      "Save Key & Translate to " + targetLanguage
+                    )}
+                  </button>
+                </form>
+
+                <p className="text-[9px] text-teal-700/60 font-black uppercase tracking-wider">
+                  Don't have a key? Create one for free on the{" "}
+                  <a 
+                    href="https://ai.google.dev/gemini-api" 
+                    target="_blank" 
+                    rel="noreferrer"
+                    className="underline text-teal-800 hover:text-teal-900"
+                  >
+                    Google AI Studio Developer Platform
+                  </a>
+                </p>
+              </div>
+            ) : loadingTranslation ? (
               <div className="flex flex-col items-center justify-center py-12 sm:py-24 text-center space-y-4 bg-teal-50/20 rounded-3xl border border-teal-50/70 p-6">
                 <Loader2 className="animate-spin text-teal-600" size={40} />
                 <p className="text-xs font-black text-teal-800 uppercase tracking-widest">Translating to {targetLanguage}...</p>
@@ -423,13 +490,26 @@ export const HymnDetail: React.FC<HymnDetailProps> = ({ hymn, isFavorite, onTogg
                     <Languages size={22} className="text-teal-600" />
                     <h3 className="font-serif text-xl sm:text-2xl font-black text-teal-900 tracking-tight">{targetLanguage} Version</h3>
                   </div>
-                  <button 
-                    onClick={() => handleShare('lyrics')}
-                    className="p-3 text-teal-700 hover:text-white hover:bg-teal-600 rounded-2xl transition-all border border-teal-100 bg-white"
-                    title="Share Translation"
-                  >
-                    <Share2 size={16} />
-                  </button>
+                  <div className="flex items-center gap-2">
+                    <button 
+                      onClick={() => {
+                        setCustomApiKey('');
+                        setApiKeyValue('');
+                        setCustomKeyInput('');
+                      }}
+                      className="text-[10px] font-black uppercase text-teal-600 hover:text-rose-600 underline transition-colors mr-3"
+                      title="Clear custom API Key from device local storage"
+                    >
+                      Clear API Key
+                    </button>
+                    <button 
+                      onClick={() => handleShare('lyrics')}
+                      className="p-3 text-teal-700 hover:text-white hover:bg-teal-600 border border-teal-100 rounded-2xl transition-all bg-white"
+                      title="Share Translation"
+                    >
+                      <Share2 size={16} />
+                    </button>
+                  </div>
                 </div>
                 <p className="hymn-font leading-[2] text-teal-950 font-serif font-medium text-lg sm:text-2xl whitespace-pre-line text-left">
                   {translatedLyrics || "Translation failed to match. Try checking your API connection or re-select."}

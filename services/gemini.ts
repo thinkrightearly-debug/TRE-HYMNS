@@ -23,6 +23,18 @@ export const getApiKey = (): string => {
     if (stored) return stored;
   }
 
+  // If we are not in the AI Studio Sandbox or Localhost development, the baked-in system API keys 
+  // will fail on external hosts (like vercel.app or custom domains) due to Google's origin/referrer constraints.
+  // We ignore baked-in keys for external production deployments to ensure graceful custom setup options.
+  if (typeof window !== "undefined") {
+    const host = window.location.hostname;
+    const isSandboxUrl = host.endsWith(".run.app") || host.endsWith(".aistudio-preview.com");
+    const isLocalhost = host === "localhost" || host === "127.0.0.1" || host.startsWith("192.168.") || host === "0.0.0.0";
+    if (!isSandboxUrl && !isLocalhost) {
+      return '';
+    }
+  }
+
   // Try Vite's modern client-facing environment config
   // Vite replaces literal 'import.meta.env.VITE_*' strings at build time.
   try {
