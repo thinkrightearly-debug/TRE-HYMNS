@@ -33,6 +33,7 @@ export const HymnDetail: React.FC<HymnDetailProps> = ({ hymn, isFavorite, onTogg
   const [modernLyrics, setModernLyrics] = useState<string | null>(null);
   const [translatedLyrics, setTranslatedLyrics] = useState<string | null>(null);
   const [loadingTranslation, setLoadingTranslation] = useState(false);
+  const [translationError, setTranslationError] = useState<string | null>(null);
   const [targetLanguage, setTargetLanguage] = useState('Yoruba');
   const [customLanguage, setCustomLanguage] = useState('');
   const [showCustomInput, setShowCustomInput] = useState(false);
@@ -77,6 +78,7 @@ export const HymnDetail: React.FC<HymnDetailProps> = ({ hymn, isFavorite, onTogg
   const handleTranslate = async (lang: string) => {
     setTargetLanguage(lang);
     setViewMode('translated');
+    setTranslationError(null);
     
     // Check cache first
     const cached = await getCachedData(`translate_${hymn.title}_${lang.toLowerCase()}`);
@@ -86,10 +88,29 @@ export const HymnDetail: React.FC<HymnDetailProps> = ({ hymn, isFavorite, onTogg
     }
 
     setLoadingTranslation(true);
-    const lyricsString = hymn.verses.join("\n\n") + (hymn.chorus ? `\n\nChorus:\n${hymn.chorus}` : "");
-    const res = await translateHymn(hymn.title, lyricsString, lang);
-    setTranslatedLyrics(res);
-    setLoadingTranslation(false);
+    try {
+      const lyricsString = hymn.verses.join("\n\n") + (hymn.chorus ? `\n\nChorus:\n${hymn.chorus}` : "");
+      const res = await translateHymn(hymn.title, lyricsString, lang);
+      setTranslatedLyrics(res);
+    } catch (err: any) {
+      console.error("Translation failed:", err);
+      const msg = err?.message || String(err || "");
+      if (
+        msg.includes("API key") || 
+        msg.includes("is not configured") || 
+        msg.includes("not valid") || 
+        msg.includes("403") || 
+        msg.includes("412") ||
+        msg.includes("401")
+      ) {
+        setTranslationError("Gemini Translation is currently resting. A configured Gemini API key is required on the server to activate automatic translation.");
+      } else {
+        setTranslationError(`Could not translate into ${lang} at this time. Please make sure translation services are authorized.`);
+      }
+      setTranslatedLyrics(null);
+    } finally {
+      setLoadingTranslation(false);
+    }
   };
 
   const handleShare = async (type: 'lyrics' | 'reflection') => {
@@ -413,15 +434,21 @@ export const HymnDetail: React.FC<HymnDetailProps> = ({ hymn, isFavorite, onTogg
         {/* Lyrics */}
         <div className="space-y-16">
           {viewMode === 'translated' ? (
-            !apiKeyValue ? (
+            loadingTranslation ? (
+              <div className="flex flex-col items-center justify-center py-12 sm:py-24 text-center space-y-4 bg-teal-50/20 rounded-3xl border border-teal-50/70 p-6">
+                <Loader2 className="animate-spin text-teal-600" size={40} />
+                <p className="text-xs font-black text-teal-800 uppercase tracking-widest">Translating to {targetLanguage}...</p>
+                <p className="text-[11px] text-gray-400 max-w-xs leading-relaxed">Gemini is rendering lyrics with poetic theology & tonality markings...</p>
+              </div>
+            ) : translationError ? (
               <div className="bg-gradient-to-br from-teal-50/30 to-emerald-50/20 rounded-[2rem] sm:rounded-[2.5rem] border-2 border-teal-100/55 p-6 sm:p-12 text-center max-w-2xl mx-auto space-y-5 shadow-sm animate-in fade-in zoom-in-95 duration-300">
                 <div className="mx-auto w-14 h-14 bg-teal-100/50 rounded-full flex items-center justify-center text-teal-600 mb-2">
                   <Languages size={26} />
                 </div>
                 <div className="space-y-2">
-                  <h3 className="font-serif text-lg sm:text-xl font-black text-teal-950 tracking-tight">Gemini API Key Required</h3>
+                  <h3 className="font-serif text-lg sm:text-xl font-black text-teal-950 tracking-tight">Translation Inactive</h3>
                   <p className="subtitle-font text-[11px] sm:text-xs text-teal-900/80 leading-relaxed max-w-md mx-auto">
-                    To enable high-fidelity automated translations on external hosts like Vercel, please enter your free Gemini API key. Your credentials will remain stored secure and local to your web browser.
+                    {translationError}
                   </p>
                 </div>
                 
@@ -431,6 +458,7 @@ export const HymnDetail: React.FC<HymnDetailProps> = ({ hymn, isFavorite, onTogg
                     if (customKeyInput.trim()) {
                       setCustomApiKey(customKeyInput.trim());
                       setApiKeyValue(customKeyInput.trim());
+                      setTranslationError(null);
                       setShowKeyConfigSuccess(true);
                       setTimeout(() => {
                         setShowKeyConfigSuccess(false);
@@ -465,23 +493,24 @@ export const HymnDetail: React.FC<HymnDetailProps> = ({ hymn, isFavorite, onTogg
                   </button>
                 </form>
 
-                <p className="text-[9px] text-teal-700/60 font-black uppercase tracking-wider">
-                  Don't have a key? Create one for free on the{" "}
-                  <a 
-                    href="https://ai.google.dev/gemini-api" 
-                    target="_blank" 
-                    rel="noreferrer"
-                    className="underline text-teal-800 hover:text-teal-900"
-                  >
-                    Google AI Studio Developer Platform
-                  </a>
-                </p>
-              </div>
-            ) : loadingTranslation ? (
-              <div className="flex flex-col items-center justify-center py-12 sm:py-24 text-center space-y-4 bg-teal-50/20 rounded-3xl border border-teal-50/70 p-6">
-                <Loader2 className="animate-spin text-teal-600" size={40} />
-                <p className="text-xs font-black text-teal-800 uppercase tracking-widest">Translating to {targetLanguage}...</p>
-                <p className="text-[11px] text-gray-400 max-w-xs leading-relaxed">Gemini is rendering lyrics with poetic theology & tonality markings...</p>
+                {/* Only show development platform links if the user is running in AI Studio Sandbox or Localhost */}
+                {typeof window !== "undefined" && 
+                 (window.location.hostname.endsWith(".run.app") || 
+                  window.location.hostname.endsWith(".aistudio-preview.com") || 
+                  window.location.hostname === "localhost" || 
+                  window.location.hostname === "127.0.0.1") && (
+                  <p className="text-[9px] text-teal-700/60 font-black uppercase tracking-wider">
+                    Don't have a key? Create one for free on the{" "}
+                    <a 
+                      href="https://ai.google.dev/gemini-api" 
+                      target="_blank" 
+                      rel="noreferrer"
+                      className="underline text-teal-800 hover:text-teal-900"
+                    >
+                      Google AI Studio Developer Platform
+                    </a>
+                  </p>
+                )}
               </div>
             ) : (
               <div className="bg-teal-50/10 p-6 sm:p-12 rounded-3xl sm:rounded-[3.5rem] border border-teal-100/50 shadow-sm relative group/translation">
@@ -491,17 +520,20 @@ export const HymnDetail: React.FC<HymnDetailProps> = ({ hymn, isFavorite, onTogg
                     <h3 className="font-serif text-xl sm:text-2xl font-black text-teal-900 tracking-tight">{targetLanguage} Version</h3>
                   </div>
                   <div className="flex items-center gap-2">
-                    <button 
-                      onClick={() => {
-                        setCustomApiKey('');
-                        setApiKeyValue('');
-                        setCustomKeyInput('');
-                      }}
-                      className="text-[10px] font-black uppercase text-teal-600 hover:text-rose-600 underline transition-colors mr-3"
-                      title="Clear custom API Key from device local storage"
-                    >
-                      Clear API Key
-                    </button>
+                    {apiKeyValue && (
+                      <button 
+                        onClick={() => {
+                          setCustomApiKey('');
+                          setApiKeyValue('');
+                          setCustomKeyInput('');
+                          setTranslationError(null);
+                        }}
+                        className="text-[10px] font-black uppercase text-teal-600 hover:text-rose-600 underline transition-colors mr-3"
+                        title="Clear custom API Key from device local storage"
+                      >
+                        Clear API Key
+                      </button>
+                    )}
                     <button 
                       onClick={() => handleShare('lyrics')}
                       className="p-3 text-teal-700 hover:text-white hover:bg-teal-600 border border-teal-100 rounded-2xl transition-all bg-white"

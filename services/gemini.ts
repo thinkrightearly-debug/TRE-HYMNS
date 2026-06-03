@@ -23,18 +23,6 @@ export const getApiKey = (): string => {
     if (stored) return stored;
   }
 
-  // If we are not in the AI Studio Sandbox or Localhost development, the baked-in system API keys 
-  // will fail on external hosts (like vercel.app or custom domains) due to Google's origin/referrer constraints.
-  // We ignore baked-in keys for external production deployments to ensure graceful custom setup options.
-  if (typeof window !== "undefined") {
-    const host = window.location.hostname;
-    const isSandboxUrl = host.endsWith(".run.app") || host.endsWith(".aistudio-preview.com");
-    const isLocalhost = host === "localhost" || host === "127.0.0.1" || host.startsWith("192.168.") || host === "0.0.0.0";
-    if (!isSandboxUrl && !isLocalhost) {
-      return '';
-    }
-  }
-
   // Try Vite's modern client-facing environment config
   // Vite replaces literal 'import.meta.env.VITE_*' strings at build time.
   try {
@@ -130,6 +118,9 @@ const callGeminiDirect = async (prompt: string, responseMimeType?: string): Prom
   const modelsToTry = [
     "gemini-3.5-flash",
     "gemini-3.1-flash-lite",
+    "gemini-2.5-flash",
+    "gemini-2.0-flash",
+    "gemini-1.5-flash",
     "gemini-flash-latest"
   ];
 
@@ -293,11 +284,6 @@ export const getHymnReflection = async (hymnTitle: string, lyrics: string) => {
     const cached = await get(cacheKey);
     if (cached) return cached;
 
-    const apiKey = getApiKey();
-    if (!apiKey) {
-      return "Spiritual reflections are currently resting. Please set your GEMINI_API_KEY to see them.";
-    }
-
     const prompt = `You are a theologian and devotional writer. Provide a short, inspiring spiritual reflection (3-4 sentences) on the following hymn titled "${hymnTitle}". Then suggest one Bible verse that fits the theme. 
     Lyrics: ${lyrics.substring(0, 1000)}`;
 
@@ -315,11 +301,6 @@ export const modernizeHymn = async (hymnTitle: string, lyrics: string) => {
   try {
     const cached = await get(cacheKey);
     if (cached) return cached;
-
-    const apiKey = getApiKey();
-    if (!apiKey) {
-      return "Modernized translation is unavailable without a configured GEMINI_API_KEY.";
-    }
 
     const prompt = `Rewrite the following hymn lyrics in modern English. Maintain original meaning but use contemporary language.
     Hymn: ${hymnTitle}
@@ -345,11 +326,6 @@ export const generateHymnMelody = async (hymnTitle: string, tune: string, firstV
   try {
     const cached = await get(cacheKey);
     if (cached) return cached;
-
-    const apiKey = getApiKey();
-    if (!apiKey) {
-      throw new Error("Gemini API is not configured");
-    }
 
     const prompt = `You are a world-class organist and musicologist. Provide the mathematically and musically accurate main melody for the hymn "${hymnTitle}" (Tune: ${tune}).
     ${firstVerse ? `Context (First Verse): "${firstVerse}"` : ''}
@@ -377,12 +353,6 @@ export const generateHymnMelody = async (hymnTitle: string, tune: string, firstV
 
 export const fetchHymnFromArchive = async (query: string): Promise<Hymn | null> => {
   try {
-    const apiKey = getApiKey();
-    if (!apiKey) {
-      console.warn("Cannot fetch from archive: Gemini API key is missing.");
-      return null;
-    }
-
     const prompt = `You are a hymnal archivist specializing in the English Anglican and Iwe Orin Mimo (IOM) traditions. 
     Retrieve the following hymn details for: "${query}". 
     If a number is provided, find that specific number from the standard 600+ English hymnal.
@@ -416,11 +386,6 @@ export const translateHymn = async (hymnTitle: string, lyrics: string, targetLan
     const cached = await get(cacheKey);
     if (cached) return cached;
 
-    const apiKey = getApiKey();
-    if (!apiKey) {
-      return `Translations in ${targetLanguage} are resting. Please configure your GEMINI_API_KEY.`;
-    }
-
     const prompt = `You are a world-class expert theologian, linguist, and bilingual translator specializing in sacred Christian hymns.
     Your task is to translate the following hymn lyrics into extremely high-fidelity, poetic, and rhythmically appropriate ${targetLanguage} text of 100% absolute accuracy.
 
@@ -442,7 +407,7 @@ export const translateHymn = async (hymnTitle: string, lyrics: string, targetLan
     return text;
   } catch (error) {
     console.error("Gemini Translation Error:", error);
-    return `Could not translate into ${targetLanguage} at this time.`;
+    throw error;
   }
 };
 
@@ -452,9 +417,6 @@ export const verifyAndCompleteLyrics = async (
   currentLyrics: string
 ): Promise<{ verses: string[]; chorus?: string | null; author?: string; tune?: string; melody?: Note[] } | null> => {
   try {
-    const apiKey = getApiKey();
-    if (!apiKey) return null;
-
     const prompt = `You are a world-class sacred hymnal expert, musicologist, and organist. Verify and retrieve the absolute 100% complete and accurate traditional English lyrics AND musical tune melody for the following hymn:
     Number: ${hymnNumber}
     Title: "${title}"
